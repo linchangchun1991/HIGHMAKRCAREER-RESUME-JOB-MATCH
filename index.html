@@ -3,462 +3,590 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HIGHMARK CAREER | Executive Talent Assessment</title>
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-    <!-- Tailwind CSS -->
+    <title>HIGHMARK CAREER | Elite Talent Assessment System</title>
+    
+    <!-- 引入核心库 -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    
+    <!-- 引入高级字体 -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Inter:wght@300;400;600;800&family=JetBrains+Mono:wght@400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+    <!-- 自定义配置 Tailwind -->
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        'midnight': '#0B1120', // 深邃午夜蓝背景
+                        'card-bg': '#151E32',  // 卡片背景
+                        'gold': '#D4AF37',     // 投行金
+                        'gold-dim': 'rgba(212, 175, 55, 0.1)',
+                        'tech-blue': '#3B82F6', // 科技蓝
+                        'danger': '#EF4444',
+                    },
+                    fontFamily: {
+                        'serif': ['"Playfair Display"', 'serif'],
+                        'display': ['"Cinzel"', 'serif'],
+                        'sans': ['"Inter"', 'sans-serif'],
+                        'mono': ['"JetBrains Mono"', 'monospace'],
+                    },
+                    backgroundImage: {
+                        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+                    }
+                }
+            }
+        }
+    </script>
+
     <style>
-        :root {
-            --gold: #D4AF37;
-            --blue: #3B82F6;
-            --dark-bg: #020617;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            background: var(--dark-bg);
-            color: #ffffff;
-            min-height: 100vh;
-            position: relative;
+            background-color: #0B1120;
+            background-image: 
+                radial-gradient(circle at 15% 50%, rgba(59, 130, 246, 0.08), transparent 25%), 
+                radial-gradient(circle at 85% 30%, rgba(212, 175, 55, 0.05), transparent 25%);
+            color: #E2E8F0;
             overflow-x: hidden;
         }
 
-        /* 流光渐变背景 */
-        body::before {
-            content: '';
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: 
-                radial-gradient(circle at 20% 30%, rgba(212, 175, 55, 0.08) 0%, transparent 50%),
-                radial-gradient(circle at 80% 70%, rgba(59, 130, 246, 0.08) 0%, transparent 50%),
-                linear-gradient(180deg, #020617 0%, #030a1f 50%, #020617 100%);
-            pointer-events: none;
-            z-index: 0;
-            animation: backgroundShift 20s ease-in-out infinite;
+        /* 磨砂玻璃质感 */
+        .glass-panel {
+            background: rgba(21, 30, 50, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
         }
 
-        @keyframes backgroundShift {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.8; }
-        }
-
-        /* 网格背景 */
-        body::after {
-            content: '';
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: 
-                linear-gradient(rgba(212, 175, 55, 0.03) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(212, 175, 55, 0.03) 1px, transparent 1px);
-            background-size: 50px 50px;
-            pointer-events: none;
-            z-index: 0;
-        }
-
-        .container {
-            position: relative;
-            z-index: 1;
-        }
-
-        /* Logo 样式 */
-        .logo {
-            font-family: 'Playfair Display', serif;
-            font-weight: 900;
-            font-size: 1.5rem;
-            letter-spacing: 0.1em;
-            color: var(--gold);
-            text-shadow: 0 0 20px rgba(212, 175, 55, 0.5);
-        }
-
-        /* 玻璃态卡片 */
-        .glass-card {
-            background: rgba(255, 255, 255, 0.03);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            box-shadow: 
-                0 8px 32px rgba(0, 0, 0, 0.4),
-                inset 0 1px 0 rgba(255, 255, 255, 0.1);
-        }
-
-        /* 金色流光边框 */
+        /* 金色微光边框效果 */
         .gold-border-glow {
             border: 1px solid rgba(212, 175, 55, 0.3);
-            position: relative;
-            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        .gold-border-glow:hover {
+            border-color: rgba(212, 175, 55, 0.8);
+            box-shadow: 0 0 15px rgba(212, 175, 55, 0.15);
         }
 
-        .gold-border-glow::before {
-            content: '';
+        /* 终端打字机光标 */
+        .cursor-blink {
+            animation: blink 1s step-end infinite;
+        }
+        @keyframes blink { 50% { opacity: 0; } }
+
+        /* 扫描动画 */
+        .scanner-line {
             position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: linear-gradient(45deg, transparent, rgba(212, 175, 55, 0.3), transparent);
-            animation: rotateGlow 3s linear infinite;
-        }
-
-        @keyframes rotateGlow {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-
-        /* 呼吸灯效果 */
-        .breathe {
-            animation: breathe 3s ease-in-out infinite;
-        }
-
-        @keyframes breathe {
-            0%, 100% { 
-                box-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
-            }
-            50% { 
-                box-shadow: 0 0 40px rgba(212, 175, 55, 0.6);
-            }
-        }
-
-        /* 全息数据分析台 */
-        .hologram-box {
-            background: rgba(2, 6, 23, 0.8);
-            backdrop-filter: blur(30px);
-            border: 1px solid rgba(212, 175, 55, 0.2);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hologram-box::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
             width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.1), transparent);
-            animation: scanLine 2s linear infinite;
+            height: 2px;
+            background: linear-gradient(to right, transparent, #3B82F6, transparent);
+            animation: scan 2s linear infinite;
+        }
+        @keyframes scan {
+            0% { top: 0%; opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { top: 100%; opacity: 0; }
         }
 
-        @keyframes scanLine {
-            0% { left: -100%; }
-            100% { left: 100%; }
-        }
-
-        /* Terminal 浮层 */
-        .terminal-overlay {
-            background: rgba(0, 0, 0, 0.9);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(59, 130, 246, 0.3);
-            font-family: 'JetBrains Mono', monospace;
-        }
-
-        .terminal-line {
-            color: #10b981;
-            font-size: 0.875rem;
-            line-height: 1.8;
-            opacity: 0;
-            animation: typeIn 0.5s forwards;
-        }
-
-        @keyframes typeIn {
-            to { opacity: 1; }
-        }
-
-        .terminal-cursor {
-            display: inline-block;
-            width: 8px;
-            height: 16px;
-            background: #10b981;
-            animation: blink 1s infinite;
-            margin-left: 4px;
-        }
-
-        @keyframes blink {
-            0%, 50% { opacity: 1; }
-            51%, 100% { opacity: 0; }
-        }
-
-        /* 计步器动画 */
-        @keyframes countUp {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .count-up {
-            animation: countUp 1s ease-out forwards;
-        }
-
-        /* Gauge 仪表盘 */
-        .gauge-container {
-            position: relative;
-            width: 200px;
-            height: 200px;
-            margin: 0 auto;
-        }
-
-        .gauge-arc {
-            fill: none;
-            stroke-width: 20;
-            stroke-linecap: round;
-        }
-
-        /* 股票走势图背景 */
-        .stock-chart-bg {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 60%;
-            opacity: 0.1;
-            background-image: 
-                linear-gradient(to right, transparent 0%, var(--gold) 50%, transparent 100%);
-            clip-path: polygon(0 100%, 10% 80%, 20% 70%, 30% 60%, 40% 50%, 50% 45%, 60% 50%, 70% 55%, 80% 60%, 90% 65%, 100% 70%, 100% 100%);
-        }
-
-        /* 代码 Review 样式 */
-        .code-review {
-            background: rgba(0, 0, 0, 0.5);
-            border-left: 3px solid var(--gold);
-            font-family: 'JetBrains Mono', monospace;
-        }
-
-        .red-underline {
-            text-decoration: underline;
-            text-decoration-color: #ef4444;
-            text-decoration-style: wavy;
-        }
-
-        /* 时间轴样式 */
-        .timeline-item {
-            position: relative;
-            padding-left: 2rem;
-            border-left: 2px solid rgba(212, 175, 55, 0.3);
-        }
-
-        .timeline-item::before {
-            content: '';
-            position: absolute;
-            left: -6px;
-            top: 0;
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
-            background: var(--gold);
-            box-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
-        }
-
-        .timeline-item.active::before {
-            animation: pulse 2s ease-in-out infinite;
-        }
-
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); opacity: 1; }
-            50% { transform: scale(1.5); opacity: 0.7; }
-        }
-
-        /* 黑金会员卡 */
-        .premium-card {
-            background: linear-gradient(135deg, rgba(212, 175, 55, 0.1) 0%, rgba(59, 130, 246, 0.1) 100%);
-            border: 2px solid var(--gold);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .premium-card::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(212, 175, 55, 0.2) 0%, transparent 70%);
-            animation: rotateGlow 10s linear infinite;
-        }
-
-        /* 渐变文字 */
-        .gradient-text {
-            background: linear-gradient(135deg, var(--gold) 0%, var(--blue) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        /* 响应式 */
-        @media (max-width: 768px) {
-            .bento-grid {
-                grid-template-columns: 1fr !important;
-            }
-        }
+        /* 滚动条美化 */
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: #0B1120; }
+        ::-webkit-scrollbar-thumb { background: #334155; border-radius: 3px; }
+        ::-webkit-scrollbar-thumb:hover { background: #475569; }
     </style>
 </head>
-<body>
-    <div class="container min-h-screen">
-        <!-- Header -->
-        <header class="border-b border-white/10 py-6 px-6 md:px-12 fixed top-0 left-0 right-0 bg-dark-bg/80 backdrop-blur-md z-50">
-            <div class="max-w-7xl mx-auto flex items-center justify-between">
-                <div class="logo">HIGHMARK CAREER</div>
-                <nav class="hidden md:flex gap-8 text-sm">
-                    <a href="#" class="text-white/60 transition-colors" style="color: rgba(255,255,255,0.6);" onmouseover="this.style.color='#D4AF37'" onmouseout="this.style.color='rgba(255,255,255,0.6)'">Assessment</a>
-                    <a href="#" class="text-white/60 transition-colors" style="color: rgba(255,255,255,0.6);" onmouseover="this.style.color='#D4AF37'" onmouseout="this.style.color='rgba(255,255,255,0.6)'">Solutions</a>
-                    <a href="#" class="text-white/60 transition-colors" style="color: rgba(255,255,255,0.6);" onmouseover="this.style.color='#D4AF37'" onmouseout="this.style.color='rgba(255,255,255,0.6)'">About</a>
-                </nav>
-            </div>
-        </header>
+<body class="antialiased min-h-screen font-sans selection:bg-gold selection:text-midnight">
 
-        <!-- Hero Section -->
-        <section class="pt-32 pb-16 px-6 md:px-12">
-            <div class="max-w-7xl mx-auto">
-                <!-- Hero Title -->
-                <div class="text-center mb-16">
-                    <h1 class="font-['Playfair_Display'] text-6xl md:text-8xl font-bold mb-6 gradient-text">
-                        Executive Talent Assessment
-                    </h1>
-                    <p class="text-xl text-white/60 max-w-2xl mx-auto">
-                        Powered by Highmark's proprietary algorithm analyzing 10,000+ candidate profiles
+    <!-- 顶部导航 -->
+    <nav class="fixed top-0 w-full z-50 glass-panel border-b border-white/5">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <!-- 简单的 SVG Logo -->
+                <svg class="w-8 h-8 text-gold" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zm0 9l2.5-1.25L12 8.5l-2.5 1.25L12 11zm0 2.5l-5-2.5-5 2.5L12 22l10-8.5-5-2.5-5 2.5z"/></svg>
+                <span class="font-display font-bold text-2xl tracking-widest text-white">HIGHMARK <span class="text-gold">CAREER</span></span>
+            </div>
+            <div class="flex items-center gap-6 text-sm font-mono text-gray-400">
+                <span>EST. 2015</span>
+                <span class="text-gold">GLOBAL ELITE TALENT SYSTEM</span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 主内容区 -->
+    <main class="pt-32 pb-20 px-6 max-w-7xl mx-auto">
+        
+        <!-- Hero: 文件上传区 (初始状态) -->
+        <section id="upload-section" class="relative z-10 transition-all duration-700 ease-in-out">
+            <div class="text-center mb-12">
+                <h1 class="font-serif text-5xl md:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-white via-gray-200 to-gray-400 mb-6 leading-tight">
+                    Reveal Your True <span class="text-gold italic">Market Value</span>
+                </h1>
+                <p class="text-gray-400 text-lg max-w-2xl mx-auto font-light">
+                    基于 <span class="text-white font-semibold">Global 500</span> 真实录用标准 · 
+                    <span class="text-white font-semibold">安永(EY)</span> 审计级数据核验
+                </p>
+            </div>
+
+            <!-- 上传框 -->
+            <div class="max-w-3xl mx-auto">
+                <div id="drop-zone" class="glass-panel rounded-2xl p-12 border-2 border-dashed border-gray-700 hover:border-gold transition-all duration-300 cursor-pointer group relative overflow-hidden">
+                    <input type="file" id="file-input" class="hidden" accept=".pdf">
+                    
+                    <div class="relative z-10 flex flex-col items-center justify-center gap-6">
+                        <div class="w-20 h-20 rounded-full bg-gold-dim flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                            <svg class="w-10 h-10 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"></path></svg>
+                        </div>
+                        <div class="text-center">
+                            <p class="text-xl font-medium text-white mb-2 group-hover:text-gold transition-colors">拖拽简历至此，或点击上传</p>
+                            <p class="text-sm text-gray-500 font-mono">SUPPORT PDF ONLY · MAX 10MB</p>
+                        </div>
+                    </div>
+                    
+                    <!-- 背景流光 -->
+                    <div class="absolute inset-0 bg-gradient-to-tr from-gold/5 via-transparent to-tech-blue/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Loading: 终端分析动画 (默认隐藏) -->
+        <section id="loading-section" class="hidden max-w-3xl mx-auto mt-10">
+            <div class="glass-panel rounded-lg p-6 font-mono text-sm border border-gray-700 shadow-2xl relative overflow-hidden h-64 flex flex-col">
+                <div class="flex items-center gap-2 mb-4 border-b border-gray-800 pb-2">
+                    <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                    <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                    <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                    <span class="ml-2 text-xs text-gray-500">Highmark_Core_Engine_v4.0.exe</span>
+                </div>
+                <div id="terminal-content" class="flex-1 overflow-hidden text-tech-blue space-y-2">
+                    <!-- JS 会在这里打字 -->
+                </div>
+                <div class="scanner-line"></div>
+            </div>
+        </section>
+
+        <!-- Report: 深度报告 Bento Grid (默认隐藏) -->
+        <section id="report-section" class="hidden space-y-8 animate-fade-in-up">
+            
+            <!-- 头部状态栏 -->
+            <div class="flex justify-between items-end border-b border-gray-800 pb-4">
+                <div>
+                    <div class="text-gold text-xs font-bold tracking-[0.2em] uppercase mb-1">Evaluation Report</div>
+                    <h2 class="text-3xl font-serif text-white">人才资产评估报告</h2>
+                </div>
+                <div class="text-right">
+                    <div class="text-gray-500 text-xs font-mono">REPORT ID</div>
+                    <div class="text-white font-mono">HM-2025-X829</div>
+                </div>
+            </div>
+
+            <!-- Bento Grid 布局 -->
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+                
+                <!-- 卡片1: 核心估值 (Top Left) -->
+                <div class="md:col-span-4 glass-panel rounded-2xl p-6 gold-border-glow relative overflow-hidden">
+                    <div class="text-gray-400 text-xs font-mono uppercase mb-4">Market Competitiveness Score</div>
+                    <div class="flex items-baseline gap-2">
+                        <span id="score-val" class="text-7xl font-display font-bold text-white tracking-tighter">0</span>
+                        <span class="text-xl text-gray-500">/ 100</span>
+                    </div>
+                    <div id="tier-badge" class="mt-4 inline-block px-3 py-1 rounded bg-gold/20 text-gold text-xs font-bold border border-gold/30">
+                        CALCULATING...
+                    </div>
+                    <p id="summary-text" class="mt-6 text-sm text-gray-300 leading-relaxed italic border-l-2 border-gold pl-4">
+                        分析中...
                     </p>
                 </div>
 
-                <!-- 全息数据分析台 -->
-                <div class="hologram-box rounded-3xl p-12 md:p-16 mb-8 max-w-4xl mx-auto breathe" id="hologramBox">
-                    <div class="text-center" id="uploadState">
-                        <div class="text-8xl mb-8">📊</div>
-                        <h2 class="font-['Playfair_Display'] text-3xl md:text-4xl font-bold mb-4" style="color: #D4AF37;">
-                            上传简历，启动 Highmark 独家算法评估
-                        </h2>
-                        <p class="text-white/60 mb-8">Drop your PDF resume or click to upload</p>
-                        <div class="upload-zone border-2 border-dashed rounded-2xl p-16 cursor-pointer transition-colors" style="border-color: rgba(212, 175, 55, 0.3);" id="uploadArea" onmouseover="this.style.borderColor='rgba(212, 175, 55, 0.6)'" onmouseout="this.style.borderColor='rgba(212, 175, 55, 0.3)'">
-                            <input type="file" id="fileInput" accept=".pdf" class="hidden">
-                            <div class="text-6xl mb-4">📄</div>
-                            <div class="text-xl font-semibold text-white" id="uploadText">Click or Drag to Upload</div>
+                <!-- 卡片2: 雷达图 (Top Middle) -->
+                <div class="md:col-span-4 glass-panel rounded-2xl p-6 gold-border-glow flex flex-col">
+                    <div class="text-gray-400 text-xs font-mono uppercase mb-2">6-Dimension Analysis</div>
+                    <div class="flex-1 relative">
+                        <canvas id="radarChart"></canvas>
+                    </div>
+                </div>
+
+                <!-- 卡片3: 同辈残酷排位 (Top Right) -->
+                <div class="md:col-span-4 glass-panel rounded-2xl p-6 gold-border-glow flex flex-col justify-between">
+                    <div class="text-gray-400 text-xs font-mono uppercase">Peer Ranking (同院校)</div>
+                    
+                    <div class="my-6">
+                        <div class="flex justify-between text-sm mb-2">
+                            <span class="text-danger">淘汰区 (Bottom 30%)</span>
+                            <span class="text-gold">核心区 (Top 10%)</span>
                         </div>
-                        <button class="mt-8 px-12 py-4 rounded-full font-semibold text-lg transition-all disabled:opacity-50 disabled:cursor-not-allowed" style="background: linear-gradient(135deg, #D4AF37 0%, #3B82F6 100%);" id="analyzeBtn" disabled>
-                            Start Analysis
+                        <div class="h-4 bg-gray-800 rounded-full overflow-hidden relative">
+                            <div id="rank-bar" class="h-full bg-gradient-to-r from-red-600 via-blue-500 to-gold w-0 transition-all duration-1000 ease-out"></div>
+                            <!-- 标记点 -->
+                            <div id="rank-marker" class="absolute top-0 w-1 h-full bg-white shadow-[0_0_10px_white] transition-all duration-1000" style="left: 0%"></div>
+                        </div>
+                        <div class="mt-2 text-right text-xs text-tech-blue font-mono">
+                            Based on 12,405 data points
+                        </div>
+                    </div>
+
+                    <div class="bg-black/40 rounded p-3 text-xs text-gray-400">
+                        <strong class="text-white block mb-1">Data Source:</strong>
+                        对比样本为 QS Top 100 且投递同类岗位的候选人。
+                    </div>
+                </div>
+
+                <!-- 卡片4: 简历含水量检测 (Middle Wide) -->
+                <div class="md:col-span-8 glass-panel rounded-2xl p-6 gold-border-glow">
+                    <div class="flex items-center gap-2 mb-6">
+                        <div class="w-2 h-2 rounded-full bg-danger animate-pulse"></div>
+                        <span class="text-gray-400 text-xs font-mono uppercase">"Water Content" X-Ray Detection</span>
+                    </div>
+                    
+                    <div id="water-content-list" class="space-y-4">
+                        <!-- 动态生成的内容 -->
+                    </div>
+                </div>
+
+                <!-- 卡片5: 职业时间轴 (Middle Right) -->
+                <div class="md:col-span-4 glass-panel rounded-2xl p-6 gold-border-glow relative overflow-hidden">
+                    <div class="text-gray-400 text-xs font-mono uppercase mb-6">Critical Timeline (2025 Fall)</div>
+                    <div id="timeline-box" class="space-y-6 relative pl-4 border-l border-gray-700">
+                        <!-- 动态生成 -->
+                    </div>
+                </div>
+
+                <!-- 卡片6: 薪资预测 & 岗位 (Bottom Left) -->
+                <div class="md:col-span-6 glass-panel rounded-2xl p-6 border border-gray-800">
+                    <div class="text-gray-400 text-xs font-mono uppercase mb-4">Career Compass</div>
+                    <div class="grid grid-cols-2 gap-6">
+                        <div>
+                            <div class="text-xs text-gray-500 mb-1">建议投递岗位</div>
+                            <div id="target-roles" class="flex flex-wrap gap-2"></div>
+                        </div>
+                        <div>
+                            <div class="text-xs text-gray-500 mb-1">首年年薪预测 (RMB)</div>
+                            <div id="salary-range" class="text-2xl font-mono text-gold font-bold">CALCULATING</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 卡片7: 海马处方签 (Bottom Right - Solution) -->
+                <div class="md:col-span-6 bg-gradient-to-br from-gray-900 to-black rounded-2xl p-6 border border-gold/40 relative overflow-hidden group cursor-pointer">
+                    <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+                        <svg class="w-32 h-32 text-gold" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zm0 9l2.5-1.25L12 8.5l-2.5 1.25L12 11zm0 2.5l-5-2.5-5 2.5L12 22l10-8.5-5-2.5-5 2.5z"/></svg>
+                    </div>
+                    
+                    <div class="relative z-10">
+                        <div class="text-gold text-xs font-bold tracking-widest uppercase mb-2">Highmark Exclusive Solution</div>
+                        <h3 id="solution-title" class="text-2xl font-serif text-white mb-2">等待诊断...</h3>
+                        <p id="solution-reason" class="text-sm text-gray-400 mb-6 max-w-md">请先上传简历进行诊断。</p>
+                        
+                        <button class="bg-gold hover:bg-yellow-500 text-black font-bold py-2 px-6 rounded text-sm transition-colors flex items-center gap-2">
+                            激活专家通道
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
                         </button>
                     </div>
-
-                    <!-- Terminal 分析浮层 -->
-                    <div class="hidden terminal-overlay rounded-2xl p-8" id="terminalOverlay">
-                        <div class="space-y-2" id="terminalLines"></div>
-                    </div>
                 </div>
 
-                <!-- Error Message -->
-                <div class="hidden bg-red-500/10 border border-red-500/30 rounded-xl p-4 mb-6 max-w-4xl mx-auto" id="errorMessage">
-                    <p class="text-red-400" id="errorText"></p>
-                </div>
             </div>
         </section>
+    </main>
 
-        <!-- Bento Grid Report -->
-        <section class="hidden px-6 md:px-12 pb-16" id="resultsSection">
-            <div class="max-w-7xl mx-auto">
-                <div class="bento-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <!-- Card A: 核心身价 -->
-                    <div class="glass-card rounded-2xl p-8 relative overflow-hidden">
-                        <div class="stock-chart-bg"></div>
-                        <div class="relative z-10">
-                            <div class="text-white/60 text-sm mb-4 font-['JetBrains_Mono']">CURRENT MARKET VALUE</div>
-                            <div class="text-7xl font-bold gradient-text mb-2" id="scoreNumber">0</div>
-                            <div class="text-white/80 text-lg">当前市场竞争力评分</div>
+    <!-- 逻辑脚本 -->
+    <script>
+        // ================= 配置区 =================
+        // ⚠️ 请在此处填入你的 Key，否则无法运行！
+        const API_KEY = 'sk-9fe20e18ec704475b63fbb27c7f7b32f'; 
+        
+        // 初始化 PDF.js
+        pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+        
+        // ================= 核心逻辑 =================
+        const fileInput = document.getElementById('file-input');
+        const dropZone = document.getElementById('drop-zone');
+        
+        // 拖拽事件处理
+        dropZone.addEventListener('click', () => fileInput.click());
+        dropZone.addEventListener('dragover', (e) => {
+            e.preventDefault();
+            dropZone.classList.add('border-gold', 'bg-white/5');
+        });
+        dropZone.addEventListener('dragleave', () => {
+            dropZone.classList.remove('border-gold', 'bg-white/5');
+        });
+        dropZone.addEventListener('drop', (e) => {
+            e.preventDefault();
+            dropZone.classList.remove('border-gold', 'bg-white/5');
+            const file = e.dataTransfer.files[0];
+            if (file && file.type === 'application/pdf') handleFile(file);
+            else alert('仅支持 PDF 文件');
+        });
+        fileInput.addEventListener('change', (e) => {
+            if (e.target.files[0]) handleFile(e.target.files[0]);
+        });
+
+        async function handleFile(file) {
+            // UI 切换：隐藏上传，显示终端
+            document.getElementById('upload-section').classList.add('hidden');
+            document.getElementById('loading-section').classList.remove('hidden');
+            
+            // 启动终端动画
+            runTerminalEffect();
+
+            try {
+                // 1. 解析 PDF
+                const text = await parsePDF(file);
+                
+                // 2. 调用 API (人为延迟2秒以展示动画效果)
+                await new Promise(r => setTimeout(r, 2000)); 
+                const analysis = await analyzeWithAPI(text);
+                
+                // 3. 渲染报告
+                renderReport(analysis);
+                
+                // UI 切换：隐藏终端，显示报告
+                document.getElementById('loading-section').classList.add('hidden');
+                document.getElementById('report-section').classList.remove('hidden');
+
+            } catch (error) {
+                console.error(error);
+                alert('分析失败：' + error.message);
+                location.reload();
+            }
+        }
+
+        async function parsePDF(file) {
+            const arrayBuffer = await file.arrayBuffer();
+            const pdf = await pdfjsLib.getDocument({ data: arrayBuffer }).promise;
+            let fullText = '';
+            
+            for (let i = 1; i <= pdf.numPages; i++) {
+                const page = await pdf.getPage(i);
+                const textContent = await page.getTextContent();
+                fullText += textContent.items.map(item => item.str).join(' ');
+            }
+            return fullText;
+        }
+
+        async function analyzeWithAPI(resumeText) {
+            // 使用通义千问 API
+            const API_ENDPOINT = 'https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions';
+            const MODEL = 'qwen-plus';
+            
+            const systemPrompt = `你是一位毒舌但极其专业的中国顶尖校招专家。请基于 2025-2026 年最严峻的就业形势，对这份留学生简历进行残酷的'拆解'。
+
+**必须返回严格的 JSON 格式，不要包含 Markdown 代码块标记**。JSON 结构如下：
+{
+    "score": 0-100的整数,
+    "tier_label": "青铜 / 白银 / 黄金 / 钻石 / 王者",
+    "ranking_percentile": 0-100的整数 (代表击败了百分之多少的人),
+    "summary": "一句话扎心评价（100字内）",
+    "radar": [学历, 实习, 技能, 语言, 领导力, 行业匹配] (6个0-100的数字),
+    "water_content": [
+        {"original": "简历原句", "comment": "毒舌点评", "suggestion": "修改建议"}
+    ],
+    "timeline": [
+        {"time": "当前-1月", "action": "动作"},
+        {"time": "2月-3月", "action": "动作"}
+    ],
+    "career_compass": {
+        "roles": ["岗位1", "岗位2"],
+        "salary": "例如：15k-20k/月"
+    },
+    "solution": {
+        "product": "推荐的海马产品名",
+        "reason": "推荐理由"
+    }
+}`;
+
+            const userPrompt = `这是候选人简历：${resumeText.substring(0, 10000)}`;
+
+            const response = await fetch(API_ENDPOINT, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${API_KEY}`
+                },
+                body: JSON.stringify({
+                    model: MODEL,
+                    messages: [
+                        { role: 'system', content: systemPrompt },
+                        { role: 'user', content: userPrompt }
+                    ],
+                    temperature: 0.7,
+                    max_tokens: 3000
+                })
+            });
+
+            if (!response.ok) {
+                throw new Error(`API 请求失败: ${response.status}`);
+            }
+
+            const data = await response.json();
+            let rawText = '';
+            
+            if (data.choices && data.choices[0] && data.choices[0].message) {
+                rawText = data.choices[0].message.content;
+            } else {
+                throw new Error('API 返回格式不正确');
+            }
+
+            // 清理可能存在的 markdown 标记
+            rawText = rawText.trim();
+            if (rawText.startsWith('```json')) {
+                rawText = rawText.replace(/^```json\s*/, '').replace(/\s*```$/, '');
+            } else if (rawText.startsWith('```')) {
+                rawText = rawText.replace(/^```\s*/, '').replace(/\s*```$/, '');
+            }
+            
+            return JSON.parse(rawText);
+        }
+
+        // ================= 渲染逻辑 =================
+        function renderReport(data) {
+            // 1. 核心分数动画
+            animateValue("score-val", 0, data.score, 1500);
+            
+            // 2. 评级 Badge
+            const tierEl = document.getElementById('tier-badge');
+            tierEl.innerText = data.tier_label || 'CALCULATING...';
+            document.getElementById('summary-text').innerText = data.summary || '分析中...';
+
+            // 3. 雷达图
+            if (data.radar && Array.isArray(data.radar)) {
+                initRadarChart(data.radar);
+            }
+
+            // 4. 同辈排位
+            if (data.ranking_percentile !== undefined) {
+                setTimeout(() => {
+                    const percent = data.ranking_percentile;
+                    document.getElementById('rank-marker').style.left = percent + '%';
+                    document.getElementById('rank-bar').style.width = percent + '%';
+                }, 500);
+            }
+
+            // 5. 含水量检测
+            if (data.water_content && Array.isArray(data.water_content)) {
+                const waterList = document.getElementById('water-content-list');
+                waterList.innerHTML = data.water_content.map(item => `
+                    <div class="grid grid-cols-1 md:grid-cols-12 gap-4 text-sm border-b border-gray-800 pb-4 last:border-0">
+                        <div class="md:col-span-5 text-gray-500 italic">"${item.original || '-'}"</div>
+                        <div class="md:col-span-1 text-center text-gold hidden md:block">➔</div>
+                        <div class="md:col-span-6">
+                            <div class="text-danger font-bold mb-1">CRITIQUE: ${item.comment || '-'}</div>
+                            <div class="text-tech-blue">FIX: ${item.suggestion || '-'}</div>
                         </div>
                     </div>
+                `).join('');
+            }
 
-                    <!-- Card B: 同辈残酷排位 -->
-                    <div class="glass-card rounded-2xl p-8">
-                        <div class="text-white/60 text-sm mb-4 font-['JetBrains_Mono']">PEER RANKING</div>
-                        <h3 class="font-['Playfair_Display'] text-2xl font-bold mb-6" style="color: #D4AF37;">同辈残酷排位</h3>
-                        <div class="gauge-container mb-4" id="gaugeContainer">
-                            <svg viewBox="0 0 200 200" class="w-full h-full">
-                                <circle class="gauge-arc" cx="100" cy="100" r="80" stroke="rgba(255,255,255,0.1)" />
-                                <circle class="gauge-arc" cx="100" cy="100" r="80" stroke="url(#gaugeGradient)" 
-                                        stroke-dasharray="251.2" id="gaugeArc" 
-                                        stroke-dashoffset="251.2" transform="rotate(-90 100 100)" />
-                                <defs>
-                                    <linearGradient id="gaugeGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                                        <stop offset="0%" style="stop-color:#ef4444;stop-opacity:1" />
-                                        <stop offset="50%" style="stop-color:#fbbf24;stop-opacity:1" />
-                                        <stop offset="100%" style="stop-color:#10b981;stop-opacity:1" />
-                                    </linearGradient>
-                                </defs>
-                            </svg>
-                            <div class="absolute inset-0 flex items-center justify-center">
-                                <div class="text-center">
-                                    <div class="text-3xl font-bold text-white" id="percentileDisplay">-</div>
-                                    <div class="text-sm text-white/60" id="rankingStatus">-</div>
-                                </div>
-                            </div>
-                        </div>
-                        <p class="text-white/60 text-sm text-center mt-4">基于 10,000+ 同院校背景候选人数据</p>
+            // 6. 时间轴
+            if (data.timeline && Array.isArray(data.timeline)) {
+                document.getElementById('timeline-box').innerHTML = data.timeline.map(item => `
+                    <div class="relative">
+                        <div class="absolute -left-[21px] top-1 w-3 h-3 rounded-full bg-gold border border-black"></div>
+                        <div class="text-gold text-xs font-bold mb-1">${item.time || '-'}</div>
+                        <div class="text-gray-300 text-sm">${item.action || '-'}</div>
                     </div>
+                `).join('');
+            }
 
-                    <!-- Card C: 简历含水量 X-Ray -->
-                    <div class="glass-card rounded-2xl p-8 lg:col-span-2">
-                        <div class="text-white/60 text-sm mb-4 font-['JetBrains_Mono']">WATER CONTENT DETECTION</div>
-                        <h3 class="font-['Playfair_Display'] text-2xl font-bold mb-6" style="color: #D4AF37;">简历含水量 X-Ray</h3>
-                        <div class="space-y-6" id="waterContentDetection"></div>
-                    </div>
+            // 7. 薪资与岗位
+            if (data.career_compass) {
+                if (data.career_compass.roles && Array.isArray(data.career_compass.roles)) {
+                    document.getElementById('target-roles').innerHTML = data.career_compass.roles.map(r => 
+                        `<span class="bg-white/10 px-2 py-1 rounded text-xs text-white">${r}</span>`
+                    ).join('');
+                }
+                if (data.career_compass.salary) {
+                    document.getElementById('salary-range').innerText = data.career_compass.salary;
+                }
+            }
 
-                    <!-- Card D: 六维能力雷达 -->
-                    <div class="glass-card rounded-2xl p-8 lg:col-span-2">
-                        <div class="text-white/60 text-sm mb-4 font-['JetBrains_Mono']">COMPETENCY RADAR</div>
-                        <h3 class="font-['Playfair_Display'] text-2xl font-bold mb-6" style="color: #D4AF37;">六维能力雷达</h3>
-                        <canvas id="radarChart" class="max-h-96"></canvas>
-                    </div>
+            // 8. 解决方案
+            if (data.solution) {
+                if (data.solution.product) {
+                    document.getElementById('solution-title').innerText = data.solution.product;
+                }
+                if (data.solution.reason) {
+                    document.getElementById('solution-reason').innerText = data.solution.reason;
+                }
+            }
+        }
 
-                    <!-- Card E: 职业时间轴 -->
-                    <div class="glass-card rounded-2xl p-8">
-                        <div class="text-white/60 text-sm mb-4 font-['JetBrains_Mono']">CAREER TIMELINE</div>
-                        <h3 class="font-['Playfair_Display'] text-2xl font-bold mb-6" style="color: #D4AF37;">职业时间轴</h3>
-                        <div class="space-y-6" id="careerTimeline"></div>
-                    </div>
+        // 终端打字机特效
+        function runTerminalEffect() {
+            const logs = [
+                "> Establishing secure connection to Highmark Database...",
+                "> Verifying EY Audit Standards...",
+                "> Scanning Global 500 Job Descriptions (2025 Edition)...",
+                "> Analyzing keyword density against ATS algorithms...",
+                "> Detecting weak signals in project experience...",
+                "> Benchmarking against Ivy League/G5 candidates...",
+                "> Generating strategic career roadmap..."
+            ];
+            const container = document.getElementById('terminal-content');
+            container.innerHTML = ''; // 清空
+            let i = 0;
+            
+            function typeLine() {
+                if (i < logs.length) {
+                    const div = document.createElement('div');
+                    div.className = 'font-mono';
+                    div.innerHTML = `<span class="text-gold mr-2">➜</span> ${logs[i]}`;
+                    container.appendChild(div);
+                    i++;
+                    setTimeout(typeLine, 800); // 每800ms一行
+                }
+            }
+            typeLine();
+        }
 
-                    <!-- Card F: 海马处方签 -->
-                    <div class="glass-card premium-card rounded-2xl p-8 lg:col-span-3 relative">
-                        <div class="relative z-10">
-                            <div class="text-sm mb-4 font-['JetBrains_Mono']" style="color: #D4AF37;">HIGHMARK PRESCRIPTION</div>
-                            <h3 class="font-['Playfair_Display'] text-3xl font-bold mb-6" style="color: #D4AF37;">海马处方签</h3>
-                            <div class="grid md:grid-cols-3 gap-6 mb-6">
-                                <div>
-                                    <div class="text-white/60 text-sm mb-2">Recommended Product</div>
-                                    <div class="text-2xl font-bold text-white" id="recommendedProduct">-</div>
-                                </div>
-                                <div>
-                                    <div class="text-white/60 text-sm mb-2">Reasoning</div>
-                                    <div class="text-white/80" id="productReasoning">-</div>
-                                </div>
-                                <div>
-                                    <div class="text-white/60 text-sm mb-2">Expected Outcome</div>
-                                    <div class="text-white/80 font-semibold" id="expectedOutcome">-</div>
-                                </div>
-                            </div>
-                            <button class="w-full py-4 rounded-lg font-semibold text-lg transition-all" style="background: linear-gradient(135deg, #D4AF37 0%, #3B82F6 100%);" id="accessBtn">
-                                激活专家通过权 (Access Granted)
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </div>
+        // 数字增长动画
+        function animateValue(id, start, end, duration) {
+            const obj = document.getElementById(id);
+            let startTimestamp = null;
+            const step = (timestamp) => {
+                if (!startTimestamp) startTimestamp = timestamp;
+                const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+                obj.innerHTML = Math.floor(progress * (end - start) + start);
+                if (progress < 1) window.requestAnimationFrame(step);
+            };
+            window.requestAnimationFrame(step);
+        }
 
-    <!-- PDF.js -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
-    <!-- Chart.js -->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
-    <!-- Main Script -->
-    <script src="script.js"></script>
+        // 初始化雷达图
+        function initRadarChart(dataValues) {
+            const ctx = document.getElementById('radarChart').getContext('2d');
+            new Chart(ctx, {
+                type: 'radar',
+                data: {
+                    labels: ['学历硬核度', '实习含金量', '硬技能', '语言能力', '领导力', '行业匹配'],
+                    datasets: [{
+                        label: 'Candidate Profile',
+                        data: dataValues,
+                        backgroundColor: 'rgba(212, 175, 55, 0.2)', // Gold fill
+                        borderColor: '#D4AF37', // Gold border
+                        pointBackgroundColor: '#D4AF37',
+                        pointBorderColor: '#fff',
+                        borderWidth: 2
+                    }]
+                },
+                options: {
+                    scales: {
+                        r: {
+                            angleLines: { color: 'rgba(255, 255, 255, 0.1)' },
+                            grid: { color: 'rgba(255, 255, 255, 0.1)' },
+                            pointLabels: { color: '#94A3B8', font: { size: 11, family: 'Inter' } },
+                            ticks: { display: false, backdropColor: 'transparent' },
+                            suggestedMin: 0,
+                            suggestedMax: 100
+                        }
+                    },
+                    plugins: { legend: { display: false } }
+                }
+            });
+        }
+    </script>
 </body>
 </html>
