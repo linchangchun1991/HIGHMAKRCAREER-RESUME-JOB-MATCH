@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HIGHMARK CAREER | Executive Talent Assessment</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        :root {
+            --gold: #D4AF37;
+            --blue: #3B82F6;
+            --dark-bg: #020617;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--dark-bg);
+            color: #ffffff;
+            min-height: 100vh;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* 流光渐变背景 */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 30%, rgba(212, 175, 55, 0.08) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(59, 130, 246, 0.08) 0%, transparent 50%),
+                linear-gradient(180deg, #020617 0%, #030a1f 50%, #020617 100%);
+            pointer-events: none;
+            z-index: 0;
+            animation: backgroundShift 20s ease-in-out infinite;
+        }
+
+        @keyframes backgroundShift {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.8; }
+        }
+
+        /* 网格背景 */
+        body::after {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(rgba(212, 175, 55, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(212, 175, 55, 0.03) 1px, transparent 1px);
+            background-size: 50px 50px;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .container {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Logo 样式 */
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-weight: 900;
+            font-size: 1.5rem;
+            letter-spacing: 0.1em;
+            color: var(--gold);
+            text-shadow: 0 0 20px rgba(212, 175, 55, 0.5);
+        }
+
+        /* 玻璃态卡片 */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 
+                0 8px 32px rgba(0, 0, 0, 0.4),
+                inset 0 1px 0 rgba(255, 255, 255, 0.1);
+        }
+
+        /* 金色流光边框 */
+        .gold-border-glow {
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .gold-border-glow::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(212, 175, 55, 0.3), transparent);
+            animation: rotateGlow 3s linear infinite;
+        }
+
+        @keyframes rotateGlow {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* 呼吸灯效果 */
+        .breathe {
+            animation: breathe 3s ease-in-out infinite;
+        }
+
+        @keyframes breathe {
+            0%, 100% { 
+                box-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
+            }
+            50% { 
+                box-shadow: 0 0 40px rgba(212, 175, 55, 0.6);
+            }
+        }
+
+        /* 全息数据分析台 */
+        .hologram-box {
+            background: rgba(2, 6, 23, 0.8);
+            backdrop-filter: blur(30px);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hologram-box::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.1), transparent);
+            animation: scanLine 2s linear infinite;
+        }
+
+        @keyframes scanLine {
+            0% { left: -100%; }
+            100% { left: 100%; }
+        }
+
+        /* Terminal 浮层 */
+        .terminal-overlay {
+            background: rgba(0, 0, 0, 0.9);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(59, 130, 246, 0.3);
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .terminal-line {
+            color: #10b981;
+            font-size: 0.875rem;
+            line-height: 1.8;
+            opacity: 0;
+            animation: typeIn 0.5s forwards;
+        }
+
+        @keyframes typeIn {
+            to { opacity: 1; }
+        }
+
+        .terminal-cursor {
+            display: inline-block;
+            width: 8px;
+            height: 16px;
+            background: #10b981;
+            animation: blink 1s infinite;
+            margin-left: 4px;
+        }
+
+        @keyframes blink {
+            0%, 50% { opacity: 1; }
+            51%, 100% { opacity: 0; }
+        }
+
+        /* 计步器动画 */
+        @keyframes countUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .count-up {
+            animation: countUp 1s ease-out forwards;
+        }
+
+        /* Gauge 仪表盘 */
+        .gauge-container {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            margin: 0 auto;
+        }
+
+        .gauge-arc {
+            fill: none;
+            stroke-width: 20;
+            stroke-linecap: round;
+        }
+
+        /* 股票走势图背景 */
+        .stock-chart-bg {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 60%;
+            opacity: 0.1;
+            background-image: 
+                linear-gradient(to right, transparent 0%, var(--gold) 50%, transparent 100%);
+            clip-path: polygon(0 100%, 10% 80%, 20% 70%, 30% 60%, 40% 50%, 50% 45%, 60% 50%, 70% 55%, 80% 60%, 90% 65%, 100% 70%, 100% 100%);
+        }
+
+        /* 代码 Review 样式 */
+        .code-review {
+            background: rgba(0, 0, 0, 0.5);
+            border-left: 3px solid var(--gold);
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .red-underline {
+            text-decoration: underline;
+            text-decoration-color: #ef4444;
+            text-decoration-style: wavy;
+        }
+
+        /* 时间轴样式 */
+        .timeline-item {
+            position: relative;
+            padding-left: 2rem;
+            border-left: 2px solid rgba(212, 175, 55, 0.3);
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -6px;
+            top: 0;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: var(--gold);
+            box-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+        }
+
+        .timeline-item.active::before {
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.5); opacity: 0.7; }
+        }
+
+        /* 黑金会员卡 */
+        .premium-card {
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.1) 0%, rgba(59, 130, 246, 0.1) 100%);
+            border: 2px solid var(--gold);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .premium-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(212, 175, 55, 0.2) 0%, transparent 70%);
+            animation: rotateGlow 10s linear infinite;
+        }
+
+        /* 渐变文字 */
+        .gradient-text {
+            background: linear-gradient(135deg, var(--gold) 0%, var(--blue) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* 响应式 */
+        @media (max-width: 768px) {
+            .bento-grid {
+                grid-template-columns: 1fr !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container min-h-screen">
+        <!-- Header -->
+        <header class="border-b border-white/10 py-6 px-6 md:px-12 fixed top-0 left-0 right-0 bg-dark-bg/80 backdrop-blur-md z-50">
+            <div class="max-w-7xl mx-auto flex items-center justify-between">
+                <div class="logo">HIGHMARK CAREER</div>
+                <nav class="hidden md:flex gap-8 text-sm">
+                    <a href="#" class="text-white/60 transition-colors" style="color: rgba(255,255,255,0.6);" onmouseover="this.style.color='#D4AF37'" onmouseout="this.style.color='rgba(255,255,255,0.6)'">Assessment</a>
+                    <a href="#" class="text-white/60 transition-colors" style="color: rgba(255,255,255,0.6);" onmouseover="this.style.color='#D4AF37'" onmouseout="this.style.color='rgba(255,255,255,0.6)'">Solutions</a>
+                    <a href="#" class="text-white/60 transition-colors" style="color: rgba(255,255,255,0.6);" onmouseover="this.style.color='#D4AF37'" onmouseout="this.style.color='rgba(255,255,255,0.6)'">About</a>
+                </nav>
+            </div>
+        </header>
+
+        <!-- Hero Section -->
+        <section class="pt-32 pb-16 px-6 md:px-12">
+            <div class="max-w-7xl mx-auto">
+                <!-- Hero Title -->
+                <div class="text-center mb-16">
+                    <h1 class="font-['Playfair_Display'] text-6xl md:text-8xl font-bold mb-6 gradient-text">
+                        Executive Talent Assessment
+                    </h1>
+                    <p class="text-xl text-white/60 max-w-2xl mx-auto">
+                        Powered by Highmark's proprietary algorithm analyzing 10,000+ candidate profiles
+                    </p>
+                </div>
+
+                <!-- 全息数据分析台 -->
+                <div class="hologram-box rounded-3xl p-12 md:p-16 mb-8 max-w-4xl mx-auto breathe" id="hologramBox">
+                    <div class="text-center" id="uploadState">
+                        <div class="text-8xl mb-8">📊</div>
+                        <h2 class="font-['Playfair_Display'] text-3xl md:text-4xl font-bold mb-4" style="color: #D4AF37;">
+                            上传简历，启动 Highmark 独家算法评估
+                        </h2>
+                        <p class="text-white/60 mb-8">Drop your PDF resume or click to upload</p>
+                        <div class="upload-zone border-2 border-dashed rounded-2xl p-16 cursor-pointer transition-colors" style="border-color: rgba(212, 175, 55, 0.3);" id="uploadArea" onmouseover="this.style.borderColor='rgba(212, 175, 55, 0.6)'" onmouseout="this.style.borderColor='rgba(212, 175, 55, 0.3)'">
+                            <input type="file" id="fileInput" accept=".pdf" class="hidden">
+                            <div class="text-6xl mb-4">📄</div>
+                            <div class="text-xl font-semibold text-white" id="uploadText">Click or Drag to Upload</div>
+                        </div>
+                        <button class="mt-8 px-12 py-4 rounded-full font-semibold text-lg transition-all disabled:opacity-50 disabled:cursor-not-allowed" style="background: linear-gradient(135deg, #D4AF37 0%, #3B82F6 100%);" id="analyzeBtn" disabled>
+                            Start Analysis
+                        </button>
+                    </div>
+
+                    <!-- Terminal 分析浮层 -->
+                    <div class="hidden terminal-overlay rounded-2xl p-8" id="terminalOverlay">
+                        <div class="space-y-2" id="terminalLines"></div>
+                    </div>
+                </div>
+
+                <!-- Error Message -->
+                <div class="hidden bg-red-500/10 border border-red-500/30 rounded-xl p-4 mb-6 max-w-4xl mx-auto" id="errorMessage">
+                    <p class="text-red-400" id="errorText"></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Bento Grid Report -->
+        <section class="hidden px-6 md:px-12 pb-16" id="resultsSection">
+            <div class="max-w-7xl mx-auto">
+                <div class="bento-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Card A: 核心身价 -->
+                    <div class="glass-card rounded-2xl p-8 relative overflow-hidden">
+                        <div class="stock-chart-bg"></div>
+                        <div class="relative z-10">
+                            <div class="text-white/60 text-sm mb-4 font-['JetBrains_Mono']">CURRENT MARKET VALUE</div>
+                            <div class="text-7xl font-bold gradient-text mb-2" id="scoreNumber">0</div>
+                            <div class="text-white/80 text-lg">当前市场竞争力评分</div>
+                        </div>
+                    </div>
+
+                    <!-- Card B: 同辈残酷排位 -->
+                    <div class="glass-card rounded-2xl p-8">
+                        <div class="text-white/60 text-sm mb-4 font-['JetBrains_Mono']">PEER RANKING</div>
+                        <h3 class="font-['Playfair_Display'] text-2xl font-bold mb-6" style="color: #D4AF37;">同辈残酷排位</h3>
+                        <div class="gauge-container mb-4" id="gaugeContainer">
+                            <svg viewBox="0 0 200 200" class="w-full h-full">
+                                <circle class="gauge-arc" cx="100" cy="100" r="80" stroke="rgba(255,255,255,0.1)" />
+                                <circle class="gauge-arc" cx="100" cy="100" r="80" stroke="url(#gaugeGradient)" 
+                                        stroke-dasharray="251.2" id="gaugeArc" 
+                                        stroke-dashoffset="251.2" transform="rotate(-90 100 100)" />
+                                <defs>
+                                    <linearGradient id="gaugeGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                                        <stop offset="0%" style="stop-color:#ef4444;stop-opacity:1" />
+                                        <stop offset="50%" style="stop-color:#fbbf24;stop-opacity:1" />
+                                        <stop offset="100%" style="stop-color:#10b981;stop-opacity:1" />
+                                    </linearGradient>
+                                </defs>
+                            </svg>
+                            <div class="absolute inset-0 flex items-center justify-center">
+                                <div class="text-center">
+                                    <div class="text-3xl font-bold text-white" id="percentileDisplay">-</div>
+                                    <div class="text-sm text-white/60" id="rankingStatus">-</div>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="text-white/60 text-sm text-center mt-4">基于 10,000+ 同院校背景候选人数据</p>
+                    </div>
+
+                    <!-- Card C: 简历含水量 X-Ray -->
+                    <div class="glass-card rounded-2xl p-8 lg:col-span-2">
+                        <div class="text-white/60 text-sm mb-4 font-['JetBrains_Mono']">WATER CONTENT DETECTION</div>
+                        <h3 class="font-['Playfair_Display'] text-2xl font-bold mb-6" style="color: #D4AF37;">简历含水量 X-Ray</h3>
+                        <div class="space-y-6" id="waterContentDetection"></div>
+                    </div>
+
+                    <!-- Card D: 六维能力雷达 -->
+                    <div class="glass-card rounded-2xl p-8 lg:col-span-2">
+                        <div class="text-white/60 text-sm mb-4 font-['JetBrains_Mono']">COMPETENCY RADAR</div>
+                        <h3 class="font-['Playfair_Display'] text-2xl font-bold mb-6" style="color: #D4AF37;">六维能力雷达</h3>
+                        <canvas id="radarChart" class="max-h-96"></canvas>
+                    </div>
+
+                    <!-- Card E: 职业时间轴 -->
+                    <div class="glass-card rounded-2xl p-8">
+                        <div class="text-white/60 text-sm mb-4 font-['JetBrains_Mono']">CAREER TIMELINE</div>
+                        <h3 class="font-['Playfair_Display'] text-2xl font-bold mb-6" style="color: #D4AF37;">职业时间轴</h3>
+                        <div class="space-y-6" id="careerTimeline"></div>
+                    </div>
+
+                    <!-- Card F: 海马处方签 -->
+                    <div class="glass-card premium-card rounded-2xl p-8 lg:col-span-3 relative">
+                        <div class="relative z-10">
+                            <div class="text-sm mb-4 font-['JetBrains_Mono']" style="color: #D4AF37;">HIGHMARK PRESCRIPTION</div>
+                            <h3 class="font-['Playfair_Display'] text-3xl font-bold mb-6" style="color: #D4AF37;">海马处方签</h3>
+                            <div class="grid md:grid-cols-3 gap-6 mb-6">
+                                <div>
+                                    <div class="text-white/60 text-sm mb-2">Recommended Product</div>
+                                    <div class="text-2xl font-bold text-white" id="recommendedProduct">-</div>
+                                </div>
+                                <div>
+                                    <div class="text-white/60 text-sm mb-2">Reasoning</div>
+                                    <div class="text-white/80" id="productReasoning">-</div>
+                                </div>
+                                <div>
+                                    <div class="text-white/60 text-sm mb-2">Expected Outcome</div>
+                                    <div class="text-white/80 font-semibold" id="expectedOutcome">-</div>
+                                </div>
+                            </div>
+                            <button class="w-full py-4 rounded-lg font-semibold text-lg transition-all" style="background: linear-gradient(135deg, #D4AF37 0%, #3B82F6 100%);" id="accessBtn">
+                                激活专家通过权 (Access Granted)
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- PDF.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+    <!-- Main Script -->
+    <script src="script.js"></script>
+</body>
+</html>
