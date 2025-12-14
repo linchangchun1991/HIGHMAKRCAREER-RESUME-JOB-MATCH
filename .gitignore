@@ -23,6 +23,7 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+*.log
 
 # local env files
 .env*.local
@@ -34,3 +35,51 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Python files (if not needed)
+*.py
+*.pyc
+__pycache__/
+*.db
+*.sqlite
+*.sqlite3
+
+# Data files
+*.xlsx
+*.csv
+*.xls
+data/
+
+# Debug images
+*_debug*.png
+douyin_debug*.png
+xhs_debug*.png
+
+# Recordings
+recordings/
+*.mp3
+
+# Resume files
+resumes/
+resumes_download/
+resume/
+
+# Python requirements (keep only if needed)
+requirements*.txt
+
+# Workspace files
+*.code-workspace
+
+# Backup files
+*_backup*
+jobs_backup*
+
+# Test files
+test_*.log
+test_*.py
+scraper*.log
+market_*.log
+referral_*.log
+real_scraper.log
+download.log
+download_log.txt
