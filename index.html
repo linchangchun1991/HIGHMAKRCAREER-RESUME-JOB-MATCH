@@ -12,7 +12,7 @@
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     
     <!-- 引入高级字体 -->
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Inter:wght@300;400;600;800&family=JetBrains+Mono:wght@400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&family=Inter:wght@300;400;600;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
 
     <!-- 自定义配置 Tailwind -->
     <script>
@@ -21,16 +21,17 @@
             theme: {
                 extend: {
                     colors: {
-                        'midnight': '#0B1120', // 深邃午夜蓝背景
-                        'card-bg': '#151E32',  // 卡片背景
-                        'gold': '#D4AF37',     // 投行金
-                        'gold-dim': 'rgba(212, 175, 55, 0.1)',
-                        'tech-blue': '#3B82F6', // 科技蓝
+                        'midnight': '#0F172A', // Slate 900 - 深邃岩石蓝背景
+                        'card-bg': '#1E293B',  // Slate 800 - 卡片背景
+                        'sky-accent': '#38BDF8', // Sky 400 - 极光蓝（主色）
+                        'indigo-accent': '#818CF8', // Indigo 400 - 靛蓝（辅助色）
+                        'text-primary': '#F1F5F9', // Slate 100 - 柔和白
+                        'text-secondary': '#94A3B8', // Slate 400 - 雾霾蓝灰
+                        'border-slate': '#334155', // Slate 700 - 分割线
                         'danger': '#EF4444',
                     },
                     fontFamily: {
-                        'serif': ['"Playfair Display"', 'serif'],
-                        'display': ['"Cinzel"', 'serif'],
+                        'serif': ['"Noto Serif SC"', 'serif'],
                         'sans': ['"Inter"', 'sans-serif'],
                         'mono': ['"JetBrains Mono"', 'monospace'],
                     },
@@ -44,31 +45,31 @@
 
     <style>
         body {
-            background-color: #0B1120;
+            background-color: #0F172A; /* Slate 900 */
             background-image: 
-                radial-gradient(circle at 15% 50%, rgba(59, 130, 246, 0.08), transparent 25%), 
-                radial-gradient(circle at 85% 30%, rgba(212, 175, 55, 0.05), transparent 25%);
-            color: #E2E8F0;
+                radial-gradient(circle at 15% 50%, rgba(56, 189, 248, 0.06), transparent 25%), 
+                radial-gradient(circle at 85% 30%, rgba(129, 140, 248, 0.04), transparent 25%);
+            color: #F1F5F9; /* Slate 100 */
             overflow-x: hidden;
         }
 
-        /* 磨砂玻璃质感 */
+        /* 磨砂玻璃质感 - 冷色调 */
         .glass-panel {
-            background: rgba(21, 30, 50, 0.7);
+            background: rgba(30, 41, 59, 0.7); /* Slate 800 with transparency */
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(51, 65, 85, 0.5); /* Slate 700 */
             box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
         }
 
-        /* 金色微光边框效果 */
-        .gold-border-glow {
-            border: 1px solid rgba(212, 175, 55, 0.3);
+        /* 极光蓝微光边框效果 */
+        .sky-border-glow {
+            border: 1px solid rgba(56, 189, 248, 0.3); /* Sky 400 30% */
             transition: all 0.3s ease;
         }
-        .gold-border-glow:hover {
-            border-color: rgba(212, 175, 55, 0.8);
-            box-shadow: 0 0 15px rgba(212, 175, 55, 0.15);
+        .sky-border-glow:hover {
+            border-color: rgba(56, 189, 248, 0.6);
+            box-shadow: 0 0 15px rgba(56, 189, 248, 0.2);
         }
 
         /* 终端打字机光标 */
@@ -77,12 +78,12 @@
         }
         @keyframes blink { 50% { opacity: 0; } }
 
-        /* 扫描动画 */
+        /* 扫描动画 - 极光蓝 */
         .scanner-line {
             position: absolute;
             width: 100%;
             height: 2px;
-            background: linear-gradient(to right, transparent, #3B82F6, transparent);
+            background: linear-gradient(to right, transparent, #38BDF8, transparent);
             animation: scan 2s linear infinite;
         }
         @keyframes scan {
@@ -94,24 +95,24 @@
 
         /* 滚动条美化 */
         ::-webkit-scrollbar { width: 6px; }
-        ::-webkit-scrollbar-track { background: #0B1120; }
+        ::-webkit-scrollbar-track { background: #0F172A; }
         ::-webkit-scrollbar-thumb { background: #334155; border-radius: 3px; }
         ::-webkit-scrollbar-thumb:hover { background: #475569; }
     </style>
 </head>
-<body class="antialiased min-h-screen font-sans selection:bg-gold selection:text-midnight">
+<body class="antialiased min-h-screen font-sans selection:bg-sky-400 selection:text-mlate-900">
 
     <!-- 顶部导航 -->
     <nav class="fixed top-0 w-full z-50 glass-panel border-b border-white/5">
         <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
             <div class="flex items-center gap-3">
                 <!-- 简单的 SVG Logo -->
-                <svg class="w-8 h-8 text-gold" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zm0 9l2.5-1.25L12 8.5l-2.5 1.25L12 11zm0 2.5l-5-2.5-5 2.5L12 22l10-8.5-5-2.5-5 2.5z"/></svg>
-                <span class="font-display font-bold text-2xl tracking-widest text-white">HIGHMARK <span class="text-gold">CAREER</span></span>
+                <svg class="w-8 h-8 text-sky-400" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zm0 9l2.5-1.25L12 8.5l-2.5 1.25L12 11zm0 2.5l-5-2.5-5 2.5L12 22l10-8.5-5-2.5-5 2.5z"/></svg>
+                <span class="font-display font-bold text-2xl tracking-widest text-white">HIGHMARK <span class="text-sky-400">CAREER</span></span>
             </div>
-            <div class="flex items-center gap-6 text-sm font-mono text-gray-400">
+            <div class="flex items-center gap-6 text-sm font-mono text-slate-400">
                 <span>EST. 2015</span>
-                <span class="text-gold">GLOBAL ELITE TALENT SYSTEM</span>
+                <span class="text-sky-400">GLOBAL ELITE TALENT SYSTEM</span>
             </div>
         </div>
     </nav>
@@ -122,10 +123,10 @@
         <!-- Hero: 文件上传区 (初始状态) -->
         <section id="upload-section" class="relative z-10 transition-all duration-700 ease-in-out">
             <div class="text-center mb-12">
-                <h1 class="font-serif text-5xl md:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-white via-gray-200 to-gray-400 mb-6 leading-tight">
-                    Reveal Your True <span class="text-gold italic">Market Value</span>
+                <h1 class="font-serif text-5xl md:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-slate-100 via-slate-200 to-slate-300 mb-6 leading-tight">
+                    Reveal Your True <span class="text-sky-400 italic">Market Value</span>
                 </h1>
-                <p class="text-gray-400 text-lg max-w-2xl mx-auto font-light">
+                <p class="text-slate-400 text-lg max-w-2xl mx-auto font-light">
                     基于 <span class="text-white font-semibold">Global 500</span> 真实录用标准 · 
                     <span class="text-white font-semibold">安永(EY)</span> 审计级数据核验
                 </p>
@@ -133,21 +134,21 @@
 
             <!-- 上传框 -->
             <div class="max-w-3xl mx-auto">
-                <div id="drop-zone" class="glass-panel rounded-2xl p-12 border-2 border-dashed border-gray-700 hover:border-gold transition-all duration-300 cursor-pointer group relative overflow-hidden">
+                <div id="drop-zone" class="glass-panel rounded-2xl p-14 border-2 border-dashed border-slate-700 hover:border-sky-400/50 transition-all duration-300 cursor-pointer group relative overflow-hidden">
                     <input type="file" id="file-input" class="hidden" accept=".pdf">
                     
                     <div class="relative z-10 flex flex-col items-center justify-center gap-6">
-                        <div class="w-20 h-20 rounded-full bg-gold-dim flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                            <svg class="w-10 h-10 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"></path></svg>
+                        <div class="w-20 h-20 rounded-full bg-sky-400/10 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                            <svg class="w-10 h-10 text-sky-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"></path></svg>
                         </div>
                         <div class="text-center">
-                            <p class="text-xl font-medium text-white mb-2 group-hover:text-gold transition-colors">拖拽简历至此，或点击上传</p>
-                            <p class="text-sm text-gray-500 font-mono">SUPPORT PDF ONLY · MAX 10MB</p>
+                            <p class="text-xl font-medium text-slate-100 mb-2 group-hover:text-sky-400 transition-colors">拖拽简历至此，或点击上传</p>
+                            <p class="text-sm text-slate-500 font-mono">SUPPORT PDF ONLY · MAX 10MB</p>
                         </div>
                     </div>
                     
-                    <!-- 背景流光 -->
-                    <div class="absolute inset-0 bg-gradient-to-tr from-gold/5 via-transparent to-tech-blue/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <!-- 背景流光 - 极光蓝 -->
+                    <div class="absolute inset-0 bg-gradient-to-tr from-sky-400/5 via-transparent to-indigo-400/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 </div>
             </div>
         </section>
@@ -155,13 +156,13 @@
         <!-- Loading: 终端分析动画 (默认隐藏) -->
         <section id="loading-section" class="hidden max-w-3xl mx-auto mt-10">
             <div class="glass-panel rounded-lg p-6 font-mono text-sm border border-gray-700 shadow-2xl relative overflow-hidden h-64 flex flex-col">
-                <div class="flex items-center gap-2 mb-4 border-b border-gray-800 pb-2">
+                <div class="flex items-center gap-2 mb-4 border-b border-slate-800 pb-3">
                     <div class="w-3 h-3 rounded-full bg-red-500"></div>
                     <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
                     <div class="w-3 h-3 rounded-full bg-green-500"></div>
-                    <span class="ml-2 text-xs text-gray-500">Highmark_Core_Engine_v4.0.exe</span>
+                    <span class="ml-2 text-xs text-slate-500">Highmark_Core_Engine_v4.0.exe</span>
                 </div>
-                <div id="terminal-content" class="flex-1 overflow-hidden text-tech-blue space-y-2">
+                <div id="terminal-content" class="flex-1 overflow-hidden text-sky-400 space-y-2">
                     <!-- JS 会在这里打字 -->
                 </div>
                 <div class="scanner-line"></div>
@@ -174,12 +175,12 @@
             <!-- 头部状态栏 -->
             <div class="flex justify-between items-end border-b border-gray-800 pb-4">
                 <div>
-                    <div class="text-gold text-xs font-bold tracking-[0.2em] uppercase mb-1">Evaluation Report</div>
-                    <h2 class="text-3xl font-serif text-white">人才资产评估报告</h2>
+                    <div class="text-sky-400 text-xs font-bold tracking-[0.2em] uppercase mb-1">Evaluation Report</div>
+                    <h2 class="text-3xl font-serif text-slate-100">人才资产评估报告</h2>
                 </div>
-                <div class="text-right">
-                    <div class="text-gray-500 text-xs font-mono">REPORT ID</div>
-                    <div class="text-white font-mono">HM-2025-X829</div>
+                    <div class="text-right">
+                    <div class="text-slate-500 text-xs font-mono">REPORT ID</div>
+                    <div class="text-slate-100 font-mono">HM-2025-X829</div>
                 </div>
             </div>
 
@@ -187,100 +188,100 @@
             <div class="grid grid-cols-1 md:grid-cols-12 gap-6">
                 
                 <!-- 卡片1: 核心估值 (Top Left) -->
-                <div class="md:col-span-4 glass-panel rounded-2xl p-6 gold-border-glow relative overflow-hidden">
-                    <div class="text-gray-400 text-xs font-mono uppercase mb-4">Market Competitiveness Score</div>
+                <div class="md:col-span-4 glass-panel rounded-2xl p-8 sky-border-glow relative overflow-hidden">
+                    <div class="text-slate-400 text-xs font-mono uppercase mb-6">Market Competitiveness Score</div>
                     <div class="flex items-baseline gap-2">
-                        <span id="score-val" class="text-7xl font-display font-bold text-white tracking-tighter">0</span>
-                        <span class="text-xl text-gray-500">/ 100</span>
+                        <span id="score-val" class="text-7xl font-display font-bold text-slate-100 tracking-tighter">0</span>
+                        <span class="text-xl text-slate-500">/ 100</span>
                     </div>
-                    <div id="tier-badge" class="mt-4 inline-block px-3 py-1 rounded bg-gold/20 text-gold text-xs font-bold border border-gold/30">
+                    <div id="tier-badge" class="mt-6 inline-block px-4 py-2 rounded-lg bg-sky-400/20 text-sky-400 text-xs font-bold border border-sky-400/30">
                         CALCULATING...
                     </div>
-                    <p id="summary-text" class="mt-6 text-sm text-gray-300 leading-relaxed italic border-l-2 border-gold pl-4">
+                    <p id="summary-text" class="mt-8 text-sm text-slate-300 leading-relaxed italic border-l-2 border-sky-400/50 pl-5">
                         分析中...
                     </p>
                 </div>
 
                 <!-- 卡片2: 雷达图 (Top Middle) -->
-                <div class="md:col-span-4 glass-panel rounded-2xl p-6 gold-border-glow flex flex-col">
-                    <div class="text-gray-400 text-xs font-mono uppercase mb-2">6-Dimension Analysis</div>
+                <div class="md:col-span-4 glass-panel rounded-2xl p-8 sky-border-glow flex flex-col">
+                    <div class="text-slate-400 text-xs font-mono uppercase mb-4">6-Dimension Analysis</div>
                     <div class="flex-1 relative">
                         <canvas id="radarChart"></canvas>
                     </div>
                 </div>
 
                 <!-- 卡片3: 同辈残酷排位 (Top Right) -->
-                <div class="md:col-span-4 glass-panel rounded-2xl p-6 gold-border-glow flex flex-col justify-between">
-                    <div class="text-gray-400 text-xs font-mono uppercase">Peer Ranking (同院校)</div>
+                <div class="md:col-span-4 glass-panel rounded-2xl p-8 sky-border-glow flex flex-col justify-between">
+                    <div class="text-slate-400 text-xs font-mono uppercase mb-4">Peer Ranking (同院校)</div>
                     
-                    <div class="my-6">
-                        <div class="flex justify-between text-sm mb-2">
+                    <div class="my-8">
+                        <div class="flex justify-between text-sm mb-3">
                             <span class="text-danger">淘汰区 (Bottom 30%)</span>
-                            <span class="text-gold">核心区 (Top 10%)</span>
+                            <span class="text-sky-400">核心区 (Top 10%)</span>
                         </div>
-                        <div class="h-4 bg-gray-800 rounded-full overflow-hidden relative">
-                            <div id="rank-bar" class="h-full bg-gradient-to-r from-red-600 via-blue-500 to-gold w-0 transition-all duration-1000 ease-out"></div>
+                        <div class="h-4 bg-slate-800 rounded-full overflow-hidden relative">
+                            <div id="rank-bar" class="h-full bg-gradient-to-r from-red-600 via-indigo-500 to-sky-400 w-0 transition-all duration-1000 ease-out"></div>
                             <!-- 标记点 -->
-                            <div id="rank-marker" class="absolute top-0 w-1 h-full bg-white shadow-[0_0_10px_white] transition-all duration-1000" style="left: 0%"></div>
+                            <div id="rank-marker" class="absolute top-0 w-1 h-full bg-sky-400 shadow-[0_0_10px_rgba(56,189,248,0.5)] transition-all duration-1000" style="left: 0%"></div>
                         </div>
-                        <div class="mt-2 text-right text-xs text-tech-blue font-mono">
+                        <div class="mt-3 text-right text-xs text-sky-400 font-mono">
                             Based on 12,405 data points
                         </div>
                     </div>
 
-                    <div class="bg-black/40 rounded p-3 text-xs text-gray-400">
+                    <div class="bg-slate-900/60 rounded-lg p-4 text-xs text-slate-400">
                         <strong class="text-white block mb-1">Data Source:</strong>
                         对比样本为 QS Top 100 且投递同类岗位的候选人。
                     </div>
                 </div>
 
                 <!-- 卡片4: 简历含水量检测 (Middle Wide) -->
-                <div class="md:col-span-8 glass-panel rounded-2xl p-6 gold-border-glow">
-                    <div class="flex items-center gap-2 mb-6">
+                <div class="md:col-span-8 glass-panel rounded-2xl p-8 sky-border-glow">
+                    <div class="flex items-center gap-2 mb-8">
                         <div class="w-2 h-2 rounded-full bg-danger animate-pulse"></div>
-                        <span class="text-gray-400 text-xs font-mono uppercase">"Water Content" X-Ray Detection</span>
+                        <span class="text-slate-400 text-xs font-mono uppercase">"Water Content" X-Ray Detection</span>
                     </div>
                     
-                    <div id="water-content-list" class="space-y-4">
+                    <div id="water-content-list" class="space-y-5">
                         <!-- 动态生成的内容 -->
                     </div>
                 </div>
 
                 <!-- 卡片5: 职业时间轴 (Middle Right) -->
-                <div class="md:col-span-4 glass-panel rounded-2xl p-6 gold-border-glow relative overflow-hidden">
-                    <div class="text-gray-400 text-xs font-mono uppercase mb-6">Critical Timeline (2025 Fall)</div>
-                    <div id="timeline-box" class="space-y-6 relative pl-4 border-l border-gray-700">
+                <div class="md:col-span-4 glass-panel rounded-2xl p-8 sky-border-glow relative overflow-hidden">
+                    <div class="text-slate-400 text-xs font-mono uppercase mb-8">Critical Timeline (2025 Fall)</div>
+                    <div id="timeline-box" class="space-y-6 relative pl-5 border-l border-slate-700">
                         <!-- 动态生成 -->
                     </div>
                 </div>
 
                 <!-- 卡片6: 薪资预测 & 岗位 (Bottom Left) -->
-                <div class="md:col-span-6 glass-panel rounded-2xl p-6 border border-gray-800">
-                    <div class="text-gray-400 text-xs font-mono uppercase mb-4">Career Compass</div>
-                    <div class="grid grid-cols-2 gap-6">
+                <div class="md:col-span-6 glass-panel rounded-2xl p-8 border border-slate-700">
+                    <div class="text-slate-400 text-xs font-mono uppercase mb-6">Career Compass</div>
+                    <div class="grid grid-cols-2 gap-8">
                         <div>
-                            <div class="text-xs text-gray-500 mb-1">建议投递岗位</div>
+                            <div class="text-xs text-slate-500 mb-2">建议投递岗位</div>
                             <div id="target-roles" class="flex flex-wrap gap-2"></div>
                         </div>
                         <div>
-                            <div class="text-xs text-gray-500 mb-1">首年年薪预测 (RMB)</div>
-                            <div id="salary-range" class="text-2xl font-mono text-gold font-bold">CALCULATING</div>
+                            <div class="text-xs text-slate-500 mb-2">首年年薪预测 (RMB)</div>
+                            <div id="salary-range" class="text-2xl font-mono text-sky-400 font-bold">CALCULATING</div>
                         </div>
                     </div>
                 </div>
 
                 <!-- 卡片7: 海马处方签 (Bottom Right - Solution) -->
-                <div class="md:col-span-6 bg-gradient-to-br from-gray-900 to-black rounded-2xl p-6 border border-gold/40 relative overflow-hidden group cursor-pointer">
+                <div class="md:col-span-6 bg-gradient-to-br from-slate-900 to-slate-950 rounded-2xl p-8 border border-sky-400/40 relative overflow-hidden group cursor-pointer">
                     <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
-                        <svg class="w-32 h-32 text-gold" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zm0 9l2.5-1.25L12 8.5l-2.5 1.25L12 11zm0 2.5l-5-2.5-5 2.5L12 22l10-8.5-5-2.5-5 2.5z"/></svg>
+                        <svg class="w-32 h-32 text-sky-400" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zm0 9l2.5-1.25L12 8.5l-2.5 1.25L12 11zm0 2.5l-5-2.5-5 2.5L12 22l10-8.5-5-2.5-5 2.5z"/></svg>
                     </div>
                     
                     <div class="relative z-10">
-                        <div class="text-gold text-xs font-bold tracking-widest uppercase mb-2">Highmark Exclusive Solution</div>
-                        <h3 id="solution-title" class="text-2xl font-serif text-white mb-2">等待诊断...</h3>
-                        <p id="solution-reason" class="text-sm text-gray-400 mb-6 max-w-md">请先上传简历进行诊断。</p>
+                        <div class="text-sky-400 text-xs font-bold tracking-widest uppercase mb-3">Highmark Exclusive Solution</div>
+                        <h3 id="solution-title" class="text-2xl font-serif text-slate-100 mb-3">等待诊断...</h3>
+                        <p id="solution-reason" class="text-sm text-slate-400 mb-8 max-w-md leading-relaxed">请先上传简历进行诊断。</p>
                         
-                        <button class="bg-gold hover:bg-yellow-500 text-black font-bold py-2 px-6 rounded text-sm transition-colors flex items-center gap-2">
+                        <button class="bg-sky-500 hover:bg-sky-400 text-white font-bold py-3 px-8 rounded-lg text-sm transition-all shadow-lg shadow-sky-500/30 flex items-center gap-2">
                             激活专家通道
                             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
                         </button>
@@ -308,14 +309,14 @@
         dropZone.addEventListener('click', () => fileInput.click());
         dropZone.addEventListener('dragover', (e) => {
             e.preventDefault();
-            dropZone.classList.add('border-gold', 'bg-white/5');
+            dropZone.classList.add('border-sky-400/50', 'bg-slate-500/5');
         });
         dropZone.addEventListener('dragleave', () => {
-            dropZone.classList.remove('border-gold', 'bg-white/5');
+            dropZone.classList.remove('border-sky-400/50', 'bg-slate-500/5');
         });
         dropZone.addEventListener('drop', (e) => {
             e.preventDefault();
-            dropZone.classList.remove('border-gold', 'bg-white/5');
+            dropZone.classList.remove('border-sky-400/50', 'bg-slate-500/5');
             const file = e.dataTransfer.files[0];
             if (file && file.type === 'application/pdf') handleFile(file);
             else alert('仅支持 PDF 文件');
@@ -469,12 +470,12 @@
             if (data.water_content && Array.isArray(data.water_content)) {
                 const waterList = document.getElementById('water-content-list');
                 waterList.innerHTML = data.water_content.map(item => `
-                    <div class="grid grid-cols-1 md:grid-cols-12 gap-4 text-sm border-b border-gray-800 pb-4 last:border-0">
-                        <div class="md:col-span-5 text-gray-500 italic">"${item.original || '-'}"</div>
-                        <div class="md:col-span-1 text-center text-gold hidden md:block">➔</div>
+                    <div class="grid grid-cols-1 md:grid-cols-12 gap-4 text-sm border-b border-slate-800 pb-5 last:border-0">
+                        <div class="md:col-span-5 text-slate-500 italic">"${item.original || '-'}"</div>
+                        <div class="md:col-span-1 text-center text-sky-400 hidden md:block">➔</div>
                         <div class="md:col-span-6">
-                            <div class="text-danger font-bold mb-1">CRITIQUE: ${item.comment || '-'}</div>
-                            <div class="text-tech-blue">FIX: ${item.suggestion || '-'}</div>
+                            <div class="text-danger font-bold mb-2">CRITIQUE: ${item.comment || '-'}</div>
+                            <div class="text-sky-400">FIX: ${item.suggestion || '-'}</div>
                         </div>
                     </div>
                 `).join('');
@@ -484,9 +485,9 @@
             if (data.timeline && Array.isArray(data.timeline)) {
                 document.getElementById('timeline-box').innerHTML = data.timeline.map(item => `
                     <div class="relative">
-                        <div class="absolute -left-[21px] top-1 w-3 h-3 rounded-full bg-gold border border-black"></div>
-                        <div class="text-gold text-xs font-bold mb-1">${item.time || '-'}</div>
-                        <div class="text-gray-300 text-sm">${item.action || '-'}</div>
+                        <div class="absolute -left-[25px] top-1 w-3 h-3 rounded-full bg-sky-400 border-2 border-slate-900 shadow-[0_0_8px_rgba(56,189,248,0.5)]"></div>
+                        <div class="text-sky-400 text-xs font-bold mb-2">${item.time || '-'}</div>
+                        <div class="text-slate-300 text-sm leading-relaxed">${item.action || '-'}</div>
                     </div>
                 `).join('');
             }
@@ -495,7 +496,7 @@
             if (data.career_compass) {
                 if (data.career_compass.roles && Array.isArray(data.career_compass.roles)) {
                     document.getElementById('target-roles').innerHTML = data.career_compass.roles.map(r => 
-                        `<span class="bg-white/10 px-2 py-1 rounded text-xs text-white">${r}</span>`
+                        `<span class="bg-slate-800/50 border border-slate-700 px-3 py-1.5 rounded-lg text-xs text-slate-200 hover:border-sky-400/50 transition-colors">${r}</span>`
                     ).join('');
                 }
                 if (data.career_compass.salary) {
@@ -533,7 +534,7 @@
                 if (i < logs.length) {
                     const div = document.createElement('div');
                     div.className = 'font-mono';
-                    div.innerHTML = `<span class="text-gold mr-2">➜</span> ${logs[i]}`;
+                    div.innerHTML = `<span class="text-sky-400 mr-2">➜</span> ${logs[i]}`;
                     container.appendChild(div);
                     i++;
                     setTimeout(typeLine, 800); // 每800ms一行
@@ -565,10 +566,12 @@
                     datasets: [{
                         label: 'Candidate Profile',
                         data: dataValues,
-                        backgroundColor: 'rgba(212, 175, 55, 0.2)', // Gold fill
-                        borderColor: '#D4AF37', // Gold border
-                        pointBackgroundColor: '#D4AF37',
-                        pointBorderColor: '#fff',
+                        backgroundColor: 'rgba(56, 189, 248, 0.2)', // Sky 400 fill
+                        borderColor: '#38BDF8', // Sky 400 border
+                        pointBackgroundColor: '#38BDF8',
+                        pointBorderColor: '#0F172A',
+                        pointHoverBackgroundColor: '#0F172A',
+                        pointHoverBorderColor: '#38BDF8',
                         borderWidth: 2
                     }]
                 },
@@ -577,13 +580,34 @@
                         r: {
                             angleLines: { color: 'rgba(255, 255, 255, 0.1)' },
                             grid: { color: 'rgba(255, 255, 255, 0.1)' },
-                            pointLabels: { color: '#94A3B8', font: { size: 11, family: 'Inter' } },
-                            ticks: { display: false, backdropColor: 'transparent' },
+                            pointLabels: { color: '#94A3B8', font: { size: 12, family: 'Inter', weight: '500' } },
+                            ticks: { 
+                                display: false, 
+                                backdropColor: 'transparent',
+                                color: 'rgba(148, 163, 184, 0.5)'
+                            },
                             suggestedMin: 0,
                             suggestedMax: 100
                         }
                     },
-                    plugins: { legend: { display: false } }
+                    plugins: { 
+                        legend: { display: false },
+                        tooltip: {
+                            backgroundColor: 'rgba(15, 23, 42, 0.95)',
+                            titleColor: '#38BDF8',
+                            bodyColor: '#F1F5F9',
+                            borderColor: '#38BDF8',
+                            borderWidth: 1,
+                            padding: 12,
+                            titleFont: { family: 'Inter', weight: '600' },
+                            bodyFont: { family: 'Inter' },
+                            callbacks: {
+                                label: function(context) {
+                                    return context.label + ': ' + context.parsed.r + ' 分';
+                                }
+                            }
+                        }
+                    }
                 }
             });
         }
