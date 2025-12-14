@@ -72,18 +72,44 @@ npm run dev
 
 ## 📦 部署
 
-### Vercel 部署（推荐）
+### 完整部署指南
 
-详细部署指南请查看 [VERCEL_DEPLOY_GUIDE.md](./VERCEL_DEPLOY_GUIDE.md)
+**📖 详细步骤请查看**：[DEPLOY_STEP_BY_STEP.md](./DEPLOY_STEP_BY_STEP.md)
 
-**快速步骤**：
-1. 将代码推送到 GitHub
-2. 在 [Vercel](https://vercel.com) 导入项目
-3. 配置环境变量：
-   - `QWEN_API_KEY` - 阿里云 API Key
-   - `TURSO_DATABASE_URL` - Turso 数据库 URL
-   - `TURSO_AUTH_TOKEN` - Turso 认证 Token
-4. 点击部署，完成！
+包含：
+- ✅ GitHub 推送完整步骤
+- ✅ Vercel 部署详细教程
+- ✅ 环境变量配置
+- ✅ 常见问题排查
+
+### 快速部署步骤
+
+#### 1. 推送到 GitHub
+
+```bash
+# 初始化 Git（如果还没有）
+git init
+git add .
+git commit -m "Initial commit"
+
+# 在 GitHub 创建仓库后
+git remote add origin https://github.com/YOUR_USERNAME/highmark-job-matcher.git
+git branch -M main
+git push -u origin main
+```
+
+#### 2. 部署到 Vercel
+
+1. 访问 [Vercel](https://vercel.com) 并登录（使用 GitHub）
+2. 点击 **Add New...** → **Project**
+3. 选择你的 GitHub 仓库
+4. 配置环境变量：
+   - `QWEN_API_KEY`
+   - `TURSO_DATABASE_URL`
+   - `TURSO_AUTH_TOKEN`
+5. 点击 **Deploy**
+
+详细步骤请查看 [DEPLOY_STEP_BY_STEP.md](./DEPLOY_STEP_BY_STEP.md)
 
 ### 本地/服务器部署
 \`\`\`bash
