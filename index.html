@@ -3,40 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HIGHMARK CAREER | Elite Talent Assessment System</title>
+    <title>海马职加 | 简历人才池评估系统</title>
     
     <!-- 引入核心库 -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     
-    <!-- 引入高级字体 -->
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&family=Inter:wght@300;400;600;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <!-- 引入字体 -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
-    <!-- 自定义配置 Tailwind -->
+    <!-- Tailwind 配置 -->
     <script>
         tailwind.config = {
             darkMode: 'class',
             theme: {
                 extend: {
                     colors: {
-                        'midnight': '#0F172A', // Slate 900 - 深邃岩石蓝背景
-                        'card-bg': '#1E293B',  // Slate 800 - 卡片背景
-                        'sky-accent': '#38BDF8', // Sky 400 - 极光蓝（主色）
-                        'indigo-accent': '#818CF8', // Indigo 400 - 靛蓝（辅助色）
-                        'text-primary': '#F1F5F9', // Slate 100 - 柔和白
-                        'text-secondary': '#94A3B8', // Slate 400 - 雾霾蓝灰
-                        'border-slate': '#334155', // Slate 700 - 分割线
-                        'danger': '#EF4444',
+                        'ocean': '#0B1120', // 深岩蓝背景
+                        'card': '#1E293B',  // 卡片背景
+                        'sky': '#38BDF8',   // 极光蓝主色
+                        'sky-dim': 'rgba(56, 189, 248, 0.1)',
+                        'warm-orange': '#FDBA74', // 柔和橙色（替代红色）
+                        'text-primary': '#F1F5F9', // 柔白
+                        'text-secondary': '#94A3B8', // 雾霾蓝灰
                     },
                     fontFamily: {
                         'serif': ['"Noto Serif SC"', 'serif'],
                         'sans': ['"Inter"', 'sans-serif'],
                         'mono': ['"JetBrains Mono"', 'monospace'],
-                    },
-                    backgroundImage: {
-                        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
                     }
                 }
             }
@@ -44,41 +39,43 @@
     </script>
 
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
-            background-color: #0F172A; /* Slate 900 */
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: #0B1120; /* 深岩蓝 */
             background-image: 
-                radial-gradient(circle at 15% 50%, rgba(56, 189, 248, 0.06), transparent 25%), 
-                radial-gradient(circle at 85% 30%, rgba(129, 140, 248, 0.04), transparent 25%);
-            color: #F1F5F9; /* Slate 100 */
+                radial-gradient(circle at 20% 50%, rgba(56, 189, 248, 0.05), transparent 30%), 
+                radial-gradient(circle at 80% 30%, rgba(56, 189, 248, 0.03), transparent 30%);
+            color: #F1F5F9;
+            min-height: 100vh;
             overflow-x: hidden;
         }
 
-        /* 磨砂玻璃质感 - 冷色调 */
+        /* 磨砂玻璃质感 */
         .glass-panel {
-            background: rgba(30, 41, 59, 0.7); /* Slate 800 with transparency */
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border: 1px solid rgba(51, 65, 85, 0.5); /* Slate 700 */
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+            background: rgba(30, 41, 59, 0.75);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(51, 65, 85, 0.5);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
         }
 
-        /* 极光蓝微光边框效果 */
-        .sky-border-glow {
-            border: 1px solid rgba(56, 189, 248, 0.3); /* Sky 400 30% */
+        /* 极光蓝边框效果 */
+        .sky-border {
+            border: 1px solid rgba(56, 189, 248, 0.3);
             transition: all 0.3s ease;
         }
-        .sky-border-glow:hover {
-            border-color: rgba(56, 189, 248, 0.6);
-            box-shadow: 0 0 15px rgba(56, 189, 248, 0.2);
+        .sky-border:hover {
+            border-color: rgba(56, 189, 248, 0.5);
+            box-shadow: 0 0 20px rgba(56, 189, 248, 0.15);
         }
 
-        /* 终端打字机光标 */
-        .cursor-blink {
-            animation: blink 1s step-end infinite;
-        }
-        @keyframes blink { 50% { opacity: 0; } }
-
-        /* 扫描动画 - 极光蓝 */
+        /* 扫描动画 */
         .scanner-line {
             position: absolute;
             width: 100%;
@@ -93,26 +90,27 @@
             100% { top: 100%; opacity: 0; }
         }
 
-        /* 滚动条美化 */
-        ::-webkit-scrollbar { width: 6px; }
-        ::-webkit-scrollbar-track { background: #0F172A; }
-        ::-webkit-scrollbar-thumb { background: #334155; border-radius: 3px; }
+        /* 滚动条 */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #0B1120; }
+        ::-webkit-scrollbar-thumb { background: #334155; border-radius: 4px; }
         ::-webkit-scrollbar-thumb:hover { background: #475569; }
     </style>
 </head>
-<body class="antialiased min-h-screen font-sans selection:bg-sky-400 selection:text-mlate-900">
+<body class="antialiased min-h-screen">
 
     <!-- 顶部导航 -->
-    <nav class="fixed top-0 w-full z-50 glass-panel border-b border-white/5">
+    <nav class="fixed top-0 w-full z-50 glass-panel border-b border-slate-700/50">
         <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
             <div class="flex items-center gap-3">
-                <!-- 简单的 SVG Logo -->
-                <svg class="w-8 h-8 text-sky-400" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zm0 9l2.5-1.25L12 8.5l-2.5 1.25L12 11zm0 2.5l-5-2.5-5 2.5L12 22l10-8.5-5-2.5-5 2.5z"/></svg>
-                <span class="font-display font-bold text-2xl tracking-widest text-white">HIGHMARK <span class="text-sky-400">CAREER</span></span>
+                <svg class="w-8 h-8 text-sky" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 2L2 7l10 5 10-5-10-5zm0 9l2.5-1.25L12 8.5l-2.5 1.25L12 11zm0 2.5l-5-2.5-5 2.5L12 22l10-8.5-5-2.5-5 2.5z"/>
+                </svg>
+                <span class="font-serif text-xl font-bold text-text-primary">海马职加</span>
+                <span class="text-text-secondary text-sm font-mono">HIGHMARK CAREER</span>
             </div>
-            <div class="flex items-center gap-6 text-sm font-mono text-slate-400">
-                <span>EST. 2015</span>
-                <span class="text-sky-400">GLOBAL ELITE TALENT SYSTEM</span>
+            <div class="text-text-secondary text-xs font-mono">
+                简历人才池评估系统
             </div>
         </div>
     </nav>
@@ -120,170 +118,188 @@
     <!-- 主内容区 -->
     <main class="pt-32 pb-20 px-6 max-w-7xl mx-auto">
         
-        <!-- Hero: 文件上传区 (初始状态) -->
-        <section id="upload-section" class="relative z-10 transition-all duration-700 ease-in-out">
-            <div class="text-center mb-12">
-                <h1 class="font-serif text-5xl md:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-slate-100 via-slate-200 to-slate-300 mb-6 leading-tight">
-                    Reveal Your True <span class="text-sky-400 italic">Market Value</span>
+        <!-- Hero: 文件上传区 -->
+        <section id="upload-section" class="relative z-10 transition-all duration-700">
+            <div class="text-center mb-16">
+                <h1 class="font-serif text-5xl md:text-6xl font-bold text-text-primary mb-4 leading-tight">
+                    发掘你的真实职场身价
                 </h1>
-                <p class="text-slate-400 text-lg max-w-2xl mx-auto font-light">
-                    基于 <span class="text-white font-semibold">Global 500</span> 真实录用标准 · 
-                    <span class="text-white font-semibold">安永(EY)</span> 审计级数据核验
+                <p class="text-text-secondary text-lg max-w-2xl mx-auto font-light mb-2">
+                    Reveal Your Market Value
+                </p>
+                <p class="text-text-secondary text-base max-w-3xl mx-auto mt-4">
+                    基于 <span class="text-text-primary font-medium">Global 500</span> 真实录用标准 · 
+                    <span class="text-text-primary font-medium">安永(EY)</span> 审计级数据核验
                 </p>
             </div>
 
             <!-- 上传框 -->
             <div class="max-w-3xl mx-auto">
-                <div id="drop-zone" class="glass-panel rounded-2xl p-14 border-2 border-dashed border-slate-700 hover:border-sky-400/50 transition-all duration-300 cursor-pointer group relative overflow-hidden">
+                <div id="drop-zone" class="glass-panel rounded-3xl p-16 border-2 border-dashed border-slate-700/50 hover:border-sky/50 transition-all duration-300 cursor-pointer group relative overflow-hidden sky-border">
                     <input type="file" id="file-input" class="hidden" accept=".pdf">
                     
-                    <div class="relative z-10 flex flex-col items-center justify-center gap-6">
-                        <div class="w-20 h-20 rounded-full bg-sky-400/10 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                            <svg class="w-10 h-10 text-sky-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"></path></svg>
+                    <div class="relative z-10 flex flex-col items-center justify-center gap-8">
+                        <div class="w-24 h-24 rounded-full bg-sky-dim flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                            <svg class="w-12 h-12 text-sky" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"></path>
+                            </svg>
                         </div>
                         <div class="text-center">
-                            <p class="text-xl font-medium text-slate-100 mb-2 group-hover:text-sky-400 transition-colors">拖拽简历至此，或点击上传</p>
-                            <p class="text-sm text-slate-500 font-mono">SUPPORT PDF ONLY · MAX 10MB</p>
+                            <p class="text-xl font-medium text-text-primary mb-3 group-hover:text-sky transition-colors">
+                                拖拽简历至此，或点击上传
+                            </p>
+                            <p class="text-sm text-text-secondary font-mono">
+                                SUPPORT PDF ONLY · MAX 10MB
+                            </p>
                         </div>
                     </div>
                     
-                    <!-- 背景流光 - 极光蓝 -->
-                    <div class="absolute inset-0 bg-gradient-to-tr from-sky-400/5 via-transparent to-indigo-400/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <!-- 背景流光 -->
+                    <div class="absolute inset-0 bg-gradient-to-tr from-sky/5 via-transparent to-sky/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 </div>
             </div>
         </section>
 
-        <!-- Loading: 终端分析动画 (默认隐藏) -->
-        <section id="loading-section" class="hidden max-w-3xl mx-auto mt-10">
-            <div class="glass-panel rounded-lg p-6 font-mono text-sm border border-gray-700 shadow-2xl relative overflow-hidden h-64 flex flex-col">
-                <div class="flex items-center gap-2 mb-4 border-b border-slate-800 pb-3">
+        <!-- Loading: 终端分析动画 -->
+        <section id="loading-section" class="hidden max-w-3xl mx-auto mt-12">
+            <div class="glass-panel rounded-2xl p-8 font-mono text-sm border border-slate-700/50 shadow-2xl relative overflow-hidden h-72 flex flex-col sky-border">
+                <div class="flex items-center gap-2 mb-6 border-b border-slate-800 pb-3">
                     <div class="w-3 h-3 rounded-full bg-red-500"></div>
                     <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
                     <div class="w-3 h-3 rounded-full bg-green-500"></div>
-                    <span class="ml-2 text-xs text-slate-500">Highmark_Core_Engine_v4.0.exe</span>
+                    <span class="ml-2 text-xs text-text-secondary">Highmark_Core_Engine_v4.0.exe</span>
                 </div>
-                <div id="terminal-content" class="flex-1 overflow-hidden text-sky-400 space-y-2">
+                <div id="terminal-content" class="flex-1 overflow-hidden text-sky space-y-2">
                     <!-- JS 会在这里打字 -->
                 </div>
                 <div class="scanner-line"></div>
             </div>
         </section>
 
-        <!-- Report: 深度报告 Bento Grid (默认隐藏) -->
-        <section id="report-section" class="hidden space-y-8 animate-fade-in-up">
+        <!-- Report: 深度报告 Bento Grid -->
+        <section id="report-section" class="hidden space-y-10">
             
             <!-- 头部状态栏 -->
             <div class="flex justify-between items-end border-b border-slate-800 pb-6">
                 <div>
-                    <div class="text-sky-400 text-xs font-bold tracking-[0.2em] uppercase mb-1">Evaluation Report</div>
-                    <h2 class="text-3xl font-serif text-slate-100">人才资产评估报告</h2>
+                    <div class="text-sky text-xs font-bold tracking-[0.2em] uppercase mb-2">Evaluation Report</div>
+                    <h2 class="text-4xl font-serif text-text-primary">人才资产评估报告</h2>
                 </div>
-                    <div class="text-right">
-                    <div class="text-slate-500 text-xs font-mono">REPORT ID</div>
-                    <div class="text-slate-100 font-mono">HM-2025-X829</div>
+                <div class="text-right">
+                    <div class="text-text-secondary text-xs font-mono">REPORT ID</div>
+                    <div class="text-text-primary font-mono">HM-2025-X829</div>
                 </div>
             </div>
 
             <!-- Bento Grid 布局 -->
-            <div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-8">
                 
-                <!-- 卡片1: 核心估值 (Top Left) -->
-                <div class="md:col-span-4 glass-panel rounded-2xl p-8 sky-border-glow relative overflow-hidden">
-                    <div class="text-slate-400 text-xs font-mono uppercase mb-6">Market Competitiveness Score</div>
-                    <div class="flex items-baseline gap-2">
-                        <span id="score-val" class="text-7xl font-display font-bold text-slate-100 tracking-tighter">0</span>
-                        <span class="text-xl text-slate-500">/ 100</span>
+                <!-- 卡片1: 核心估值 -->
+                <div class="md:col-span-4 glass-panel rounded-3xl p-10 sky-border relative overflow-hidden">
+                    <div class="text-text-secondary text-xs font-mono uppercase mb-6">Market Competitiveness Score</div>
+                    <div class="flex items-baseline gap-2 mb-6">
+                        <span id="score-val" class="text-8xl font-serif font-bold text-text-primary tracking-tighter">0</span>
+                        <span class="text-2xl text-text-secondary">/ 100</span>
                     </div>
-                    <div id="tier-badge" class="mt-6 inline-block px-4 py-2 rounded-lg bg-sky-400/20 text-sky-400 text-xs font-bold border border-sky-400/30">
+                    <div id="tier-badge" class="mb-8 inline-block px-4 py-2 rounded-lg bg-sky-dim text-sky text-sm font-bold border border-sky/30">
                         CALCULATING...
                     </div>
-                    <p id="summary-text" class="mt-8 text-sm text-slate-300 leading-relaxed italic border-l-2 border-sky-400/50 pl-5">
+                    <p id="summary-text" class="text-base text-text-primary leading-relaxed italic border-l-2 border-sky/50 pl-5">
                         分析中...
                     </p>
                 </div>
 
-                <!-- 卡片2: 雷达图 (Top Middle) -->
-                <div class="md:col-span-4 glass-panel rounded-2xl p-8 sky-border-glow flex flex-col">
-                    <div class="text-slate-400 text-xs font-mono uppercase mb-4">6-Dimension Analysis</div>
+                <!-- 卡片2: 雷达图 -->
+                <div class="md:col-span-4 glass-panel rounded-3xl p-10 sky-border flex flex-col">
+                    <div class="text-text-secondary text-xs font-mono uppercase mb-6">6-Dimension Analysis</div>
+                    <div class="text-text-primary text-lg font-serif mb-6">六维能力雷达图</div>
                     <div class="flex-1 relative">
                         <canvas id="radarChart"></canvas>
                     </div>
                 </div>
 
-                <!-- 卡片3: 同辈残酷排位 (Top Right) -->
-                <div class="md:col-span-4 glass-panel rounded-2xl p-8 sky-border-glow flex flex-col justify-between">
-                    <div class="text-slate-400 text-xs font-mono uppercase mb-4">Peer Ranking (同院校)</div>
+                <!-- 卡片3: 同辈残酷排位 -->
+                <div class="md:col-span-4 glass-panel rounded-3xl p-10 sky-border flex flex-col justify-between">
+                    <div class="text-text-secondary text-xs font-mono uppercase mb-4">Peer Ranking</div>
+                    <div class="text-text-primary text-lg font-serif mb-8">同院校候选人竞争力排位</div>
                     
                     <div class="my-8">
-                        <div class="flex justify-between text-sm mb-3">
-                            <span class="text-danger">淘汰区 (Bottom 30%)</span>
-                            <span class="text-sky-400">核心区 (Top 10%)</span>
+                        <div class="flex justify-between text-sm mb-4">
+                            <span class="text-warm-orange">淘汰区 (Bottom 30%)</span>
+                            <span class="text-sky">核心区 (Top 10%)</span>
                         </div>
-                        <div class="h-4 bg-slate-800 rounded-full overflow-hidden relative">
-                            <div id="rank-bar" class="h-full bg-gradient-to-r from-red-600 via-indigo-500 to-sky-400 w-0 transition-all duration-1000 ease-out"></div>
-                            <!-- 标记点 -->
-                            <div id="rank-marker" class="absolute top-0 w-1 h-full bg-sky-400 shadow-[0_0_10px_rgba(56,189,248,0.5)] transition-all duration-1000" style="left: 0%"></div>
+                        <div class="h-5 bg-slate-800 rounded-full overflow-hidden relative">
+                            <div id="rank-bar" class="h-full bg-gradient-to-r from-warm-orange/60 via-indigo-500/60 to-sky w-0 transition-all duration-1000 ease-out"></div>
+                            <div id="rank-marker" class="absolute top-0 w-1.5 h-full bg-sky shadow-[0_0_12px_rgba(56,189,248,0.6)] transition-all duration-1000" style="left: 0%"></div>
                         </div>
-                        <div class="mt-3 text-right text-xs text-sky-400 font-mono">
+                        <div class="mt-4 text-right text-xs text-sky font-mono">
                             Based on 12,405 data points
                         </div>
                     </div>
 
-                    <div class="bg-slate-900/60 rounded-lg p-4 text-xs text-slate-400">
-                        <strong class="text-white block mb-1">Data Source:</strong>
+                    <div class="bg-slate-900/60 rounded-xl p-5 text-sm text-text-secondary leading-relaxed">
+                        <strong class="text-text-primary block mb-2">数据来源：</strong>
                         对比样本为 QS Top 100 且投递同类岗位的候选人。
                     </div>
                 </div>
 
-                <!-- 卡片4: 简历含水量检测 (Middle Wide) -->
-                <div class="md:col-span-8 glass-panel rounded-2xl p-8 sky-border-glow">
-                    <div class="flex items-center gap-2 mb-8">
-                        <div class="w-2 h-2 rounded-full bg-danger animate-pulse"></div>
-                        <span class="text-slate-400 text-xs font-mono uppercase">"Water Content" X-Ray Detection</span>
+                <!-- 卡片4: 简历竞争力深度复盘 -->
+                <div class="md:col-span-8 glass-panel rounded-3xl p-10 sky-border">
+                    <div class="flex items-center gap-3 mb-8">
+                        <div class="w-2.5 h-2.5 rounded-full bg-warm-orange animate-pulse"></div>
+                        <div class="text-text-secondary text-xs font-mono uppercase">Resume Optimization</div>
                     </div>
+                    <div class="text-text-primary text-2xl font-serif mb-8">简历竞争力深度复盘</div>
                     
-                    <div id="water-content-list" class="space-y-5">
+                    <div id="water-content-list" class="space-y-6">
                         <!-- 动态生成的内容 -->
                     </div>
                 </div>
 
-                <!-- 卡片5: 职业时间轴 (Middle Right) -->
-                <div class="md:col-span-4 glass-panel rounded-2xl p-8 sky-border-glow relative overflow-hidden">
-                    <div class="text-slate-400 text-xs font-mono uppercase mb-8">Critical Timeline (2025 Fall)</div>
-                    <div id="timeline-box" class="space-y-6 relative pl-5 border-l border-slate-700">
+                <!-- 卡片5: 职业时间轴 -->
+                <div class="md:col-span-4 glass-panel rounded-3xl p-10 sky-border relative overflow-hidden">
+                    <div class="text-text-secondary text-xs font-mono uppercase mb-4">Career Timeline</div>
+                    <div class="text-text-primary text-lg font-serif mb-8">关键时间节点规划</div>
+                    <div id="timeline-box" class="space-y-8 relative pl-6 border-l border-slate-700">
                         <!-- 动态生成 -->
                     </div>
                 </div>
 
-                <!-- 卡片6: 薪资预测 & 岗位 (Bottom Left) -->
-                <div class="md:col-span-6 glass-panel rounded-2xl p-8 border border-slate-700">
-                    <div class="text-slate-400 text-xs font-mono uppercase mb-6">Career Compass</div>
-                    <div class="grid grid-cols-2 gap-8">
+                <!-- 卡片6: 薪资预测 & 岗位 -->
+                <div class="md:col-span-6 glass-panel rounded-3xl p-10 border border-slate-700/50">
+                    <div class="text-text-secondary text-xs font-mono uppercase mb-6">Career Compass</div>
+                    <div class="text-text-primary text-lg font-serif mb-8">职业罗盘</div>
+                    <div class="grid grid-cols-2 gap-10">
                         <div>
-                            <div class="text-xs text-slate-500 mb-2">建议投递岗位</div>
-                            <div id="target-roles" class="flex flex-wrap gap-2"></div>
+                            <div class="text-sm text-text-secondary mb-4">建议投递岗位</div>
+                            <div id="target-roles" class="flex flex-wrap gap-3"></div>
                         </div>
                         <div>
-                            <div class="text-xs text-slate-500 mb-2">首年年薪预测 (RMB)</div>
-                            <div id="salary-range" class="text-2xl font-mono text-sky-400 font-bold">CALCULATING</div>
+                            <div class="text-sm text-text-secondary mb-4">首年年薪预测 (RMB)</div>
+                            <div id="salary-range" class="text-3xl font-mono text-sky font-bold">CALCULATING</div>
                         </div>
                     </div>
                 </div>
 
-                <!-- 卡片7: 海马处方签 (Bottom Right - Solution) -->
-                <div class="md:col-span-6 bg-gradient-to-br from-slate-900 to-slate-950 rounded-2xl p-8 border border-sky-400/40 relative overflow-hidden group cursor-pointer">
-                    <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
-                        <svg class="w-32 h-32 text-sky-400" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zm0 9l2.5-1.25L12 8.5l-2.5 1.25L12 11zm0 2.5l-5-2.5-5 2.5L12 22l10-8.5-5-2.5-5 2.5z"/></svg>
+                <!-- 卡片7: 定制化职业加速方案 -->
+                <div class="md:col-span-6 bg-gradient-to-br from-slate-900 to-slate-950 rounded-3xl p-10 border border-sky/40 relative overflow-hidden group cursor-pointer">
+                    <div class="absolute top-0 right-0 p-6 opacity-10 group-hover:opacity-20 transition-opacity">
+                        <svg class="w-40 h-40 text-sky" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2L2 7l10 5 10-5-10-5zm0 9l2.5-1.25L12 8.5l-2.5 1.25L12 11zm0 2.5l-5-2.5-5 2.5L12 22l10-8.5-5-2.5-5 2.5z"/>
+                        </svg>
                     </div>
                     
                     <div class="relative z-10">
-                        <div class="text-sky-400 text-xs font-bold tracking-widest uppercase mb-3">Highmark Exclusive Solution</div>
-                        <h3 id="solution-title" class="text-2xl font-serif text-slate-100 mb-3">等待诊断...</h3>
-                        <p id="solution-reason" class="text-sm text-slate-400 mb-8 max-w-md leading-relaxed">请先上传简历进行诊断。</p>
+                        <div class="text-sky text-xs font-bold tracking-widest uppercase mb-4">Highmark Exclusive Solution</div>
+                        <h3 class="text-text-primary text-2xl font-serif mb-4">定制化职业加速方案</h3>
+                        <h4 id="solution-title" class="text-xl font-serif text-text-primary mb-4">等待诊断...</h4>
+                        <p id="solution-reason" class="text-base text-text-secondary mb-8 max-w-md leading-relaxed">请先上传简历进行诊断。</p>
                         
-                        <button class="bg-sky-500 hover:bg-sky-400 text-white font-bold py-3 px-8 rounded-lg text-sm transition-all shadow-lg shadow-sky-500/30 flex items-center gap-2">
+                        <button class="bg-sky hover:bg-sky-400 text-white font-bold py-3 px-8 rounded-lg text-sm transition-all shadow-lg shadow-sky/30 flex items-center gap-2">
                             激活专家通道
-                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                            </svg>
                         </button>
                     </div>
                 </div>
@@ -295,7 +311,6 @@
     <!-- 逻辑脚本 -->
     <script>
         // ================= 配置区 =================
-        // ⚠️ 请在此处填入你的 Key，否则无法运行！
         const API_KEY = 'sk-9fe20e18ec704475b63fbb27c7f7b32f'; 
         
         // 初始化 PDF.js
@@ -309,14 +324,14 @@
         dropZone.addEventListener('click', () => fileInput.click());
         dropZone.addEventListener('dragover', (e) => {
             e.preventDefault();
-            dropZone.classList.add('border-sky-400/50', 'bg-slate-500/5');
+            dropZone.classList.add('border-sky/50', 'bg-slate-500/5');
         });
         dropZone.addEventListener('dragleave', () => {
-            dropZone.classList.remove('border-sky-400/50', 'bg-slate-500/5');
+            dropZone.classList.remove('border-sky/50', 'bg-slate-500/5');
         });
         dropZone.addEventListener('drop', (e) => {
             e.preventDefault();
-            dropZone.classList.remove('border-sky-400/50', 'bg-slate-500/5');
+            dropZone.classList.remove('border-sky/50', 'bg-slate-500/5');
             const file = e.dataTransfer.files[0];
             if (file && file.type === 'application/pdf') handleFile(file);
             else alert('仅支持 PDF 文件');
@@ -326,7 +341,7 @@
         });
 
         async function handleFile(file) {
-            // UI 切换：隐藏上传，显示终端
+            // UI 切换
             document.getElementById('upload-section').classList.add('hidden');
             document.getElementById('loading-section').classList.remove('hidden');
             
@@ -337,16 +352,21 @@
                 // 1. 解析 PDF
                 const text = await parsePDF(file);
                 
-                // 2. 调用 API (人为延迟2秒以展示动画效果)
+                // 2. 调用 API (延迟2秒展示动画)
                 await new Promise(r => setTimeout(r, 2000)); 
                 const analysis = await analyzeWithAPI(text);
                 
                 // 3. 渲染报告
                 renderReport(analysis);
                 
-                // UI 切换：隐藏终端，显示报告
+                // UI 切换
                 document.getElementById('loading-section').classList.add('hidden');
                 document.getElementById('report-section').classList.remove('hidden');
+                
+                // 平滑滚动到结果
+                setTimeout(() => {
+                    document.getElementById('report-section').scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }, 100);
 
             } catch (error) {
                 console.error(error);
@@ -373,21 +393,42 @@
             const API_ENDPOINT = 'https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions';
             const MODEL = 'qwen-plus';
             
-            const systemPrompt = `你是一位毒舌但极其专业的中国顶尖校招专家。请基于 2025-2026 年最严峻的就业形势，对这份留学生简历进行残酷的'拆解'。
+            const systemPrompt = `你是一位共情型职业战略家（Empathetic Career Strategist），拥有 15 年全球顶级企业人才评估经验。你的任务是帮助候选人发现职业潜力，提供建设性的优化建议。
+
+**核心原则**：
+1. **语调（Tone）**：
+   - ❌ 禁止：讽刺、反问、"这就是你失败的原因"、"太水了"等负面表达
+   - ✅ 提倡：建设性、前瞻性、"提升空间"、"优化路径"、"该经历具备很好的核心逻辑，建议补充量化数据以增强说服力"
+   - 用温暖、专业、鼓励的方式指出改进方向
+
+2. **分析深度**：
+   - 简历优化建议：不仅要指出问题，更要提供**具体的修改示范（Rewrite）**
+   - 产品匹配：基于"诊断 -> 处方 -> 疗效"的逻辑，不要生硬推销
+
+3. **产品推荐逻辑**：
+   - **PTA 远程项目实训**：适合大一/大二积累核心项目经验，为后续实习打基础
+   - **名企远程/实地人事实习**：适合需要 Big Name 背书以通过大厂简历筛选的同学
+   - **千里马求职全案**：适合需要从职业规划到最终 Offer 的全流程陪跑
+   - **千里马至尊版 (Diamond)**：适合目标是顶尖投行/咨询/核心大厂且基础尚可，需要冲刺顶薪的同学
+   - **Why Now**：结合 2025 春招补录/秋招提前批的时间窗口，解释为什么现在是最佳时机
 
 **必须返回严格的 JSON 格式，不要包含 Markdown 代码块标记**。JSON 结构如下：
 {
     "score": 0-100的整数,
     "tier_label": "青铜 / 白银 / 黄金 / 钻石 / 王者",
     "ranking_percentile": 0-100的整数 (代表击败了百分之多少的人),
-    "summary": "一句话扎心评价（100字内）",
+    "summary": "建设性的综合评价（100字内，温暖鼓励的语调）",
     "radar": [学历, 实习, 技能, 语言, 领导力, 行业匹配] (6个0-100的数字),
-    "water_content": [
-        {"original": "简历原句", "comment": "毒舌点评", "suggestion": "修改建议"}
+    "optimization": [
+        {
+            "original": "简历原句",
+            "analysis": "建设性分析（例如：该经历具备很好的核心逻辑，但描述较为单薄）",
+            "rewrite": "具体的修改示范（完整的改写后的句子）"
+        }
     ],
     "timeline": [
-        {"time": "当前-1月", "action": "动作"},
-        {"time": "2月-3月", "action": "动作"}
+        {"time": "当前-1月", "action": "具体动作（结合2025春招补录/秋招提前批时间窗口）"},
+        {"time": "2月-3月", "action": "具体动作"}
     ],
     "career_compass": {
         "roles": ["岗位1", "岗位2"],
@@ -395,7 +436,8 @@
     },
     "solution": {
         "product": "推荐的海马产品名",
-        "reason": "推荐理由"
+        "reason": "推荐理由（基于诊断->处方->疗效的逻辑，结合时间窗口说明Why Now）",
+        "expected_outcome": "预计提升效果"
     }
 }`;
 
@@ -466,16 +508,39 @@
                 }, 500);
             }
 
-            // 5. 含水量检测
-            if (data.water_content && Array.isArray(data.water_content)) {
+            // 5. 简历竞争力深度复盘（原含水量检测）
+            if (data.optimization && Array.isArray(data.optimization)) {
+                const waterList = document.getElementById('water-content-list');
+                waterList.innerHTML = data.optimization.map(item => `
+                    <div class="grid grid-cols-1 md:grid-cols-12 gap-6 text-sm border-b border-slate-800 pb-6 last:border-0">
+                        <div class="md:col-span-5">
+                            <div class="text-text-secondary text-xs font-mono uppercase mb-2">原始描述</div>
+                            <div class="text-text-secondary italic leading-relaxed">"${item.original || '-'}"</div>
+                        </div>
+                        <div class="md:col-span-1 text-center text-sky hidden md:block text-2xl">→</div>
+                        <div class="md:col-span-6">
+                            <div class="text-text-secondary text-xs font-mono uppercase mb-2">优化建议</div>
+                            <div class="text-text-primary mb-3 leading-relaxed">${item.analysis || '-'}</div>
+                            <div class="text-sky text-xs font-mono uppercase mb-2">修改示范</div>
+                            <div class="text-sky leading-relaxed">"${item.rewrite || '-'}"</div>
+                        </div>
+                    </div>
+                `).join('');
+            } else if (data.water_content && Array.isArray(data.water_content)) {
+                // 兼容旧格式
                 const waterList = document.getElementById('water-content-list');
                 waterList.innerHTML = data.water_content.map(item => `
-                    <div class="grid grid-cols-1 md:grid-cols-12 gap-4 text-sm border-b border-slate-800 pb-5 last:border-0">
-                        <div class="md:col-span-5 text-slate-500 italic">"${item.original || '-'}"</div>
-                        <div class="md:col-span-1 text-center text-sky-400 hidden md:block">➔</div>
+                    <div class="grid grid-cols-1 md:grid-cols-12 gap-6 text-sm border-b border-slate-800 pb-6 last:border-0">
+                        <div class="md:col-span-5">
+                            <div class="text-text-secondary text-xs font-mono uppercase mb-2">原始描述</div>
+                            <div class="text-text-secondary italic leading-relaxed">"${item.original || '-'}"</div>
+                        </div>
+                        <div class="md:col-span-1 text-center text-sky hidden md:block text-2xl">→</div>
                         <div class="md:col-span-6">
-                            <div class="text-danger font-bold mb-2">CRITIQUE: ${item.comment || '-'}</div>
-                            <div class="text-sky-400">FIX: ${item.suggestion || '-'}</div>
+                            <div class="text-text-secondary text-xs font-mono uppercase mb-2">优化建议</div>
+                            <div class="text-text-primary mb-3 leading-relaxed">${item.comment || item.analysis || '-'}</div>
+                            <div class="text-sky text-xs font-mono uppercase mb-2">修改示范</div>
+                            <div class="text-sky leading-relaxed">"${item.rewrite || item.suggestion || '-'}"</div>
                         </div>
                     </div>
                 `).join('');
@@ -483,11 +548,11 @@
 
             // 6. 时间轴
             if (data.timeline && Array.isArray(data.timeline)) {
-                document.getElementById('timeline-box').innerHTML = data.timeline.map(item => `
+                document.getElementById('timeline-box').innerHTML = data.timeline.map((item, index) => `
                     <div class="relative">
-                        <div class="absolute -left-[25px] top-1 w-3 h-3 rounded-full bg-sky-400 border-2 border-slate-900 shadow-[0_0_8px_rgba(56,189,248,0.5)]"></div>
-                        <div class="text-sky-400 text-xs font-bold mb-2">${item.time || '-'}</div>
-                        <div class="text-slate-300 text-sm leading-relaxed">${item.action || '-'}</div>
+                        <div class="absolute -left-[29px] top-1 w-4 h-4 rounded-full bg-sky border-2 border-slate-900 shadow-[0_0_10px_rgba(56,189,248,0.6)] ${index === 0 ? 'animate-pulse' : ''}"></div>
+                        <div class="text-sky text-sm font-bold mb-2">${item.time || '-'}</div>
+                        <div class="text-text-primary text-base leading-relaxed">${item.action || '-'}</div>
                     </div>
                 `).join('');
             }
@@ -496,7 +561,7 @@
             if (data.career_compass) {
                 if (data.career_compass.roles && Array.isArray(data.career_compass.roles)) {
                     document.getElementById('target-roles').innerHTML = data.career_compass.roles.map(r => 
-                        `<span class="bg-slate-800/50 border border-slate-700 px-3 py-1.5 rounded-lg text-xs text-slate-200 hover:border-sky-400/50 transition-colors">${r}</span>`
+                        `<span class="bg-slate-800/50 border border-slate-700 px-4 py-2 rounded-lg text-sm text-text-primary hover:border-sky/50 transition-colors">${r}</span>`
                     ).join('');
                 }
                 if (data.career_compass.salary) {
@@ -504,7 +569,7 @@
                 }
             }
 
-            // 8. 解决方案
+            // 8. 定制化职业加速方案
             if (data.solution) {
                 if (data.solution.product) {
                     document.getElementById('solution-title').innerText = data.solution.product;
@@ -518,26 +583,26 @@
         // 终端打字机特效
         function runTerminalEffect() {
             const logs = [
-                "> Establishing secure connection to Highmark Database...",
-                "> Verifying EY Audit Standards...",
-                "> Scanning Global 500 Job Descriptions (2025 Edition)...",
-                "> Analyzing keyword density against ATS algorithms...",
-                "> Detecting weak signals in project experience...",
-                "> Benchmarking against Ivy League/G5 candidates...",
-                "> Generating strategic career roadmap..."
+                "> 正在连接海马人才数据库...",
+                "> 验证安永(EY)审计标准...",
+                "> 扫描 Global 500 企业职位描述（2025版）...",
+                "> 分析关键词密度与 ATS 算法匹配度...",
+                "> 检测项目经历中的优化空间...",
+                "> 对标 Ivy League/G5 候选人数据...",
+                "> 生成战略职业路线图..."
             ];
             const container = document.getElementById('terminal-content');
-            container.innerHTML = ''; // 清空
+            container.innerHTML = '';
             let i = 0;
             
             function typeLine() {
                 if (i < logs.length) {
                     const div = document.createElement('div');
                     div.className = 'font-mono';
-                    div.innerHTML = `<span class="text-sky-400 mr-2">➜</span> ${logs[i]}`;
+                    div.innerHTML = `<span class="text-sky mr-2">➜</span> ${logs[i]}`;
                     container.appendChild(div);
                     i++;
-                    setTimeout(typeLine, 800); // 每800ms一行
+                    setTimeout(typeLine, 800);
                 }
             }
             typeLine();
@@ -566,13 +631,15 @@
                     datasets: [{
                         label: 'Candidate Profile',
                         data: dataValues,
-                        backgroundColor: 'rgba(56, 189, 248, 0.2)', // Sky 400 fill
-                        borderColor: '#38BDF8', // Sky 400 border
+                        backgroundColor: 'rgba(56, 189, 248, 0.2)',
+                        borderColor: '#38BDF8',
                         pointBackgroundColor: '#38BDF8',
-                        pointBorderColor: '#0F172A',
-                        pointHoverBackgroundColor: '#0F172A',
+                        pointBorderColor: '#0B1120',
+                        pointHoverBackgroundColor: '#0B1120',
                         pointHoverBorderColor: '#38BDF8',
-                        borderWidth: 2
+                        borderWidth: 2,
+                        pointRadius: 5,
+                        pointHoverRadius: 7
                     }]
                 },
                 options: {
@@ -580,7 +647,10 @@
                         r: {
                             angleLines: { color: 'rgba(255, 255, 255, 0.1)' },
                             grid: { color: 'rgba(255, 255, 255, 0.1)' },
-                            pointLabels: { color: '#94A3B8', font: { size: 12, family: 'Inter', weight: '500' } },
+                            pointLabels: { 
+                                color: '#94A3B8', 
+                                font: { size: 13, family: 'Inter', weight: '500' } 
+                            },
                             ticks: { 
                                 display: false, 
                                 backdropColor: 'transparent',
@@ -593,7 +663,7 @@
                     plugins: { 
                         legend: { display: false },
                         tooltip: {
-                            backgroundColor: 'rgba(15, 23, 42, 0.95)',
+                            backgroundColor: 'rgba(11, 17, 32, 0.95)',
                             titleColor: '#38BDF8',
                             bodyColor: '#F1F5F9',
                             borderColor: '#38BDF8',
