@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>海马职加 | 简历人才池评估系统</title>
+    
+    <!-- 引入核心库 -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <!-- 引入字体 -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+    <!-- Tailwind 配置 -->
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        'ocean': '#0B1120', // 深岩蓝背景
+                        'card': '#1E293B',  // 卡片背景
+                        'sky': '#38BDF8',   // 极光蓝主色
+                        'sky-dim': 'rgba(56, 189, 248, 0.1)',
+                        'warm-orange': '#FDBA74', // 柔和橙色（替代红色）
+                        'text-primary': '#F1F5F9', // 柔白
+                        'text-secondary': '#94A3B8', // 雾霾蓝灰
+                    },
+                    fontFamily: {
+                        'serif': ['"Noto Serif SC"', 'serif'],
+                        'sans': ['"Inter"', 'sans-serif'],
+                        'mono': ['"JetBrains Mono"', 'monospace'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: #0B1120; /* 深岩蓝 */
+            background-image: 
+                radial-gradient(circle at 20% 50%, rgba(56, 189, 248, 0.05), transparent 30%), 
+                radial-gradient(circle at 80% 30%, rgba(56, 189, 248, 0.03), transparent 30%);
+            color: #F1F5F9;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* 磨砂玻璃质感 */
+        .glass-panel {
+            background: rgba(30, 41, 59, 0.75);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(51, 65, 85, 0.5);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+        }
+
+        /* 极光蓝边框效果 */
+        .sky-border {
+            border: 1px solid rgba(56, 189, 248, 0.3);
+            transition: all 0.3s ease;
+        }
+        .sky-border:hover {
+            border-color: rgba(56, 189, 248, 0.5);
+            box-shadow: 0 0 20px rgba(56, 189, 248, 0.15);
+        }
+
+        /* 扫描动画 */
+        .scanner-line {
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(to right, transparent, #38BDF8, transparent);
+            animation: scan 2s linear infinite;
+        }
+        @keyframes scan {
+            0% { top: 0%; opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { top: 100%; opacity: 0; }
+        }
+
+        /* 滚动条 */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #0B1120; }
+        ::-webkit-scrollbar-thumb { background: #334155; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #475569; }
+    </style>
+</head>
+<body class="antialiased min-h-screen">
+
+    <!-- 顶部导航 -->
+    <nav class="fixed top-0 w-full z-50 glass-panel border-b border-slate-700/50">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <svg class="w-8 h-8 text-sky" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 2L2 7l10 5 10-5-10-5zm0 9l2.5-1.25L12 8.5l-2.5 1.25L12 11zm0 2.5l-5-2.5-5 2.5L12 22l10-8.5-5-2.5-5 2.5z"/>
+                </svg>
+                <span class="font-serif text-xl font-bold text-text-primary">海马职加</span>
+                <span class="text-text-secondary text-sm font-mono">HIGHMARK CAREER</span>
+            </div>
+            <div class="text-text-secondary text-xs font-mono">
+                简历人才池评估系统
+            </div>
+        </div>
+    </nav>
+
+    <!-- 主内容区 -->
+    <main class="pt-32 pb-20 px-6 max-w-7xl mx-auto">
+        
+        <!-- Hero: 文件上传区 -->
+        <section id="upload-section" class="relative z-10 transition-all duration-700">
+            <div class="text-center mb-16">
+                <h1 class="font-serif text-5xl md:text-6xl font-bold text-text-primary mb-4 leading-tight">
+                    发掘你的真实职场身价
+                </h1>
+                <p class="text-text-secondary text-lg max-w-2xl mx-auto font-light mb-2">
+                    Reveal Your Market Value
+                </p>
+                <p class="text-text-secondary text-base max-w-3xl mx-auto mt-4">
+                    基于 <span class="text-text-primary font-medium">Global 500</span> 真实录用标准 · 
+                    <span class="text-text-primary font-medium">安永(EY)</span> 审计级数据核验
+                </p>
+            </div>
+
+            <!-- 上传框 -->
+            <div class="max-w-3xl mx-auto">
+                <div id="drop-zone" class="glass-panel rounded-3xl p-16 border-2 border-dashed border-slate-700/50 hover:border-sky/50 transition-all duration-300 cursor-pointer group relative overflow-hidden sky-border">
+                    <input type="file" id="file-input" class="hidden" accept=".pdf">
+                    
+                    <div class="relative z-10 flex flex-col items-center justify-center gap-8">
+                        <div class="w-24 h-24 rounded-full bg-sky-dim flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                            <svg class="w-12 h-12 text-sky" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"></path>
+                            </svg>
+                        </div>
+                        <div class="text-center">
+                            <p class="text-xl font-medium text-text-primary mb-3 group-hover:text-sky transition-colors">
+                                拖拽简历至此，或点击上传
+                            </p>
+                            <p class="text-sm text-text-secondary font-mono">
+                                SUPPORT PDF ONLY · MAX 10MB
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- 背景流光 -->
+                    <div class="absolute inset-0 bg-gradient-to-tr from-sky/5 via-transparent to-sky/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Loading: 终端分析动画 -->
+        <section id="loading-section" class="hidden max-w-3xl mx-auto mt-12">
+            <div class="glass-panel rounded-2xl p-8 font-mono text-sm border border-slate-700/50 shadow-2xl relative overflow-hidden h-72 flex flex-col sky-border">
+                <div class="flex items-center gap-2 mb-6 border-b border-slate-800 pb-3">
+                    <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                    <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                    <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                    <span class="ml-2 text-xs text-text-secondary">Highmark_Core_Engine_v4.0.exe</span>
+                </div>
+                <div id="terminal-content" class="flex-1 overflow-hidden text-sky space-y-2">
+                    <!-- JS 会在这里打字 -->
+                </div>
+                <div class="scanner-line"></div>
+            </div>
+        </section>
+
+        <!-- Report: 深度报告 Bento Grid -->
+        <section id="report-section" class="hidden space-y-10">
+            
+            <!-- 头部状态栏 -->
+            <div class="flex justify-between items-end border-b border-slate-800 pb-6">
+                <div>
+                    <div class="text-sky text-xs font-bold tracking-[0.2em] uppercase mb-2">Evaluation Report</div>
+                    <h2 class="text-4xl font-serif text-text-primary">人才资产评估报告</h2>
+                </div>
+                <div class="text-right">
+                    <div class="text-text-secondary text-xs font-mono">REPORT ID</div>
+                    <div class="text-text-primary font-mono">HM-2025-X829</div>
+                </div>
+            </div>
+
+            <!-- Bento Grid 布局 -->
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-8">
+                
+                <!-- 卡片1: 核心估值 -->
+                <div class="md:col-span-4 glass-panel rounded-3xl p-10 sky-border relative overflow-hidden">
+                    <div class="text-text-secondary text-xs font-mono uppercase mb-6">Market Competitiveness Score</div>
+                    <div class="flex items-baseline gap-2 mb-6">
+                        <span id="score-val" class="text-8xl font-serif font-bold text-text-primary tracking-tighter">0</span>
+                        <span class="text-2xl text-text-secondary">/ 100</span>
+                    </div>
+                    <div id="tier-badge" class="mb-8 inline-block px-4 py-2 rounded-lg bg-sky-dim text-sky text-sm font-bold border border-sky/30">
+                        CALCULATING...
+                    </div>
+                    <p id="summary-text" class="text-base text-text-primary leading-relaxed italic border-l-2 border-sky/50 pl-5">
+                        分析中...
+                    </p>
+                </div>
+
+                <!-- 卡片2: 雷达图 -->
+                <div class="md:col-span-4 glass-panel rounded-3xl p-10 sky-border flex flex-col">
+                    <div class="text-text-secondary text-xs font-mono uppercase mb-6">6-Dimension Analysis</div>
+                    <div class="text-text-primary text-lg font-serif mb-6">六维能力雷达图</div>
+                    <div class="flex-1 relative">
+                        <canvas id="radarChart"></canvas>
+                    </div>
+                </div>
+
+                <!-- 卡片3: 同辈残酷排位 -->
+                <div class="md:col-span-4 glass-panel rounded-3xl p-10 sky-border flex flex-col justify-between">
+                    <div class="text-text-secondary text-xs font-mono uppercase mb-4">Peer Ranking</div>
+                    <div class="text-text-primary text-lg font-serif mb-8">同院校候选人竞争力排位</div>
+                    
+                    <div class="my-8">
+                        <div class="flex justify-between text-sm mb-4">
+                            <span class="text-warm-orange">淘汰区 (Bottom 30%)</span>
+                            <span class="text-sky">核心区 (Top 10%)</span>
+                        </div>
+                        <div class="h-5 bg-slate-800 rounded-full overflow-hidden relative">
+                            <div id="rank-bar" class="h-full bg-gradient-to-r from-warm-orange/60 via-indigo-500/60 to-sky w-0 transition-all duration-1000 ease-out"></div>
+                            <div id="rank-marker" class="absolute top-0 w-1.5 h-full bg-sky shadow-[0_0_12px_rgba(56,189,248,0.6)] transition-all duration-1000" style="left: 0%"></div>
+                        </div>
+                        <div class="mt-4 text-right text-xs text-sky font-mono">
+                            Based on 12,405 data points
+                        </div>
+                    </div>
+
+                    <div class="bg-slate-900/60 rounded-xl p-5 text-sm text-text-secondary leading-relaxed">
+                        <strong class="text-text-primary block mb-2">数据来源：</strong>
+                        对比样本为 QS Top 100 且投递同类岗位的候选人。
+                    </div>
+                </div>
+
+                <!-- 卡片4: 简历竞争力深度复盘 -->
+                <div class="md:col-span-8 glass-panel rounded-3xl p-10 sky-border">
+                    <div class="flex items-center gap-3 mb-8">
+                        <div class="w-2.5 h-2.5 rounded-full bg-warm-orange animate-pulse"></div>
+                        <div class="text-text-secondary text-xs font-mono uppercase">Resume Optimization</div>
+                    </div>
+                    <div class="text-text-primary text-2xl font-serif mb-8">简历竞争力深度复盘</div>
+                    
+                    <div id="water-content-list" class="space-y-6">
+                        <!-- 动态生成的内容 -->
+                    </div>
+                </div>
+
+                <!-- 卡片5: 职业时间轴 -->
+                <div class="md:col-span-4 glass-panel rounded-3xl p-10 sky-border relative overflow-hidden">
+                    <div class="text-text-secondary text-xs font-mono uppercase mb-4">Career Timeline</div>
+                    <div class="text-text-primary text-lg font-serif mb-8">关键时间节点规划</div>
+                    <div id="timeline-box" class="space-y-8 relative pl-6 border-l border-slate-700">
+                        <!-- 动态生成 -->
+                    </div>
+                </div>
+
+                <!-- 卡片6: 薪资预测 & 岗位 -->
+                <div class="md:col-span-6 glass-panel rounded-3xl p-10 border border-slate-700/50">
+                    <div class="text-text-secondary text-xs font-mono uppercase mb-6">Career Compass</div>
+                    <div class="text-text-primary text-lg font-serif mb-8">职业罗盘</div>
+                    <div class="grid grid-cols-2 gap-10">
+                        <div>
+                            <div class="text-sm text-text-secondary mb-4">建议投递岗位</div>
+                            <div id="target-roles" class="flex flex-wrap gap-3"></div>
+                        </div>
+                        <div>
+                            <div class="text-sm text-text-secondary mb-4">首年年薪预测 (RMB)</div>
+                            <div id="salary-range" class="text-3xl font-mono text-sky font-bold">CALCULATING</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 卡片7: 定制化职业加速方案 -->
+                <div class="md:col-span-6 bg-gradient-to-br from-slate-900 to-slate-950 rounded-3xl p-10 border border-sky/40 relative overflow-hidden group cursor-pointer">
+                    <div class="absolute top-0 right-0 p-6 opacity-10 group-hover:opacity-20 transition-opacity">
+                        <svg class="w-40 h-40 text-sky" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2L2 7l10 5 10-5-10-5zm0 9l2.5-1.25L12 8.5l-2.5 1.25L12 11zm0 2.5l-5-2.5-5 2.5L12 22l10-8.5-5-2.5-5 2.5z"/>
+                        </svg>
+                    </div>
+                    
+                    <div class="relative z-10">
+                        <div class="text-sky text-xs font-bold tracking-widest uppercase mb-4">Highmark Exclusive Solution</div>
+                        <h3 class="text-text-primary text-2xl font-serif mb-4">定制化职业加速方案</h3>
+                        <h4 id="solution-title" class="text-xl font-serif text-text-primary mb-4">等待诊断...</h4>
+                        <p id="solution-reason" class="text-base text-text-secondary mb-8 max-w-md leading-relaxed">请先上传简历进行诊断。</p>
+                        
+                        <button class="bg-sky hover:bg-sky-400 text-white font-bold py-3 px-8 rounded-lg text-sm transition-all shadow-lg shadow-sky/30 flex items-center gap-2">
+                            激活专家通道
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- 逻辑脚本 -->
+    <script>
+        // ================= 配置区 =================
+        const API_KEY = 'sk-9fe20e18ec704475b63fbb27c7f7b32f'; 
+        
+        // 初始化 PDF.js
+        pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+        
+        // ================= 核心逻辑 =================
+        const fileInput = document.getElementById('file-input');
+        const dropZone = document.getElementById('drop-zone');
+        
+        // 拖拽事件处理
+        dropZone.addEventListener('click', () => fileInput.click());
+        dropZone.addEventListener('dragover', (e) => {
+            e.preventDefault();
+            dropZone.classList.add('border-sky/50', 'bg-slate-500/5');
+        });
+        dropZone.addEventListener('dragleave', () => {
+            dropZone.classList.remove('border-sky/50', 'bg-slate-500/5');
+        });
+        dropZone.addEventListener('drop', (e) => {
+            e.preventDefault();
+            dropZone.classList.remove('border-sky/50', 'bg-slate-500/5');
+            const file = e.dataTransfer.files[0];
+            if (file && file.type === 'application/pdf') handleFile(file);
+            else alert('仅支持 PDF 文件');
+        });
+        fileInput.addEventListener('change', (e) => {
+            if (e.target.files[0]) handleFile(e.target.files[0]);
+        });
+
+        async function handleFile(file) {
+            // UI 切换
+            document.getElementById('upload-section').classList.add('hidden');
+            document.getElementById('loading-section').classList.remove('hidden');
+            
+            // 启动终端动画
+            runTerminalEffect();
+
+            try {
+                // 1. 解析 PDF
+                const text = await parsePDF(file);
+                
+                // 2. 调用 API (延迟2秒展示动画)
+                await new Promise(r => setTimeout(r, 2000)); 
+                const analysis = await analyzeWithAPI(text);
+                
+                // 3. 渲染报告
+                renderReport(analysis);
+                
+                // UI 切换
+                document.getElementById('loading-section').classList.add('hidden');
+                document.getElementById('report-section').classList.remove('hidden');
+                
+                // 平滑滚动到结果
+                setTimeout(() => {
+                    document.getElementById('report-section').scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }, 100);
+
+            } catch (error) {
+                console.error(error);
+                alert('分析失败：' + error.message);
+                location.reload();
+            }
+        }
+
+        async function parsePDF(file) {
+            const arrayBuffer = await file.arrayBuffer();
+            const pdf = await pdfjsLib.getDocument({ data: arrayBuffer }).promise;
+            let fullText = '';
+            
+            for (let i = 1; i <= pdf.numPages; i++) {
+                const page = await pdf.getPage(i);
+                const textContent = await page.getTextContent();
+                fullText += textContent.items.map(item => item.str).join(' ');
+            }
+            return fullText;
+        }
+
+        async function analyzeWithAPI(resumeText) {
+            // 使用通义千问 API
+            const API_ENDPOINT = 'https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions';
+            const MODEL = 'qwen-plus';
+            
+            const systemPrompt = `你是一位共情型职业战略家（Empathetic Career Strategist），拥有 15 年全球顶级企业人才评估经验。你的任务是帮助候选人发现职业潜力，提供建设性的优化建议。
+
+**核心原则**：
+1. **语调（Tone）**：
+   - ❌ 禁止：讽刺、反问、"这就是你失败的原因"、"太水了"等负面表达
+   - ✅ 提倡：建设性、前瞻性、"提升空间"、"优化路径"、"该经历具备很好的核心逻辑，建议补充量化数据以增强说服力"
+   - 用温暖、专业、鼓励的方式指出改进方向
+
+2. **分析深度**：
+   - 简历优化建议：不仅要指出问题，更要提供**具体的修改示范（Rewrite）**
+   - 产品匹配：基于"诊断 -> 处方 -> 疗效"的逻辑，不要生硬推销
+
+3. **产品推荐逻辑**：
+   - **PTA 远程项目实训**：适合大一/大二积累核心项目经验，为后续实习打基础
+   - **名企远程/实地人事实习**：适合需要 Big Name 背书以通过大厂简历筛选的同学
+   - **千里马求职全案**：适合需要从职业规划到最终 Offer 的全流程陪跑
+   - **千里马至尊版 (Diamond)**：适合目标是顶尖投行/咨询/核心大厂且基础尚可，需要冲刺顶薪的同学
+   - **Why Now**：结合 2025 春招补录/秋招提前批的时间窗口，解释为什么现在是最佳时机
+
+**必须返回严格的 JSON 格式，不要包含 Markdown 代码块标记**。JSON 结构如下：
+{
+    "score": 0-100的整数,
+    "tier_label": "青铜 / 白银 / 黄金 / 钻石 / 王者",
+    "ranking_percentile": 0-100的整数 (代表击败了百分之多少的人),
+    "summary": "建设性的综合评价（100字内，温暖鼓励的语调）",
+    "radar": [学历, 实习, 技能, 语言, 领导力, 行业匹配] (6个0-100的数字),
+    "optimization": [
+        {
+            "original": "简历原句",
+            "analysis": "建设性分析（例如：该经历具备很好的核心逻辑，但描述较为单薄）",
+            "rewrite": "具体的修改示范（完整的改写后的句子）"
+        }
+    ],
+    "timeline": [
+        {"time": "当前-1月", "action": "具体动作（结合2025春招补录/秋招提前批时间窗口）"},
+        {"time": "2月-3月", "action": "具体动作"}
+    ],
+    "career_compass": {
+        "roles": ["岗位1", "岗位2"],
+        "salary": "例如：15k-20k/月"
+    },
+    "solution": {
+        "product": "推荐的海马产品名",
+        "reason": "推荐理由（基于诊断->处方->疗效的逻辑，结合时间窗口说明Why Now）",
+        "expected_outcome": "预计提升效果"
+    }
+}`;
+
+            const userPrompt = `这是候选人简历：${resumeText.substring(0, 10000)}`;
+
+            const response = await fetch(API_ENDPOINT, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${API_KEY}`
+                },
+                body: JSON.stringify({
+                    model: MODEL,
+                    messages: [
+                        { role: 'system', content: systemPrompt },
+                        { role: 'user', content: userPrompt }
+                    ],
+                    temperature: 0.7,
+                    max_tokens: 3000
+                })
+            });
+
+            if (!response.ok) {
+                throw new Error(`API 请求失败: ${response.status}`);
+            }
+
+            const data = await response.json();
+            let rawText = '';
+            
+            if (data.choices && data.choices[0] && data.choices[0].message) {
+                rawText = data.choices[0].message.content;
+            } else {
+                throw new Error('API 返回格式不正确');
+            }
+
+            // 清理可能存在的 markdown 标记
+            rawText = rawText.trim();
+            if (rawText.startsWith('```json')) {
+                rawText = rawText.replace(/^```json\s*/, '').replace(/\s*```$/, '');
+            } else if (rawText.startsWith('```')) {
+                rawText = rawText.replace(/^```\s*/, '').replace(/\s*```$/, '');
+            }
+            
+            return JSON.parse(rawText);
+        }
+
+        // ================= 渲染逻辑 =================
+        function renderReport(data) {
+            // 1. 核心分数动画
+            animateValue("score-val", 0, data.score, 1500);
+            
+            // 2. 评级 Badge
+            const tierEl = document.getElementById('tier-badge');
+            tierEl.innerText = data.tier_label || 'CALCULATING...';
+            document.getElementById('summary-text').innerText = data.summary || '分析中...';
+
+            // 3. 雷达图
+            if (data.radar && Array.isArray(data.radar)) {
+                initRadarChart(data.radar);
+            }
+
+            // 4. 同辈排位
+            if (data.ranking_percentile !== undefined) {
+                setTimeout(() => {
+                    const percent = data.ranking_percentile;
+                    document.getElementById('rank-marker').style.left = percent + '%';
+                    document.getElementById('rank-bar').style.width = percent + '%';
+                }, 500);
+            }
+
+            // 5. 简历竞争力深度复盘（原含水量检测）
+            if (data.optimization && Array.isArray(data.optimization)) {
+                const waterList = document.getElementById('water-content-list');
+                waterList.innerHTML = data.optimization.map(item => `
+                    <div class="grid grid-cols-1 md:grid-cols-12 gap-6 text-sm border-b border-slate-800 pb-6 last:border-0">
+                        <div class="md:col-span-5">
+                            <div class="text-text-secondary text-xs font-mono uppercase mb-2">原始描述</div>
+                            <div class="text-text-secondary italic leading-relaxed">"${item.original || '-'}"</div>
+                        </div>
+                        <div class="md:col-span-1 text-center text-sky hidden md:block text-2xl">→</div>
+                        <div class="md:col-span-6">
+                            <div class="text-text-secondary text-xs font-mono uppercase mb-2">优化建议</div>
+                            <div class="text-text-primary mb-3 leading-relaxed">${item.analysis || '-'}</div>
+                            <div class="text-sky text-xs font-mono uppercase mb-2">修改示范</div>
+                            <div class="text-sky leading-relaxed">"${item.rewrite || '-'}"</div>
+                        </div>
+                    </div>
+                `).join('');
+            } else if (data.water_content && Array.isArray(data.water_content)) {
+                // 兼容旧格式
+                const waterList = document.getElementById('water-content-list');
+                waterList.innerHTML = data.water_content.map(item => `
+                    <div class="grid grid-cols-1 md:grid-cols-12 gap-6 text-sm border-b border-slate-800 pb-6 last:border-0">
+                        <div class="md:col-span-5">
+                            <div class="text-text-secondary text-xs font-mono uppercase mb-2">原始描述</div>
+                            <div class="text-text-secondary italic leading-relaxed">"${item.original || '-'}"</div>
+                        </div>
+                        <div class="md:col-span-1 text-center text-sky hidden md:block text-2xl">→</div>
+                        <div class="md:col-span-6">
+                            <div class="text-text-secondary text-xs font-mono uppercase mb-2">优化建议</div>
+                            <div class="text-text-primary mb-3 leading-relaxed">${item.comment || item.analysis || '-'}</div>
+                            <div class="text-sky text-xs font-mono uppercase mb-2">修改示范</div>
+                            <div class="text-sky leading-relaxed">"${item.rewrite || item.suggestion || '-'}"</div>
+                        </div>
+                    </div>
+                `).join('');
+            }
+
+            // 6. 时间轴
+            if (data.timeline && Array.isArray(data.timeline)) {
+                document.getElementById('timeline-box').innerHTML = data.timeline.map((item, index) => `
+                    <div class="relative">
+                        <div class="absolute -left-[29px] top-1 w-4 h-4 rounded-full bg-sky border-2 border-slate-900 shadow-[0_0_10px_rgba(56,189,248,0.6)] ${index === 0 ? 'animate-pulse' : ''}"></div>
+                        <div class="text-sky text-sm font-bold mb-2">${item.time || '-'}</div>
+                        <div class="text-text-primary text-base leading-relaxed">${item.action || '-'}</div>
+                    </div>
+                `).join('');
+            }
+
+            // 7. 薪资与岗位
+            if (data.career_compass) {
+                if (data.career_compass.roles && Array.isArray(data.career_compass.roles)) {
+                    document.getElementById('target-roles').innerHTML = data.career_compass.roles.map(r => 
+                        `<span class="bg-slate-800/50 border border-slate-700 px-4 py-2 rounded-lg text-sm text-text-primary hover:border-sky/50 transition-colors">${r}</span>`
+                    ).join('');
+                }
+                if (data.career_compass.salary) {
+                    document.getElementById('salary-range').innerText = data.career_compass.salary;
+                }
+            }
+
+            // 8. 定制化职业加速方案
+            if (data.solution) {
+                if (data.solution.product) {
+                    document.getElementById('solution-title').innerText = data.solution.product;
+                }
+                if (data.solution.reason) {
+                    document.getElementById('solution-reason').innerText = data.solution.reason;
+                }
+            }
+        }
+
+        // 终端打字机特效
+        function runTerminalEffect() {
+            const logs = [
+                "> 正在连接海马人才数据库...",
+                "> 验证安永(EY)审计标准...",
+                "> 扫描 Global 500 企业职位描述（2025版）...",
+                "> 分析关键词密度与 ATS 算法匹配度...",
+                "> 检测项目经历中的优化空间...",
+                "> 对标 Ivy League/G5 候选人数据...",
+                "> 生成战略职业路线图..."
+            ];
+            const container = document.getElementById('terminal-content');
+            container.innerHTML = '';
+            let i = 0;
+            
+            function typeLine() {
+                if (i < logs.length) {
+                    const div = document.createElement('div');
+                    div.className = 'font-mono';
+                    div.innerHTML = `<span class="text-sky mr-2">➜</span> ${logs[i]}`;
+                    container.appendChild(div);
+                    i++;
+                    setTimeout(typeLine, 800);
+                }
+            }
+            typeLine();
+        }
+
+        // 数字增长动画
+        function animateValue(id, start, end, duration) {
+            const obj = document.getElementById(id);
+            let startTimestamp = null;
+            const step = (timestamp) => {
+                if (!startTimestamp) startTimestamp = timestamp;
+                const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+                obj.innerHTML = Math.floor(progress * (end - start) + start);
+                if (progress < 1) window.requestAnimationFrame(step);
+            };
+            window.requestAnimationFrame(step);
+        }
+
+        // 初始化雷达图
+        function initRadarChart(dataValues) {
+            const ctx = document.getElementById('radarChart').getContext('2d');
+            new Chart(ctx, {
+                type: 'radar',
+                data: {
+                    labels: ['学历硬核度', '实习含金量', '硬技能', '语言能力', '领导力', '行业匹配'],
+                    datasets: [{
+                        label: 'Candidate Profile',
+                        data: dataValues,
+                        backgroundColor: 'rgba(56, 189, 248, 0.2)',
+                        borderColor: '#38BDF8',
+                        pointBackgroundColor: '#38BDF8',
+                        pointBorderColor: '#0B1120',
+                        pointHoverBackgroundColor: '#0B1120',
+                        pointHoverBorderColor: '#38BDF8',
+                        borderWidth: 2,
+                        pointRadius: 5,
+                        pointHoverRadius: 7
+                    }]
+                },
+                options: {
+                    scales: {
+                        r: {
+                            angleLines: { color: 'rgba(255, 255, 255, 0.1)' },
+                            grid: { color: 'rgba(255, 255, 255, 0.1)' },
+                            pointLabels: { 
+                                color: '#94A3B8', 
+                                font: { size: 13, family: 'Inter', weight: '500' } 
+                            },
+                            ticks: { 
+                                display: false, 
+                                backdropColor: 'transparent',
+                                color: 'rgba(148, 163, 184, 0.5)'
+                            },
+                            suggestedMin: 0,
+                            suggestedMax: 100
+                        }
+                    },
+                    plugins: { 
+                        legend: { display: false },
+                        tooltip: {
+                            backgroundColor: 'rgba(11, 17, 32, 0.95)',
+                            titleColor: '#38BDF8',
+                            bodyColor: '#F1F5F9',
+                            borderColor: '#38BDF8',
+                            borderWidth: 1,
+                            padding: 12,
+                            titleFont: { family: 'Inter', weight: '600' },
+                            bodyFont: { family: 'Inter' },
+                            callbacks: {
+                                label: function(context) {
+                                    return context.label + ': ' + context.parsed.r + ' 分';
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+        }
+    </script>
+</body>
+</html>

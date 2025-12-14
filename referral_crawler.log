@@ -1,0 +1,125 @@
+2025-12-08 20:55:11,072 - INFO - 
+============================================================
+2025-12-08 20:55:11,072 - INFO - 开始执行爬虫任务
+2025-12-08 20:55:11,072 - INFO - ============================================================
+2025-12-08 20:55:11,072 - INFO - ============================================================
+2025-12-08 20:55:11,072 - INFO - 开始爬取所有来源的内推信息
+2025-12-08 20:55:11,072 - INFO - ============================================================
+2025-12-08 20:55:11,072 - INFO - 开始爬取牛客网...
+2025-12-08 20:55:11,072 - INFO -   爬取第 1 页: https://www.nowcoder.com/search?type=post&query=内推码&order=time&page=1
+2025-12-08 20:55:12,937 - INFO -   找到 116 个帖子
+2025-12-08 20:55:15,430 - INFO -   爬取第 2 页: https://www.nowcoder.com/search?type=post&query=内推码&order=time&page=2
+2025-12-08 20:55:16,293 - INFO -   找到 116 个帖子
+2025-12-08 20:55:18,681 - INFO -   爬取第 3 页: https://www.nowcoder.com/search?type=post&query=内推码&order=time&page=3
+2025-12-08 20:55:19,342 - INFO -   找到 116 个帖子
+2025-12-08 20:55:22,067 - INFO -   爬取第 4 页: https://www.nowcoder.com/search?type=post&query=内推码&order=time&page=4
+2025-12-08 20:55:23,530 - INFO -   找到 116 个帖子
+2025-12-08 20:55:26,029 - INFO -   爬取第 5 页: https://www.nowcoder.com/search?type=post&query=内推码&order=time&page=5
+2025-12-08 20:55:26,667 - INFO -   找到 116 个帖子
+2025-12-08 20:55:29,115 - INFO - 牛客网爬取完成，获得 0 条数据
+2025-12-08 20:55:29,116 - INFO - 牛客网 完成，当前总计 0 条数据
+2025-12-08 20:55:29,116 - INFO - 开始爬取V2EX...
+2025-12-08 20:55:29,116 - INFO -   爬取第 1 页: https://www.v2ex.com/go/career
+2025-12-08 20:55:30,905 - WARNING -   第 1 页未找到帖子
+2025-12-08 20:55:30,905 - INFO - V2EX爬取完成，获得 0 条数据
+2025-12-08 20:55:30,908 - INFO - V2EX 完成，当前总计 0 条数据
+2025-12-08 20:55:30,909 - INFO - 开始爬取GitHub...
+2025-12-08 20:55:30,909 - INFO -   爬取仓库: https://raw.githubusercontent.com/0voice/interview_internal_reference/main/README.md
+2025-12-08 20:55:32,658 - WARNING - 请求失败: https://raw.githubusercontent.com/0voice/interview_internal_reference/main/README.md, 状态码: 404
+2025-12-08 20:55:34,278 - WARNING - 请求失败: https://raw.githubusercontent.com/0voice/interview_internal_reference/main/README.md, 状态码: 404
+2025-12-08 20:55:35,878 - WARNING - 请求失败: https://raw.githubusercontent.com/0voice/interview_internal_reference/main/README.md, 状态码: 404
+2025-12-08 20:55:35,882 - WARNING -   无法访问: https://raw.githubusercontent.com/0voice/interview_internal_reference/main/README.md
+2025-12-08 20:55:35,882 - INFO - GitHub爬取完成，获得 0 条数据
+2025-12-08 20:55:35,882 - INFO - GitHub 完成，当前总计 0 条数据
+2025-12-08 20:55:35,882 - INFO - 开始爬取知乎...
+2025-12-08 20:55:35,883 - INFO -   爬取第 1 页: https://www.zhihu.com/search?type=content&q=校招内推码&page=1
+2025-12-08 20:55:36,116 - WARNING - 访问被拒绝: https://www.zhihu.com/search?type=content&q=校招内推码&page=1, 尝试更换User-Agent
+2025-12-08 20:55:41,260 - WARNING - 访问被拒绝: https://www.zhihu.com/search?type=content&q=校招内推码&page=1, 尝试更换User-Agent
+2025-12-08 20:55:46,374 - WARNING - 访问被拒绝: https://www.zhihu.com/search?type=content&q=校招内推码&page=1, 尝试更换User-Agent
+2025-12-08 21:07:32,044 - WARNING -   无法访问第 1 页
+2025-12-08 21:07:32,044 - INFO - 知乎爬取完成，获得 0 条数据
+2025-12-08 21:07:32,044 - INFO - 知乎 完成，当前总计 0 条数据
+2025-12-08 21:07:32,044 - INFO - 开始爬取掘金...
+2025-12-08 21:07:32,044 - INFO -   爬取第 1 页: https://juejin.cn/search?query=校招内推码&type=all&page=1
+2025-12-08 21:07:32,051 - ERROR - 请求出错 (尝试 1/3): https://juejin.cn/search?query=校招内推码&type=all&page=1, 错误: HTTPSConnectionPool(host='juejin.cn', port=443): Max retries exceeded with url: /search?query=%E6%A0%A1%E6%8B%9B%E5%86%85%E6%8E%A8%E7%A0%81&type=all&page=1 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x12022ebb0>: Failed to resolve 'juejin.cn' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-12-08 21:07:35,066 - ERROR - 请求出错 (尝试 2/3): https://juejin.cn/search?query=校招内推码&type=all&page=1, 错误: HTTPSConnectionPool(host='juejin.cn', port=443): Max retries exceeded with url: /search?query=%E6%A0%A1%E6%8B%9B%E5%86%85%E6%8E%A8%E7%A0%81&type=all&page=1 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x12046b4c0>: Failed to resolve 'juejin.cn' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-12-08 21:07:38,079 - ERROR - 请求出错 (尝试 3/3): https://juejin.cn/search?query=校招内推码&type=all&page=1, 错误: HTTPSConnectionPool(host='juejin.cn', port=443): Max retries exceeded with url: /search?query=%E6%A0%A1%E6%8B%9B%E5%86%85%E6%8E%A8%E7%A0%81&type=all&page=1 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x12046beb0>: Failed to resolve 'juejin.cn' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-12-08 21:07:38,079 - WARNING -   无法访问第 1 页
+2025-12-08 21:07:38,079 - INFO - 掘金爬取完成，获得 0 条数据
+2025-12-08 21:07:38,079 - INFO - 掘金 完成，当前总计 0 条数据
+2025-12-08 21:07:38,079 - INFO - 开始爬取微信公众号...
+2025-12-08 21:07:38,079 - INFO -   爬取第 1 页: https://weixin.sogou.com/weixin?type=2&query=校招内推码
+2025-12-08 21:07:38,083 - ERROR - 请求出错 (尝试 1/3): https://weixin.sogou.com/weixin?type=2&query=校招内推码, 错误: HTTPSConnectionPool(host='weixin.sogou.com', port=443): Max retries exceeded with url: /weixin?type=2&query=%E6%A0%A1%E6%8B%9B%E5%86%85%E6%8E%A8%E7%A0%81 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x12023d1f0>: Failed to resolve 'weixin.sogou.com' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-12-08 21:07:41,094 - ERROR - 请求出错 (尝试 2/3): https://weixin.sogou.com/weixin?type=2&query=校招内推码, 错误: HTTPSConnectionPool(host='weixin.sogou.com', port=443): Max retries exceeded with url: /weixin?type=2&query=%E6%A0%A1%E6%8B%9B%E5%86%85%E6%8E%A8%E7%A0%81 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x12046b8e0>: Failed to resolve 'weixin.sogou.com' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-12-08 21:07:44,109 - ERROR - 请求出错 (尝试 3/3): https://weixin.sogou.com/weixin?type=2&query=校招内推码, 错误: HTTPSConnectionPool(host='weixin.sogou.com', port=443): Max retries exceeded with url: /weixin?type=2&query=%E6%A0%A1%E6%8B%9B%E5%86%85%E6%8E%A8%E7%A0%81 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x120474790>: Failed to resolve 'weixin.sogou.com' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-12-08 21:07:44,110 - WARNING -   无法访问第 1 页
+2025-12-08 21:07:44,110 - INFO - 微信公众号爬取完成，获得 0 条数据
+2025-12-08 21:07:44,110 - INFO - 微信公众号 完成，当前总计 0 条数据
+2025-12-08 21:07:44,110 - INFO - ============================================================
+2025-12-08 21:07:44,110 - INFO - 所有来源爬取完成，共获得 0 条数据
+2025-12-08 21:07:44,110 - INFO - ============================================================
+2025-12-08 21:07:44,110 - WARNING - 未获取到任何数据
+2025-12-09 09:21:25,203 - INFO - 
+============================================================
+2025-12-09 09:21:25,203 - INFO - 开始执行爬虫任务
+2025-12-09 09:21:25,203 - INFO - ============================================================
+2025-12-09 09:21:25,203 - INFO - ============================================================
+2025-12-09 09:21:25,203 - INFO - 开始爬取所有来源的内推信息
+2025-12-09 09:21:25,203 - INFO - ============================================================
+2025-12-09 09:21:25,203 - INFO - 开始爬取牛客网...
+2025-12-09 09:21:25,203 - INFO -   爬取第 1 页: https://www.nowcoder.com/search?type=post&query=内推码&order=time&page=1
+2025-12-09 09:21:26,493 - INFO -   找到 117 个帖子
+2025-12-09 09:21:29,113 - INFO -   爬取第 2 页: https://www.nowcoder.com/search?type=post&query=内推码&order=time&page=2
+2025-12-09 09:21:29,654 - INFO -   找到 117 个帖子
+2025-12-09 09:21:32,552 - INFO -   爬取第 3 页: https://www.nowcoder.com/search?type=post&query=内推码&order=time&page=3
+2025-12-09 09:21:33,075 - INFO -   找到 117 个帖子
+2025-12-09 09:21:35,717 - INFO -   爬取第 4 页: https://www.nowcoder.com/search?type=post&query=内推码&order=time&page=4
+2025-12-09 09:21:36,758 - INFO -   找到 117 个帖子
+2025-12-09 09:21:38,917 - INFO -   爬取第 5 页: https://www.nowcoder.com/search?type=post&query=内推码&order=time&page=5
+2025-12-09 09:21:39,368 - INFO -   找到 117 个帖子
+2025-12-09 09:21:41,646 - INFO - 牛客网爬取完成，获得 2 条数据
+2025-12-09 09:21:41,647 - INFO - 牛客网 完成，当前总计 2 条数据
+2025-12-09 09:21:41,647 - INFO - 开始爬取V2EX...
+2025-12-09 09:21:41,647 - INFO -   爬取第 1 页: https://www.v2ex.com/go/career
+2025-12-09 09:21:43,181 - WARNING -   第 1 页未找到帖子
+2025-12-09 09:21:43,181 - INFO - V2EX爬取完成，获得 0 条数据
+2025-12-09 09:21:43,184 - INFO - V2EX 完成，当前总计 2 条数据
+2025-12-09 09:21:43,184 - INFO - 开始爬取GitHub...
+2025-12-09 09:21:43,184 - INFO -   爬取仓库: https://raw.githubusercontent.com/0voice/interview_internal_reference/main/README.md
+2025-12-09 09:21:44,671 - WARNING - 请求失败: https://raw.githubusercontent.com/0voice/interview_internal_reference/main/README.md, 状态码: 404
+2025-12-09 09:21:46,134 - WARNING - 请求失败: https://raw.githubusercontent.com/0voice/interview_internal_reference/main/README.md, 状态码: 404
+2025-12-09 09:21:47,479 - WARNING - 请求失败: https://raw.githubusercontent.com/0voice/interview_internal_reference/main/README.md, 状态码: 404
+2025-12-09 09:21:47,483 - WARNING -   无法访问: https://raw.githubusercontent.com/0voice/interview_internal_reference/main/README.md
+2025-12-09 09:21:47,483 - INFO - GitHub爬取完成，获得 0 条数据
+2025-12-09 09:21:47,483 - INFO - GitHub 完成，当前总计 2 条数据
+2025-12-09 09:21:47,483 - INFO - 开始爬取知乎...
+2025-12-09 09:21:47,484 - INFO -   爬取第 1 页: https://www.zhihu.com/search?type=content&q=校招内推码&page=1
+2025-12-09 09:21:47,592 - WARNING - 访问被拒绝: https://www.zhihu.com/search?type=content&q=校招内推码&page=1, 尝试更换User-Agent
+2025-12-09 09:21:52,669 - WARNING - 访问被拒绝: https://www.zhihu.com/search?type=content&q=校招内推码&page=1, 尝试更换User-Agent
+2025-12-09 09:21:57,816 - WARNING - 访问被拒绝: https://www.zhihu.com/search?type=content&q=校招内推码&page=1, 尝试更换User-Agent
+2025-12-09 09:22:02,827 - WARNING -   无法访问第 1 页
+2025-12-09 09:22:02,828 - INFO - 知乎爬取完成，获得 0 条数据
+2025-12-09 09:22:02,828 - INFO - 知乎 完成，当前总计 2 条数据
+2025-12-09 09:22:02,828 - INFO - 开始爬取掘金...
+2025-12-09 09:22:02,828 - INFO -   爬取第 1 页: https://juejin.cn/search?query=校招内推码&type=all&page=1
+2025-12-09 09:22:03,027 - INFO -   找到 6 个结果
+2025-12-09 09:22:05,507 - INFO - 掘金爬取完成，获得 0 条数据
+2025-12-09 09:22:05,513 - INFO - 掘金 完成，当前总计 2 条数据
+2025-12-09 09:22:05,513 - INFO - 开始爬取微信公众号...
+2025-12-09 09:22:05,513 - INFO -   爬取第 1 页: https://weixin.sogou.com/weixin?type=2&query=校招内推码
+2025-12-09 09:22:05,882 - INFO -   找到 1 个结果
+2025-12-09 09:22:08,421 - INFO -   爬取第 2 页: https://weixin.sogou.com/weixin?type=2&query=校招内推码&page=2
+2025-12-09 09:22:08,742 - INFO -   找到 1 个结果
+2025-12-09 09:22:11,496 - INFO -   爬取第 3 页: https://weixin.sogou.com/weixin?type=2&query=校招内推码&page=3
+2025-12-09 09:22:11,796 - INFO -   找到 1 个结果
+2025-12-09 09:22:14,308 - INFO - 微信公众号爬取完成，获得 3 条数据
+2025-12-09 09:22:14,313 - INFO - 微信公众号 完成，当前总计 5 条数据
+2025-12-09 09:22:14,314 - INFO - ============================================================
+2025-12-09 09:22:14,314 - INFO - 所有来源爬取完成，共获得 5 条数据
+2025-12-09 09:22:14,314 - INFO - ============================================================
+2025-12-09 09:22:14,316 - INFO - 未找到已有数据文件，使用新数据
+2025-12-09 09:22:14,358 - INFO - 数据已保存至: referral_data.xlsx
+2025-12-09 09:22:14,358 - INFO - 共 5 条记录
+2025-12-09 09:22:14,358 - INFO - ============================================================
+2025-12-09 09:22:14,358 - INFO - 爬虫任务完成
+2025-12-09 09:22:14,358 - INFO - ============================================================

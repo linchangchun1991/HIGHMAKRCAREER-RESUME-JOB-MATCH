@@ -1,26 +1,19 @@
-import type { Metadata } from "next"
-import { Inter } from "next/font/google"
-import "./globals.css"
-import { Toaster } from "@/components/ui/toaster"
+import './globals.css';
+import { Inter } from 'next/font/google';
 
-const inter = Inter({ subsets: ["latin"] })
+const inter = Inter({ subsets: ['latin'] });
 
-export const metadata: Metadata = {
-  title: "HighMark-AI | 人岗匹配系统",
-  description: "智能人岗匹配系统",
-}
+export const metadata = {
+  title: 'HIGHMARK 海马职加 - 智能选岗系统',
+  description: '基于AI的智能人岗匹配平台',
+};
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode
-}>) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="zh-CN">
-      <body className={inter.className}>
+    <html lang="zh-CN" className="dark">
+      <body className={`${inter.className} text-white antialiased`}>
         {children}
-        <Toaster />
       </body>
     </html>
-  )
+  );
 }

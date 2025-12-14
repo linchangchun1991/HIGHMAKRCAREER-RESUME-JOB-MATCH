@@ -1,0 +1,4 @@
+# 实战情报采集系统依赖包
+DrissionPage>=4.0.0
+openai>=1.0.0
+requests>=2.31.0

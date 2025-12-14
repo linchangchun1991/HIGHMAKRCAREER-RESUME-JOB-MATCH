@@ -1,0 +1,738 @@
+/Users/changchun/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+2025-12-13 13:49:09,958 - INFO - 阿里通义千问 (Qwen) 初始化成功
+2025-12-13 13:49:09,963 - WARNING - 连接本地 Chrome 调试端口失败: __new__() got an unexpected keyword argument 'addr'
+2025-12-13 13:49:09,963 - WARNING - ================================================================================
+2025-12-13 13:49:09,963 - WARNING - 【重要提示】请先启动 Chrome 调试模式：
+2025-12-13 13:49:09,963 - WARNING - Mac: open -n /Applications/Google\ Chrome.app --args --remote-debugging-port=9222
+2025-12-13 13:49:09,963 - WARNING - Windows: "C:\Program Files\Google\Chrome\Application\chrome.exe" --remote-debugging-port=9222
+2025-12-13 13:49:09,963 - WARNING - ================================================================================
+2025-12-13 13:49:10,017 - INFO - 已降级为普通浏览器模式（小红书采集可能受限）
+2025-12-13 13:49:10,017 - INFO - 市场雷达系统初始化完成，当前日期: 2025-12-13
+2025-12-13 13:49:10,017 - INFO - ================================================================================
+2025-12-13 13:49:10,018 - INFO - 海马课堂·市场雷达日报 - 开始运行
+2025-12-13 13:49:10,018 - INFO - ================================================================================
+2025-12-13 13:49:10,018 - INFO - 跳过登录步骤，假设浏览器已登录
+2025-12-13 13:49:10,021 - INFO - ================================================================================
+2025-12-13 13:49:10,021 - INFO - 第二阶段：抖音采集（真人深潜模式）
+2025-12-13 13:49:10,022 - INFO - ================================================================================
+2025-12-13 13:49:19,231 - INFO - 品牌: 路觅，使用 8 个组合关键词搜索
+2025-12-13 13:49:19,232 - INFO - 搜索关键词: 路觅留学
+2025-12-13 13:49:19,232 - INFO -   访问搜索页: https://www.douyin.com/search/路觅留学
+2025-12-13 13:49:25,415 - INFO -   尝试点击'综合'Tab...
+2025-12-13 13:49:25,477 - INFO -   ✓ 找到'综合'Tab（使用: text:综合）
+2025-12-13 13:49:27,811 - INFO -   尝试点击'最新'排序...
+2025-12-13 13:49:35,875 - WARNING -   ⚠️ 未找到'最新'排序按钮
+2025-12-13 13:49:35,877 - INFO -   当前页面URL: https://www.douyin.com/search/%E8%B7%AF%E8%A7%85%E7%95%99%E5%AD%A6?type=general
+2025-12-13 13:49:35,878 - INFO - 当前页面 URL: https://www.douyin.com/search/%E8%B7%AF%E8%A7%85%E7%95%99%E5%AD%A6?type=general
+2025-12-13 13:49:45,889 - INFO -   ✓ 页面内容已加载
+2025-12-13 13:49:49,022 - INFO -   [搜索结果卡片] 找到 30 个结果项
+2025-12-13 13:51:05,703 - INFO - 找到 1 个链接
+2025-12-13 13:51:05,705 - INFO -   处理内容 1/1: https://www.douyin.com/user/MS4wLjABAAAAV1LBLvRhKN-geVZj4oOk...
+2025-12-13 13:51:05,705 - INFO -     跳过用户链接: https://www.douyin.com/user/MS4wLjABAAAAV1LBLvRhKN-geVZj4oOk7DHzc5OsOPhnahC_5na3Mfk?enter_from=general_search&enter_method=general_search&extra_params=%7B%22search_params%22%3A%7B%22search_result_id%22%3A%22297307524048640%22%2C%22relation_tag%22%3A0%2C%22log_pb%22%3A%7B%22impr_id%22%3A%2220251213134921FFF6BF46F71E86CFD3F9%22%7D%2C%22search_type%22%3A%22general%22%2C%22impr_id%22%3A%2220251213134921FFF6BF46F71E86CFD3F9%22%2C%22search_id%22%3A%2220251213134921FFF6BF46F71E86CFD3F9%22%2C%22search_keyword%22%3A%22%E8%B7%AF%E8%A7%85%E7%95%99%E5%AD%A6%22%2C%22token_type%22%3A%22discover_list%22%7D%7D&from_tab_name=main
+2025-12-13 13:51:08,614 - INFO - 搜索关键词: 路觅辅导
+2025-12-13 13:51:08,615 - INFO -   访问搜索页: https://www.douyin.com/search/路觅辅导
+2025-12-13 13:51:14,780 - INFO -   尝试点击'综合'Tab...
+2025-12-13 13:51:14,820 - INFO -   ✓ 找到'综合'Tab（使用: text:综合）
+2025-12-13 13:51:17,163 - INFO -   尝试点击'最新'排序...
+2025-12-13 13:51:25,225 - WARNING -   ⚠️ 未找到'最新'排序按钮
+2025-12-13 13:51:25,226 - INFO -   当前页面URL: https://www.douyin.com/search/%E8%B7%AF%E8%A7%85%E8%BE%85%E5%AF%BC?type=general
+2025-12-13 13:51:25,227 - INFO - 当前页面 URL: https://www.douyin.com/search/%E8%B7%AF%E8%A7%85%E8%BE%85%E5%AF%BC?type=general
+2025-12-13 13:51:35,234 - INFO -   ✓ 页面内容已加载
+2025-12-13 13:51:38,325 - INFO -   [搜索结果卡片] 找到 30 个结果项
+2025-12-13 13:52:55,315 - INFO - 找到 1 个链接
+2025-12-13 13:52:55,316 - INFO -   处理内容 1/1: https://www.douyin.com/user/MS4wLjABAAAAfWOYlOZ119_faVyIZSqo...
+2025-12-13 13:52:55,317 - INFO -     跳过用户链接: https://www.douyin.com/user/MS4wLjABAAAAfWOYlOZ119_faVyIZSqokRORXJy9jlMWmGxotRErBHe6lHB-egJUmFcc9ZCi5eOX?enter_from=general_search&enter_method=general_search&extra_params=%7B%22search_params%22%3A%7B%22search_result_id%22%3A%223903704997833924%22%2C%22relation_tag%22%3A0%2C%22log_pb%22%3A%7B%22impr_id%22%3A%2220251213135110610DE5F7E20B54CBA10A%22%7D%2C%22search_type%22%3A%22general%22%2C%22impr_id%22%3A%2220251213135110610DE5F7E20B54CBA10A%22%2C%22search_id%22%3A%2220251213135110610DE5F7E20B54CBA10A%22%2C%22search_keyword%22%3A%22%E8%B7%AF%E8%A7%85%E8%BE%85%E5%AF%BC%22%2C%22token_type%22%3A%22discover_list%22%7D%7D&from_tab_name=main
+2025-12-13 13:52:58,297 - INFO - 搜索关键词: 路觅网课
+2025-12-13 13:52:58,298 - INFO -   访问搜索页: https://www.douyin.com/search/路觅网课
+2025-12-13 13:53:08,657 - INFO -   尝试点击'综合'Tab...
+2025-12-13 13:53:08,940 - INFO -   ✓ 找到'综合'Tab（使用: text:综合）
+2025-12-13 13:53:11,613 - INFO -   尝试点击'最新'排序...
+2025-12-13 13:53:19,968 - WARNING -   ⚠️ 未找到'最新'排序按钮
+2025-12-13 13:53:19,969 - INFO -   当前页面URL: https://www.douyin.com/search/%E8%B7%AF%E8%A7%85%E7%BD%91%E8%AF%BE?type=general
+2025-12-13 13:53:19,970 - INFO - 当前页面 URL: https://www.douyin.com/search/%E8%B7%AF%E8%A7%85%E7%BD%91%E8%AF%BE?type=general
+2025-12-13 13:53:29,983 - INFO -   ✓ 页面内容已加载
+2025-12-13 13:53:33,262 - INFO -   [搜索结果卡片] 找到 25 个结果项
+2025-12-13 13:54:26,806 - INFO - 找到 0 个链接
+2025-12-13 13:54:26,905 - WARNING -   ⚠️ 未找到任何链接，打印页面信息...
+2025-12-13 13:54:26,905 - WARNING - 未找到任何视频，跳过关键词: 路觅网课
+2025-12-13 13:54:26,936 - INFO - 搜索关键词: 路觅作业辅导
+2025-12-13 13:54:27,149 - INFO -   访问搜索页: https://www.douyin.com/search/路觅作业辅导
+2025-12-13 13:54:27,150 - ERROR - 采集关键词 路觅作业辅导 失败: 
+The connection to the page has been disconnected.
+Version: 4.1.1.2
+2025-12-13 13:54:27,151 - INFO - 搜索关键词: 路觅论文
+2025-12-13 13:54:27,152 - INFO -   访问搜索页: https://www.douyin.com/search/路觅论文
+2025-12-13 13:54:27,152 - ERROR - 采集关键词 路觅论文 失败: 
+The connection to the page has been disconnected.
+Version: 4.1.1.2
+2025-12-13 13:54:27,152 - INFO - 搜索关键词: 路觅课程
+2025-12-13 13:54:27,153 - INFO -   访问搜索页: https://www.douyin.com/search/路觅课程
+2025-12-13 13:54:27,153 - ERROR - 采集关键词 路觅课程 失败: 
+The connection to the page has been disconnected.
+Version: 4.1.1.2
+2025-12-13 13:54:27,153 - INFO - 搜索关键词: 路觅 挂科
+2025-12-13 13:54:27,153 - INFO -   访问搜索页: https://www.douyin.com/search/路觅 挂科
+2025-12-13 13:54:27,153 - ERROR - 采集关键词 路觅 挂科 失败: 
+The connection to the page has been disconnected.
+Version: 4.1.1.2
+2025-12-13 13:54:27,153 - INFO - 搜索关键词: 路觅 GPA
+2025-12-13 13:54:27,155 - INFO -   访问搜索页: https://www.douyin.com/search/路觅 GPA
+2025-12-13 13:54:27,156 - ERROR - 采集关键词 路觅 GPA 失败: 
+The connection to the page has been disconnected.
+Version: 4.1.1.2
+2025-12-13 13:54:28,404 - INFO - 品牌: 考而思，使用 6 个组合关键词搜索
+2025-12-13 13:54:28,408 - INFO - 搜索关键词: 考而思留学
+2025-12-13 13:54:28,408 - INFO -   访问搜索页: https://www.douyin.com/search/考而思留学
+2025-12-13 13:54:28,409 - ERROR - 采集关键词 考而思留学 失败: 
+The connection to the page has been disconnected.
+Version: 4.1.1.2
+2025-12-13 13:54:28,409 - INFO - 搜索关键词: 考而思辅导
+2025-12-13 13:54:28,409 - INFO -   访问搜索页: https://www.douyin.com/search/考而思辅导
+2025-12-13 13:54:28,409 - ERROR - 采集关键词 考而思辅导 失败: 
+The connection to the page has been disconnected.
+Version: 4.1.1.2
+2025-12-13 13:54:28,409 - INFO - 搜索关键词: 考而思网课
+2025-12-13 13:54:28,409 - INFO -   访问搜索页: https://www.douyin.com/search/考而思网课
+2025-12-13 13:54:28,409 - ERROR - 采集关键词 考而思网课 失败: 
+The connection to the page has been disconnected.
+Version: 4.1.1.2
+2025-12-13 13:54:28,409 - INFO - 搜索关键词: 考而思怎么样
+2025-12-13 13:54:28,409 - INFO -   访问搜索页: https://www.douyin.com/search/考而思怎么样
+2025-12-13 13:54:28,409 - ERROR - 采集关键词 考而思怎么样 失败: 
+The connection to the page has been disconnected.
+Version: 4.1.1.2
+2025-12-13 13:54:28,409 - INFO - 搜索关键词: 考而思课程
+2025-12-13 13:54:28,409 - INFO -   访问搜索页: https://www.douyin.com/search/考而思课程
+2025-12-13 13:54:28,410 - ERROR - 采集关键词 考而思课程 失败: 
+The connection to the page has been disconnected.
+Version: 4.1.1.2
+2025-12-13 13:54:28,410 - INFO - 搜索关键词: 考而思 退费
+2025-12-13 13:54:28,410 - INFO -   访问搜索页: https://www.douyin.com/search/考而思 退费
+2025-12-13 13:54:28,410 - ERROR - 采集关键词 考而思 退费 失败: 
+The connection to the page has been disconnected.
+Version: 4.1.1.2
+2025-12-13 13:54:29,442 - INFO - 品牌: 辅无忧，使用 5 个组合关键词搜索
+2025-12-13 13:54:29,448 - INFO - 搜索关键词: 辅无忧留学
+2025-12-13 13:54:29,449 - INFO -   访问搜索页: https://www.douyin.com/search/辅无忧留学
+2025-12-13 13:54:29,483 - ERROR - 采集关键词 辅无忧留学 失败: 
+The connection to the page has been disconnected.
+Version: 4.1.1.2
+2025-12-13 13:54:29,484 - INFO - 搜索关键词: 辅无忧辅导
+2025-12-13 13:54:29,484 - INFO -   访问搜索页: https://www.douyin.com/search/辅无忧辅导
+2025-12-13 13:54:29,484 - ERROR - 采集关键词 辅无忧辅导 失败: 
+The connection to the page has been disconnected.
+Version: 4.1.1.2
+2025-12-13 13:54:29,484 - INFO - 搜索关键词: 辅无忧网课
+2025-12-13 13:54:29,484 - INFO -   访问搜索页: https://www.douyin.com/search/辅无忧网课
+2025-12-13 13:54:29,484 - ERROR - 采集关键词 辅无忧网课 失败: 
+The connection to the page has been disconnected.
+Version: 4.1.1.2
+2025-12-13 13:54:29,484 - INFO - 搜索关键词: 辅无忧怎么样
+2025-12-13 13:54:29,484 - INFO -   访问搜索页: https://www.douyin.com/search/辅无忧怎么样
+2025-12-13 13:54:29,484 - ERROR - 采集关键词 辅无忧怎么样 失败: 
+The connection to the page has been disconnected.
+Version: 4.1.1.2
+2025-12-13 13:54:29,484 - INFO - 搜索关键词: 辅无忧论文
+2025-12-13 13:54:29,485 - INFO -   访问搜索页: https://www.douyin.com/search/辅无忧论文
+2025-12-13 13:54:29,485 - ERROR - 采集关键词 辅无忧论文 失败: 
+The connection to the page has been disconnected.
+Version: 4.1.1.2
+2025-12-13 13:54:31,096 - INFO - 品牌: 万能班长，使用 4 个组合关键词搜索
+2025-12-13 13:54:31,096 - INFO - 搜索关键词: 万能班长留学
+2025-12-13 13:54:31,096 - INFO -   访问搜索页: https://www.douyin.com/search/万能班长留学
+2025-12-13 13:54:31,096 - ERROR - 采集关键词 万能班长留学 失败: 
+The connection to the page has been disconnected.
+Version: 4.1.1.2
+2025-12-13 13:54:31,097 - INFO - 搜索关键词: 万能班长辅导
+2025-12-13 13:54:31,097 - INFO -   访问搜索页: https://www.douyin.com/search/万能班长辅导
+2025-12-13 13:54:31,097 - ERROR - 采集关键词 万能班长辅导 失败: 
+The connection to the page has been disconnected.
+Version: 4.1.1.2
+2025-12-13 13:54:31,097 - INFO - 搜索关键词: 万能班长网课
+2025-12-13 13:54:31,098 - INFO -   访问搜索页: https://www.douyin.com/search/万能班长网课
+2025-12-13 13:54:31,098 - ERROR - 采集关键词 万能班长网课 失败: 
+The connection to the page has been disconnected.
+Version: 4.1.1.2
+2025-12-13 13:54:31,098 - INFO - 搜索关键词: 万能班长怎么样
+2025-12-13 13:54:31,098 - INFO -   访问搜索页: https://www.douyin.com/search/万能班长怎么样
+2025-12-13 13:54:31,098 - ERROR - 采集关键词 万能班长怎么样 失败: 
+The connection to the page has been disconnected.
+Version: 4.1.1.2
+2025-12-13 13:54:32,999 - INFO - 品牌: 海马课堂，使用 6 个组合关键词搜索
+2025-12-13 13:54:33,001 - INFO - 搜索关键词: 海马课堂
+2025-12-13 13:54:33,001 - INFO -   访问搜索页: https://www.douyin.com/search/海马课堂
+2025-12-13 13:54:33,002 - ERROR - 采集关键词 海马课堂 失败: 
+The connection to the page has been disconnected.
+Version: 4.1.1.2
+2025-12-13 13:54:33,002 - INFO - 搜索关键词: 海马课堂怎么样
+2025-12-13 13:54:33,002 - INFO -   访问搜索页: https://www.douyin.com/search/海马课堂怎么样
+2025-12-13 13:54:33,003 - ERROR - 采集关键词 海马课堂怎么样 失败: 
+The connection to the page has been disconnected.
+Version: 4.1.1.2
+2025-12-13 13:54:33,003 - INFO - 搜索关键词: 海马课堂辅导
+2025-12-13 13:54:33,003 - INFO -   访问搜索页: https://www.douyin.com/search/海马课堂辅导
+2025-12-13 13:54:33,003 - ERROR - 采集关键词 海马课堂辅导 失败: 
+The connection to the page has been disconnected.
+Version: 4.1.1.2
+2025-12-13 13:54:33,003 - INFO - 搜索关键词: 海马课堂论文
+2025-12-13 13:54:33,004 - INFO -   访问搜索页: https://www.douyin.com/search/海马课堂论文
+2025-12-13 13:54:33,101 - ERROR - 采集关键词 海马课堂论文 失败: 
+The connection to the page has been disconnected.
+Version: 4.1.1.2
+2025-12-13 13:54:33,102 - INFO - 搜索关键词: 海马课堂 退费
+2025-12-13 13:54:33,102 - INFO -   访问搜索页: https://www.douyin.com/search/海马课堂 退费
+2025-12-13 13:54:33,102 - ERROR - 采集关键词 海马课堂 退费 失败: 
+The connection to the page has been disconnected.
+Version: 4.1.1.2
+2025-12-13 13:54:33,102 - INFO - 搜索关键词: 海马课堂 避雷
+2025-12-13 13:54:33,102 - INFO -   访问搜索页: https://www.douyin.com/search/海马课堂 避雷
+2025-12-13 13:54:33,103 - ERROR - 采集关键词 海马课堂 避雷 失败: 
+The connection to the page has been disconnected.
+Version: 4.1.1.2
+2025-12-13 13:54:34,700 - INFO - 抖音采集完成，共找到 0 条有效数据
+2025-12-13 13:54:34,700 - INFO - ================================================================================
+2025-12-13 13:54:34,700 - INFO - 第二阶段：小红书采集（列表页抓取模式）
+2025-12-13 13:54:34,701 - INFO - ================================================================================
+2025-12-13 13:54:34,701 - INFO - 品牌: 路觅，使用 8 个组合关键词搜索
+2025-12-13 13:54:34,701 - INFO - 搜索关键词: 路觅留学
+2025-12-13 13:54:34,701 - INFO -   访问搜索页: https://www.xiaohongshu.com/search_result?keyword=路觅留学&source=web_search_result_notes
+2025-12-13 13:54:34,701 - ERROR - 采集关键词 路觅留学 失败: 
+The connection to the page has been disconnected.
+Version: 4.1.1.2
+2025-12-13 13:54:34,701 - INFO - 搜索关键词: 路觅辅导
+2025-12-13 13:54:34,701 - INFO -   访问搜索页: https://www.xiaohongshu.com/search_result?keyword=路觅辅导&source=web_search_result_notes
+2025-12-13 13:54:34,701 - ERROR - 采集关键词 路觅辅导 失败: 
+The connection to the page has been disconnected.
+Version: 4.1.1.2
+2025-12-13 13:54:34,701 - INFO - 搜索关键词: 路觅网课
+2025-12-13 13:54:34,701 - INFO -   访问搜索页: https://www.xiaohongshu.com/search_result?keyword=路觅网课&source=web_search_result_notes
+2025-12-13 13:54:34,701 - ERROR - 采集关键词 路觅网课 失败: 
+The connection to the page has been disconnected.
+Version: 4.1.1.2
+2025-12-13 13:54:34,701 - INFO - 搜索关键词: 路觅作业辅导
+2025-12-13 13:54:34,701 - INFO -   访问搜索页: https://www.xiaohongshu.com/search_result?keyword=路觅作业辅导&source=web_search_result_notes
+2025-12-13 13:54:34,702 - ERROR - 采集关键词 路觅作业辅导 失败: 
+The connection to the page has been disconnected.
+Version: 4.1.1.2
+2025-12-13 13:54:34,702 - INFO - 搜索关键词: 路觅论文
+2025-12-13 13:54:34,702 - INFO -   访问搜索页: https://www.xiaohongshu.com/search_result?keyword=路觅论文&source=web_search_result_notes
+2025-12-13 13:54:34,702 - ERROR - 采集关键词 路觅论文 失败: 
+The connection to the page has been disconnected.
+Version: 4.1.1.2
+2025-12-13 13:54:34,702 - INFO - 搜索关键词: 路觅课程
+2025-12-13 13:54:34,702 - INFO -   访问搜索页: https://www.xiaohongshu.com/search_result?keyword=路觅课程&source=web_search_result_notes
+2025-12-13 13:54:34,702 - ERROR - 采集关键词 路觅课程 失败: 
+The connection to the page has been disconnected.
+Version: 4.1.1.2
+2025-12-13 13:54:34,702 - INFO - 搜索关键词: 路觅 挂科
+2025-12-13 13:54:34,702 - INFO -   访问搜索页: https://www.xiaohongshu.com/search_result?keyword=路觅 挂科&source=web_search_result_notes
+2025-12-13 13:54:34,702 - ERROR - 采集关键词 路觅 挂科 失败: 
+The connection to the page has been disconnected.
+Version: 4.1.1.2
+2025-12-13 13:54:34,702 - INFO - 搜索关键词: 路觅 GPA
+2025-12-13 13:54:34,703 - INFO -   访问搜索页: https://www.xiaohongshu.com/search_result?keyword=路觅 GPA&source=web_search_result_notes
+2025-12-13 13:54:34,703 - ERROR - 采集关键词 路觅 GPA 失败: 
+The connection to the page has been disconnected.
+Version: 4.1.1.2
+2025-12-13 13:54:36,631 - INFO - 品牌: 考而思，使用 6 个组合关键词搜索
+2025-12-13 13:54:36,631 - INFO - 搜索关键词: 考而思留学
+2025-12-13 13:54:36,631 - INFO -   访问搜索页: https://www.xiaohongshu.com/search_result?keyword=考而思留学&source=web_search_result_notes
+2025-12-13 13:54:36,632 - ERROR - 采集关键词 考而思留学 失败: 
+The connection to the page has been disconnected.
+Version: 4.1.1.2
+2025-12-13 13:54:36,632 - INFO - 搜索关键词: 考而思辅导
+2025-12-13 13:54:36,632 - INFO -   访问搜索页: https://www.xiaohongshu.com/search_result?keyword=考而思辅导&source=web_search_result_notes
+2025-12-13 13:54:36,632 - ERROR - 采集关键词 考而思辅导 失败: 
+The connection to the page has been disconnected.
+Version: 4.1.1.2
+2025-12-13 13:54:36,632 - INFO - 搜索关键词: 考而思网课
+2025-12-13 13:54:36,632 - INFO -   访问搜索页: https://www.xiaohongshu.com/search_result?keyword=考而思网课&source=web_search_result_notes
+2025-12-13 13:54:36,632 - ERROR - 采集关键词 考而思网课 失败: 
+The connection to the page has been disconnected.
+Version: 4.1.1.2
+2025-12-13 13:54:36,633 - INFO - 搜索关键词: 考而思怎么样
+2025-12-13 13:54:36,633 - INFO -   访问搜索页: https://www.xiaohongshu.com/search_result?keyword=考而思怎么样&source=web_search_result_notes
+2025-12-13 13:54:36,633 - ERROR - 采集关键词 考而思怎么样 失败: 
+The connection to the page has been disconnected.
+Version: 4.1.1.2
+2025-12-13 13:54:36,633 - INFO - 搜索关键词: 考而思课程
+2025-12-13 13:54:36,633 - INFO -   访问搜索页: https://www.xiaohongshu.com/search_result?keyword=考而思课程&source=web_search_result_notes
+2025-12-13 13:54:36,633 - ERROR - 采集关键词 考而思课程 失败: 
+The connection to the page has been disconnected.
+Version: 4.1.1.2
+2025-12-13 13:54:36,633 - INFO - 搜索关键词: 考而思 退费
+2025-12-13 13:54:36,634 - INFO -   访问搜索页: https://www.xiaohongshu.com/search_result?keyword=考而思 退费&source=web_search_result_notes
+2025-12-13 13:54:36,634 - ERROR - 采集关键词 考而思 退费 失败: 
+The connection to the page has been disconnected.
+Version: 4.1.1.2
+2025-12-13 13:54:38,432 - INFO - 品牌: 辅无忧，使用 5 个组合关键词搜索
+2025-12-13 13:54:38,433 - INFO - 搜索关键词: 辅无忧留学
+2025-12-13 13:54:38,433 - INFO -   访问搜索页: https://www.xiaohongshu.com/search_result?keyword=辅无忧留学&source=web_search_result_notes
+2025-12-13 13:54:38,433 - ERROR - 采集关键词 辅无忧留学 失败: 
+The connection to the page has been disconnected.
+Version: 4.1.1.2
+2025-12-13 13:54:38,433 - INFO - 搜索关键词: 辅无忧辅导
+2025-12-13 13:54:38,433 - INFO -   访问搜索页: https://www.xiaohongshu.com/search_result?keyword=辅无忧辅导&source=web_search_result_notes
+2025-12-13 13:54:38,434 - ERROR - 采集关键词 辅无忧辅导 失败: 
+The connection to the page has been disconnected.
+Version: 4.1.1.2
+2025-12-13 13:54:38,434 - INFO - 搜索关键词: 辅无忧网课
+2025-12-13 13:54:38,434 - INFO -   访问搜索页: https://www.xiaohongshu.com/search_result?keyword=辅无忧网课&source=web_search_result_notes
+2025-12-13 13:54:38,435 - ERROR - 采集关键词 辅无忧网课 失败: 
+The connection to the page has been disconnected.
+Version: 4.1.1.2
+2025-12-13 13:54:38,435 - INFO - 搜索关键词: 辅无忧怎么样
+2025-12-13 13:54:38,435 - INFO -   访问搜索页: https://www.xiaohongshu.com/search_result?keyword=辅无忧怎么样&source=web_search_result_notes
+2025-12-13 13:54:38,435 - ERROR - 采集关键词 辅无忧怎么样 失败: 
+The connection to the page has been disconnected.
+Version: 4.1.1.2
+2025-12-13 13:54:38,435 - INFO - 搜索关键词: 辅无忧论文
+2025-12-13 13:54:38,436 - INFO -   访问搜索页: https://www.xiaohongshu.com/search_result?keyword=辅无忧论文&source=web_search_result_notes
+2025-12-13 13:54:38,436 - ERROR - 采集关键词 辅无忧论文 失败: 
+The connection to the page has been disconnected.
+Version: 4.1.1.2
+2025-12-13 13:54:39,895 - INFO - 品牌: 万能班长，使用 4 个组合关键词搜索
+2025-12-13 13:54:39,896 - INFO - 搜索关键词: 万能班长留学
+2025-12-13 13:54:39,896 - INFO -   访问搜索页: https://www.xiaohongshu.com/search_result?keyword=万能班长留学&source=web_search_result_notes
+2025-12-13 13:54:39,896 - ERROR - 采集关键词 万能班长留学 失败: 
+The connection to the page has been disconnected.
+Version: 4.1.1.2
+2025-12-13 13:54:39,896 - INFO - 搜索关键词: 万能班长辅导
+2025-12-13 13:54:39,896 - INFO -   访问搜索页: https://www.xiaohongshu.com/search_result?keyword=万能班长辅导&source=web_search_result_notes
+2025-12-13 13:54:39,897 - ERROR - 采集关键词 万能班长辅导 失败: 
+The connection to the page has been disconnected.
+Version: 4.1.1.2
+2025-12-13 13:54:39,897 - INFO - 搜索关键词: 万能班长网课
+2025-12-13 13:54:39,897 - INFO -   访问搜索页: https://www.xiaohongshu.com/search_result?keyword=万能班长网课&source=web_search_result_notes
+2025-12-13 13:54:39,897 - ERROR - 采集关键词 万能班长网课 失败: 
+The connection to the page has been disconnected.
+Version: 4.1.1.2
+2025-12-13 13:54:39,897 - INFO - 搜索关键词: 万能班长怎么样
+2025-12-13 13:54:39,897 - INFO -   访问搜索页: https://www.xiaohongshu.com/search_result?keyword=万能班长怎么样&source=web_search_result_notes
+2025-12-13 13:54:39,897 - ERROR - 采集关键词 万能班长怎么样 失败: 
+The connection to the page has been disconnected.
+Version: 4.1.1.2
+2025-12-13 13:54:41,261 - INFO - 品牌: 海马课堂，使用 6 个组合关键词搜索
+2025-12-13 13:54:41,262 - INFO - 搜索关键词: 海马课堂
+2025-12-13 13:54:41,262 - INFO -   访问搜索页: https://www.xiaohongshu.com/search_result?keyword=海马课堂&source=web_search_result_notes
+2025-12-13 13:54:41,263 - ERROR - 采集关键词 海马课堂 失败: 
+The connection to the page has been disconnected.
+Version: 4.1.1.2
+2025-12-13 13:54:41,264 - INFO - 搜索关键词: 海马课堂怎么样
+2025-12-13 13:54:41,264 - INFO -   访问搜索页: https://www.xiaohongshu.com/search_result?keyword=海马课堂怎么样&source=web_search_result_notes
+2025-12-13 13:54:41,264 - ERROR - 采集关键词 海马课堂怎么样 失败: 
+The connection to the page has been disconnected.
+Version: 4.1.1.2
+2025-12-13 13:54:41,264 - INFO - 搜索关键词: 海马课堂辅导
+2025-12-13 13:54:41,264 - INFO -   访问搜索页: https://www.xiaohongshu.com/search_result?keyword=海马课堂辅导&source=web_search_result_notes
+2025-12-13 13:54:41,264 - ERROR - 采集关键词 海马课堂辅导 失败: 
+The connection to the page has been disconnected.
+Version: 4.1.1.2
+2025-12-13 13:54:41,264 - INFO - 搜索关键词: 海马课堂论文
+2025-12-13 13:54:41,264 - INFO -   访问搜索页: https://www.xiaohongshu.com/search_result?keyword=海马课堂论文&source=web_search_result_notes
+2025-12-13 13:54:41,265 - ERROR - 采集关键词 海马课堂论文 失败: 
+The connection to the page has been disconnected.
+Version: 4.1.1.2
+2025-12-13 13:54:41,265 - INFO - 搜索关键词: 海马课堂 退费
+2025-12-13 13:54:41,265 - INFO -   访问搜索页: https://www.xiaohongshu.com/search_result?keyword=海马课堂 退费&source=web_search_result_notes
+2025-12-13 13:54:41,265 - ERROR - 采集关键词 海马课堂 退费 失败: 
+The connection to the page has been disconnected.
+Version: 4.1.1.2
+2025-12-13 13:54:41,265 - INFO - 搜索关键词: 海马课堂 避雷
+2025-12-13 13:54:41,265 - INFO -   访问搜索页: https://www.xiaohongshu.com/search_result?keyword=海马课堂 避雷&source=web_search_result_notes
+2025-12-13 13:54:41,265 - ERROR - 采集关键词 海马课堂 避雷 失败: 
+The connection to the page has been disconnected.
+Version: 4.1.1.2
+2025-12-13 13:54:42,934 - INFO - 小红书采集完成，共找到 0 条有效数据
+2025-12-13 13:54:42,935 - INFO - ================================================================================
+2025-12-13 13:54:42,935 - INFO - 第二阶段：搜狗微信采集
+2025-12-13 13:54:42,935 - INFO - ================================================================================
+2025-12-13 13:54:42,935 - ERROR - 搜狗微信采集异常: 
+The connection to the page has been disconnected.
+Version: 4.1.1.2
+Traceback (most recent call last):
+  File "/Users/changchun/Desktop/job_scraper/market_radar_haima_classroom.py", line 1909, in crawl_wechat
+    self.page.get('https://weixin.sogou.com')
+  File "/Users/changchun/Library/Python/3.9/lib/python/site-packages/DrissionPage/_pages/chromium_base.py", line 414, in get
+    self._url_available = self._d_connect(self._url, times=retry, interval=interval,
+  File "/Users/changchun/Library/Python/3.9/lib/python/site-packages/DrissionPage/_pages/chromium_base.py", line 773, in _d_connect
+    result = self._run_cdp('Page.navigate', frameId=self._frame_id, url=to_url, _timeout=timeout)
+  File "/Users/changchun/Library/Python/3.9/lib/python/site-packages/DrissionPage/_pages/chromium_base.py", line 389, in _run_cdp
+    return r if __ERROR__ not in r else raise_error(r, self.browser, ignore)
+  File "/Users/changchun/Library/Python/3.9/lib/python/site-packages/DrissionPage/_functions/tools.py", line 199, in raise_error
+    raise r
+DrissionPage.errors.PageDisconnectedError: 
+The connection to the page has been disconnected.
+Version: 4.1.1.2
+2025-12-13 13:54:42,969 - INFO - 搜狗微信采集完成，共找到 0 条有效数据
+2025-12-13 13:54:42,969 - WARNING - 没有数据可保存
+2025-12-13 13:54:42,969 - INFO - ================================================================================
+2025-12-13 13:54:42,969 - INFO - 第三阶段：阿里千问 (Qwen) 销冠分析
+2025-12-13 13:54:42,970 - INFO - ================================================================================
+2025-12-13 13:54:42,970 - WARNING - 内存数据为空，尝试从 CSV 文件加载...
+2025-12-13 13:54:42,993 - INFO - 从 CSV 加载数据，共 100 条
+2025-12-13 13:54:42,995 - ERROR - 从 CSV 加载数据失败: 'float' object has no attribute 'split'
+2025-12-13 13:54:42,995 - INFO - 从 CSV 加载后：抖音 0 条，小红书 0 条，搜狗微信 0 条
+2025-12-13 13:54:42,995 - WARNING - 所有数据源都为空或全部被过滤，无法生成报告
+2025-12-13 13:54:42,996 - INFO - 报告已保存到: Market_Radar_Classroom_2025-12-13.md
+2025-12-13 13:54:42,997 - INFO - ================================================================================
+2025-12-13 13:54:42,997 - INFO - 市场雷达日报生成完成
+2025-12-13 13:54:42,997 - INFO - ================================================================================
+[抖音深潜] 搜索关键词: 路觅留学
+[抖音搜索] 访问搜索页: https://www.douyin.com/search/路觅留学
+[抖音搜索] 尝试点击'综合'Tab...
+[抖音搜索] ✓ 找到'综合'Tab
+[抖音搜索] 尝试点击'最新'排序...
+[抖音搜索] ⚠️ 未找到'最新'排序按钮
+[抖音搜索] 当前页面URL: https://www.douyin.com/search/%E8%B7%AF%E8%A7%85%E7%95%99%E5%AD%A6?type=general
+[抖音深潜] 当前页面 URL: https://www.douyin.com/search/%E8%B7%AF%E8%A7%85%E7%95%99%E5%AD%A6?type=general
+[抖音搜索] 尝试多种选择器查找内容...
+[抖音搜索] [搜索结果卡片] 找到 30 个结果项
+[抖音搜索] ✓ 找到链接: https://www.douyin.com/user/MS4wLjABAAAAV1LBLvRhKN-geVZj4oOk...
+[抖音搜索] 最终找到 1 个链接
+[抖音搜索] 正在处理内容 1/1: https://www.douyin.com/user/MS4wLjABAAAAV1LBLvRhKN-geVZj4oOk...
+[抖音深潜] 搜索关键词: 路觅辅导
+[抖音搜索] 访问搜索页: https://www.douyin.com/search/路觅辅导
+[抖音搜索] 尝试点击'综合'Tab...
+[抖音搜索] ✓ 找到'综合'Tab
+[抖音搜索] 尝试点击'最新'排序...
+[抖音搜索] ⚠️ 未找到'最新'排序按钮
+[抖音搜索] 当前页面URL: https://www.douyin.com/search/%E8%B7%AF%E8%A7%85%E8%BE%85%E5%AF%BC?type=general
+[抖音深潜] 当前页面 URL: https://www.douyin.com/search/%E8%B7%AF%E8%A7%85%E8%BE%85%E5%AF%BC?type=general
+[抖音搜索] 尝试多种选择器查找内容...
+[抖音搜索] [搜索结果卡片] 找到 30 个结果项
+[抖音搜索] ✓ 找到链接: https://www.douyin.com/user/MS4wLjABAAAAfWOYlOZ119_faVyIZSqo...
+[抖音搜索] 最终找到 1 个链接
+[抖音搜索] 正在处理内容 1/1: https://www.douyin.com/user/MS4wLjABAAAAfWOYlOZ119_faVyIZSqo...
+[抖音深潜] 搜索关键词: 路觅网课
+[抖音搜索] 访问搜索页: https://www.douyin.com/search/路觅网课
+[抖音搜索] 尝试点击'综合'Tab...
+[抖音搜索] ✓ 找到'综合'Tab
+[抖音搜索] 尝试点击'最新'排序...
+[抖音搜索] ⚠️ 未找到'最新'排序按钮
+[抖音搜索] 当前页面URL: https://www.douyin.com/search/%E8%B7%AF%E8%A7%85%E7%BD%91%E8%AF%BE?type=general
+[抖音深潜] 当前页面 URL: https://www.douyin.com/search/%E8%B7%AF%E8%A7%85%E7%BD%91%E8%AF%BE?type=general
+[抖音搜索] 尝试多种选择器查找内容...
+[抖音搜索] [搜索结果卡片] 找到 25 个结果项
+[抖音搜索] 最终找到 0 个链接
+[抖音深潜] 未找到任何视频，跳过关键词: 路觅网课
+[抖音深潜] 搜索关键词: 路觅作业辅导
+[抖音搜索] 访问搜索页: https://www.douyin.com/search/路觅作业辅导
+[抖音深潜] 采集关键词 路觅作业辅导 失败: 
+The connection to the page has been disconnected.
+Version: 4.1.1.2
+[抖音深潜] 搜索关键词: 路觅论文
+[抖音搜索] 访问搜索页: https://www.douyin.com/search/路觅论文
+[抖音深潜] 采集关键词 路觅论文 失败: 
+The connection to the page has been disconnected.
+Version: 4.1.1.2
+[抖音深潜] 搜索关键词: 路觅课程
+[抖音搜索] 访问搜索页: https://www.douyin.com/search/路觅课程
+[抖音深潜] 采集关键词 路觅课程 失败: 
+The connection to the page has been disconnected.
+Version: 4.1.1.2
+[抖音深潜] 搜索关键词: 路觅 挂科
+[抖音搜索] 访问搜索页: https://www.douyin.com/search/路觅 挂科
+[抖音深潜] 采集关键词 路觅 挂科 失败: 
+The connection to the page has been disconnected.
+Version: 4.1.1.2
+[抖音深潜] 搜索关键词: 路觅 GPA
+[抖音搜索] 访问搜索页: https://www.douyin.com/search/路觅 GPA
+[抖音深潜] 采集关键词 路觅 GPA 失败: 
+The connection to the page has been disconnected.
+Version: 4.1.1.2
+[抖音深潜] 搜索关键词: 考而思留学
+[抖音搜索] 访问搜索页: https://www.douyin.com/search/考而思留学
+[抖音深潜] 采集关键词 考而思留学 失败: 
+The connection to the page has been disconnected.
+Version: 4.1.1.2
+[抖音深潜] 搜索关键词: 考而思辅导
+[抖音搜索] 访问搜索页: https://www.douyin.com/search/考而思辅导
+[抖音深潜] 采集关键词 考而思辅导 失败: 
+The connection to the page has been disconnected.
+Version: 4.1.1.2
+[抖音深潜] 搜索关键词: 考而思网课
+[抖音搜索] 访问搜索页: https://www.douyin.com/search/考而思网课
+[抖音深潜] 采集关键词 考而思网课 失败: 
+The connection to the page has been disconnected.
+Version: 4.1.1.2
+[抖音深潜] 搜索关键词: 考而思怎么样
+[抖音搜索] 访问搜索页: https://www.douyin.com/search/考而思怎么样
+[抖音深潜] 采集关键词 考而思怎么样 失败: 
+The connection to the page has been disconnected.
+Version: 4.1.1.2
+[抖音深潜] 搜索关键词: 考而思课程
+[抖音搜索] 访问搜索页: https://www.douyin.com/search/考而思课程
+[抖音深潜] 采集关键词 考而思课程 失败: 
+The connection to the page has been disconnected.
+Version: 4.1.1.2
+[抖音深潜] 搜索关键词: 考而思 退费
+[抖音搜索] 访问搜索页: https://www.douyin.com/search/考而思 退费
+[抖音深潜] 采集关键词 考而思 退费 失败: 
+The connection to the page has been disconnected.
+Version: 4.1.1.2
+[抖音深潜] 搜索关键词: 辅无忧留学
+[抖音搜索] 访问搜索页: https://www.douyin.com/search/辅无忧留学
+[抖音深潜] 采集关键词 辅无忧留学 失败: 
+The connection to the page has been disconnected.
+Version: 4.1.1.2
+[抖音深潜] 搜索关键词: 辅无忧辅导
+[抖音搜索] 访问搜索页: https://www.douyin.com/search/辅无忧辅导
+[抖音深潜] 采集关键词 辅无忧辅导 失败: 
+The connection to the page has been disconnected.
+Version: 4.1.1.2
+[抖音深潜] 搜索关键词: 辅无忧网课
+[抖音搜索] 访问搜索页: https://www.douyin.com/search/辅无忧网课
+[抖音深潜] 采集关键词 辅无忧网课 失败: 
+The connection to the page has been disconnected.
+Version: 4.1.1.2
+[抖音深潜] 搜索关键词: 辅无忧怎么样
+[抖音搜索] 访问搜索页: https://www.douyin.com/search/辅无忧怎么样
+[抖音深潜] 采集关键词 辅无忧怎么样 失败: 
+The connection to the page has been disconnected.
+Version: 4.1.1.2
+[抖音深潜] 搜索关键词: 辅无忧论文
+[抖音搜索] 访问搜索页: https://www.douyin.com/search/辅无忧论文
+[抖音深潜] 采集关键词 辅无忧论文 失败: 
+The connection to the page has been disconnected.
+Version: 4.1.1.2
+[抖音深潜] 搜索关键词: 万能班长留学
+[抖音搜索] 访问搜索页: https://www.douyin.com/search/万能班长留学
+[抖音深潜] 采集关键词 万能班长留学 失败: 
+The connection to the page has been disconnected.
+Version: 4.1.1.2
+[抖音深潜] 搜索关键词: 万能班长辅导
+[抖音搜索] 访问搜索页: https://www.douyin.com/search/万能班长辅导
+[抖音深潜] 采集关键词 万能班长辅导 失败: 
+The connection to the page has been disconnected.
+Version: 4.1.1.2
+[抖音深潜] 搜索关键词: 万能班长网课
+[抖音搜索] 访问搜索页: https://www.douyin.com/search/万能班长网课
+[抖音深潜] 采集关键词 万能班长网课 失败: 
+The connection to the page has been disconnected.
+Version: 4.1.1.2
+[抖音深潜] 搜索关键词: 万能班长怎么样
+[抖音搜索] 访问搜索页: https://www.douyin.com/search/万能班长怎么样
+[抖音深潜] 采集关键词 万能班长怎么样 失败: 
+The connection to the page has been disconnected.
+Version: 4.1.1.2
+[抖音深潜] 搜索关键词: 海马课堂
+[抖音搜索] 访问搜索页: https://www.douyin.com/search/海马课堂
+[抖音深潜] 采集关键词 海马课堂 失败: 
+The connection to the page has been disconnected.
+Version: 4.1.1.2
+[抖音深潜] 搜索关键词: 海马课堂怎么样
+[抖音搜索] 访问搜索页: https://www.douyin.com/search/海马课堂怎么样
+[抖音深潜] 采集关键词 海马课堂怎么样 失败: 
+The connection to the page has been disconnected.
+Version: 4.1.1.2
+[抖音深潜] 搜索关键词: 海马课堂辅导
+[抖音搜索] 访问搜索页: https://www.douyin.com/search/海马课堂辅导
+[抖音深潜] 采集关键词 海马课堂辅导 失败: 
+The connection to the page has been disconnected.
+Version: 4.1.1.2
+[抖音深潜] 搜索关键词: 海马课堂论文
+[抖音搜索] 访问搜索页: https://www.douyin.com/search/海马课堂论文
+[抖音深潜] 采集关键词 海马课堂论文 失败: 
+The connection to the page has been disconnected.
+Version: 4.1.1.2
+[抖音深潜] 搜索关键词: 海马课堂 退费
+[抖音搜索] 访问搜索页: https://www.douyin.com/search/海马课堂 退费
+[抖音深潜] 采集关键词 海马课堂 退费 失败: 
+The connection to the page has been disconnected.
+Version: 4.1.1.2
+[抖音深潜] 搜索关键词: 海马课堂 避雷
+[抖音搜索] 访问搜索页: https://www.douyin.com/search/海马课堂 避雷
+[抖音深潜] 采集关键词 海马课堂 避雷 失败: 
+The connection to the page has been disconnected.
+Version: 4.1.1.2
+[抖音深潜] 采集完成，共找到 0 条有效数据
+[小红书列表页] 搜索关键词: 路觅留学
+[小红书搜索] 访问搜索页: https://www.xiaohongshu.com/search_result?keyword=路觅留学&source=web_search_result_notes
+[小红书列表页] 采集关键词 路觅留学 失败: 
+The connection to the page has been disconnected.
+Version: 4.1.1.2
+[小红书列表页] 搜索关键词: 路觅辅导
+[小红书搜索] 访问搜索页: https://www.xiaohongshu.com/search_result?keyword=路觅辅导&source=web_search_result_notes
+[小红书列表页] 采集关键词 路觅辅导 失败: 
+The connection to the page has been disconnected.
+Version: 4.1.1.2
+[小红书列表页] 搜索关键词: 路觅网课
+[小红书搜索] 访问搜索页: https://www.xiaohongshu.com/search_result?keyword=路觅网课&source=web_search_result_notes
+[小红书列表页] 采集关键词 路觅网课 失败: 
+The connection to the page has been disconnected.
+Version: 4.1.1.2
+[小红书列表页] 搜索关键词: 路觅作业辅导
+[小红书搜索] 访问搜索页: https://www.xiaohongshu.com/search_result?keyword=路觅作业辅导&source=web_search_result_notes
+[小红书列表页] 采集关键词 路觅作业辅导 失败: 
+The connection to the page has been disconnected.
+Version: 4.1.1.2
+[小红书列表页] 搜索关键词: 路觅论文
+[小红书搜索] 访问搜索页: https://www.xiaohongshu.com/search_result?keyword=路觅论文&source=web_search_result_notes
+[小红书列表页] 采集关键词 路觅论文 失败: 
+The connection to the page has been disconnected.
+Version: 4.1.1.2
+[小红书列表页] 搜索关键词: 路觅课程
+[小红书搜索] 访问搜索页: https://www.xiaohongshu.com/search_result?keyword=路觅课程&source=web_search_result_notes
+[小红书列表页] 采集关键词 路觅课程 失败: 
+The connection to the page has been disconnected.
+Version: 4.1.1.2
+[小红书列表页] 搜索关键词: 路觅 挂科
+[小红书搜索] 访问搜索页: https://www.xiaohongshu.com/search_result?keyword=路觅 挂科&source=web_search_result_notes
+[小红书列表页] 采集关键词 路觅 挂科 失败: 
+The connection to the page has been disconnected.
+Version: 4.1.1.2
+[小红书列表页] 搜索关键词: 路觅 GPA
+[小红书搜索] 访问搜索页: https://www.xiaohongshu.com/search_result?keyword=路觅 GPA&source=web_search_result_notes
+[小红书列表页] 采集关键词 路觅 GPA 失败: 
+The connection to the page has been disconnected.
+Version: 4.1.1.2
+[小红书列表页] 搜索关键词: 考而思留学
+[小红书搜索] 访问搜索页: https://www.xiaohongshu.com/search_result?keyword=考而思留学&source=web_search_result_notes
+[小红书列表页] 采集关键词 考而思留学 失败: 
+The connection to the page has been disconnected.
+Version: 4.1.1.2
+[小红书列表页] 搜索关键词: 考而思辅导
+[小红书搜索] 访问搜索页: https://www.xiaohongshu.com/search_result?keyword=考而思辅导&source=web_search_result_notes
+[小红书列表页] 采集关键词 考而思辅导 失败: 
+The connection to the page has been disconnected.
+Version: 4.1.1.2
+[小红书列表页] 搜索关键词: 考而思网课
+[小红书搜索] 访问搜索页: https://www.xiaohongshu.com/search_result?keyword=考而思网课&source=web_search_result_notes
+[小红书列表页] 采集关键词 考而思网课 失败: 
+The connection to the page has been disconnected.
+Version: 4.1.1.2
+[小红书列表页] 搜索关键词: 考而思怎么样
+[小红书搜索] 访问搜索页: https://www.xiaohongshu.com/search_result?keyword=考而思怎么样&source=web_search_result_notes
+[小红书列表页] 采集关键词 考而思怎么样 失败: 
+The connection to the page has been disconnected.
+Version: 4.1.1.2
+[小红书列表页] 搜索关键词: 考而思课程
+[小红书搜索] 访问搜索页: https://www.xiaohongshu.com/search_result?keyword=考而思课程&source=web_search_result_notes
+[小红书列表页] 采集关键词 考而思课程 失败: 
+The connection to the page has been disconnected.
+Version: 4.1.1.2
+[小红书列表页] 搜索关键词: 考而思 退费
+[小红书搜索] 访问搜索页: https://www.xiaohongshu.com/search_result?keyword=考而思 退费&source=web_search_result_notes
+[小红书列表页] 采集关键词 考而思 退费 失败: 
+The connection to the page has been disconnected.
+Version: 4.1.1.2
+[小红书列表页] 搜索关键词: 辅无忧留学
+[小红书搜索] 访问搜索页: https://www.xiaohongshu.com/search_result?keyword=辅无忧留学&source=web_search_result_notes
+[小红书列表页] 采集关键词 辅无忧留学 失败: 
+The connection to the page has been disconnected.
+Version: 4.1.1.2
+[小红书列表页] 搜索关键词: 辅无忧辅导
+[小红书搜索] 访问搜索页: https://www.xiaohongshu.com/search_result?keyword=辅无忧辅导&source=web_search_result_notes
+[小红书列表页] 采集关键词 辅无忧辅导 失败: 
+The connection to the page has been disconnected.
+Version: 4.1.1.2
+[小红书列表页] 搜索关键词: 辅无忧网课
+[小红书搜索] 访问搜索页: https://www.xiaohongshu.com/search_result?keyword=辅无忧网课&source=web_search_result_notes
+[小红书列表页] 采集关键词 辅无忧网课 失败: 
+The connection to the page has been disconnected.
+Version: 4.1.1.2
+[小红书列表页] 搜索关键词: 辅无忧怎么样
+[小红书搜索] 访问搜索页: https://www.xiaohongshu.com/search_result?keyword=辅无忧怎么样&source=web_search_result_notes
+[小红书列表页] 采集关键词 辅无忧怎么样 失败: 
+The connection to the page has been disconnected.
+Version: 4.1.1.2
+[小红书列表页] 搜索关键词: 辅无忧论文
+[小红书搜索] 访问搜索页: https://www.xiaohongshu.com/search_result?keyword=辅无忧论文&source=web_search_result_notes
+[小红书列表页] 采集关键词 辅无忧论文 失败: 
+The connection to the page has been disconnected.
+Version: 4.1.1.2
+[小红书列表页] 搜索关键词: 万能班长留学
+[小红书搜索] 访问搜索页: https://www.xiaohongshu.com/search_result?keyword=万能班长留学&source=web_search_result_notes
+[小红书列表页] 采集关键词 万能班长留学 失败: 
+The connection to the page has been disconnected.
+Version: 4.1.1.2
+[小红书列表页] 搜索关键词: 万能班长辅导
+[小红书搜索] 访问搜索页: https://www.xiaohongshu.com/search_result?keyword=万能班长辅导&source=web_search_result_notes
+[小红书列表页] 采集关键词 万能班长辅导 失败: 
+The connection to the page has been disconnected.
+Version: 4.1.1.2
+[小红书列表页] 搜索关键词: 万能班长网课
+[小红书搜索] 访问搜索页: https://www.xiaohongshu.com/search_result?keyword=万能班长网课&source=web_search_result_notes
+[小红书列表页] 采集关键词 万能班长网课 失败: 
+The connection to the page has been disconnected.
+Version: 4.1.1.2
+[小红书列表页] 搜索关键词: 万能班长怎么样
+[小红书搜索] 访问搜索页: https://www.xiaohongshu.com/search_result?keyword=万能班长怎么样&source=web_search_result_notes
+2025-12-13 13:54:43,009 - INFO - 测试模式：消息已打印到控制台，未发送到钉钉
+2025-12-13 13:54:43,010 - INFO - 浏览器保持打开状态，请手动关闭
+[小红书列表页] 采集关键词 万能班长怎么样 失败: 
+The connection to the page has been disconnected.
+Version: 4.1.1.2
+[小红书列表页] 搜索关键词: 海马课堂
+[小红书搜索] 访问搜索页: https://www.xiaohongshu.com/search_result?keyword=海马课堂&source=web_search_result_notes
+[小红书列表页] 采集关键词 海马课堂 失败: 
+The connection to the page has been disconnected.
+Version: 4.1.1.2
+[小红书列表页] 搜索关键词: 海马课堂怎么样
+[小红书搜索] 访问搜索页: https://www.xiaohongshu.com/search_result?keyword=海马课堂怎么样&source=web_search_result_notes
+[小红书列表页] 采集关键词 海马课堂怎么样 失败: 
+The connection to the page has been disconnected.
+Version: 4.1.1.2
+[小红书列表页] 搜索关键词: 海马课堂辅导
+[小红书搜索] 访问搜索页: https://www.xiaohongshu.com/search_result?keyword=海马课堂辅导&source=web_search_result_notes
+[小红书列表页] 采集关键词 海马课堂辅导 失败: 
+The connection to the page has been disconnected.
+Version: 4.1.1.2
+[小红书列表页] 搜索关键词: 海马课堂论文
+[小红书搜索] 访问搜索页: https://www.xiaohongshu.com/search_result?keyword=海马课堂论文&source=web_search_result_notes
+[小红书列表页] 采集关键词 海马课堂论文 失败: 
+The connection to the page has been disconnected.
+Version: 4.1.1.2
+[小红书列表页] 搜索关键词: 海马课堂 退费
+[小红书搜索] 访问搜索页: https://www.xiaohongshu.com/search_result?keyword=海马课堂 退费&source=web_search_result_notes
+[小红书列表页] 采集关键词 海马课堂 退费 失败: 
+The connection to the page has been disconnected.
+Version: 4.1.1.2
+[小红书列表页] 搜索关键词: 海马课堂 避雷
+[小红书搜索] 访问搜索页: https://www.xiaohongshu.com/search_result?keyword=海马课堂 避雷&source=web_search_result_notes
+[小红书列表页] 采集关键词 海马课堂 避雷 失败: 
+The connection to the page has been disconnected.
+Version: 4.1.1.2
+[小红书列表页] 采集完成，共找到 0 条有效数据
+
+✅ 采集完成！
+📊 数据统计：抖音 0 条，小红书 0 条，搜狗微信 0 条
+📄 原始数据：raw_data_classroom.csv
+📋 分析报告：Market_Radar_Classroom_2025-12-13.md
+
+================================================================================
+【测试模式】完整钉钉消息内容（带所有原文链接）
+================================================================================
+# 海马课堂·市场雷达日报
+
+**生成时间**: 2025-12-13
+
+## ⚠️ 数据采集结果
+
+- 抖音数据: 0 条（有效: 0 条）
+- 小红书数据: 0 条（有效: 0 条）
+- 搜狗微信数据: 0 条（有效: 0 条）
+
+*注：未采集到任何有效数据，可能所有内容都被过滤器过滤。*
+
+---
+
+## 📎 完整原文链接清单
+
+### 搜狗微信平台
+
+- **路觅** - 路觅教育获“最佳留学课业辅导机构” 殊荣  🔗 [查看原文](https://weixin.sogou.com/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgSziln4oLtJd_vmzxVw-fD_AnWnzBnTuUQ1qXa8Fplpd9PEbD1Ie_qqhXYpusSUG3z7xfQdb3Bh3XGGsiJMTvRJMXjABaTJdfW5TZkaM7jJLVU7aZFjSPVX_bQmgeZhcX3M30T2uUwH5ek1l3gSk7GscXu0T-EPTmQK2-mv9zJ8iPbby3TqTa8cAwPXWCiVxyAC9NNuhIPItr_tB8jGdIgX_S-e4Yz84xMA..&type=2&query=%E8%B7%AF%E8%A7%85%E7%95%99%E5%AD%A6&token=E16692CFC566EE462A2C6CE9F23761F12A2F0D38693CF4CE)
+- **路觅** - 关于路觅留学生课程辅导,你不能不知道的6件事  🔗 [查看原文](https://weixin.sogou.com/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgSziln4oLtJd_vmzxVw-fD_AnWnzBnTuUQ1qXa8Fplpd9PEbD1Ie_qqhXYpusSUG3z7xfQdb3Bh3XGGsiJMTvRJMXjABaTJdfWw4w-hk6Tge_qLP2iWYyzwdMKYJxrZ-9DLkicpF_jHsEMoNrYckGLX-VBRurcQ-7H6YJXpIBqTr2zmpp1nxslWtrteRf0NR32wT4qVF-7wSEKuLaCsrAQ6KjotuuiAmOIg..&type=2&query=%E8%B7%AF%E8%A7%85%E7%95%99%E5%AD%A6&token=E16692CFC566EE462A2C6CE9F23761F12A2F0D38693CF4CE)
+- **路觅** - 路觅教育 | 致力于让每一位留学生都获得好成绩  🔗 [查看原文](https://weixin.sogou.com/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgSziln4oLtJd_vmzxVw-fD_AnWnzBnTuUQ1qXa8Fplpd9v_nlth45BdbGcjPE2ekU4nqLOtYQypJcZAU6roy2W_-6fKL3XLWST5XEn0ROHzz6OLkoVZ8JZzL1VrE4H3XhuQODlyjGxM2CTDnrs9eYeHHxJkWaGWTxFKiIGcTl21m8iAM7wUV1fAZ3ZBX91L2EydxmA3Qhv4fq0W0TBBfcOhZAe0f8bRARvQ..&type=2&query=%E8%B7%AF%E8%A7%85%E7%95%99%E5%AD%A6&token=E16692CFC566EE462A2C6CE9F23761F12A2F0D38693CF4CE)
+- **路觅** - 直播预告:AI 辅助学术写作的正确打开方式!更有专属写作资料免费领!  🔗 [查看原文](https://weixin.sogou.com/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgSziln4oLtJd_vmzxVw-fD_AnWnzBnTuUQ1qXa8Fplpd9s39HQNib_ZE6aAtm-mcHQheX83suAvzSWD9LJ29Gz-OkU9S0AdUNDYwtEtmtLBasdh_osbyh0GbHaLptLRzyWxTCLy_3kqN6TOtmY68gEgSASTPHObAAqmT9fZwPYuglLGJABOZQa0tQkj46CX2aMAwGUc-z4L1WB4-hrSWp6P3wdVqCwyPdzA..&type=2&query=%E8%B7%AF%E8%A7%85%E7%95%99%E5%AD%A6&token=E16692CFC566EE462A2C6CE9F23761F12A2F0D38693CF4CE)
+- **路觅** - 远洋知觅(二)——东院留学生分享汇  🔗 [查看原文](https://weixin.sogou.com/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgSziln4oLtJd_vmzxVw-fD_AnWnzBnTuUQ1qXa8Fplpd9gDrF0JWxh1pVZ-TEPcAUYaZ52VaP33NCz3d8doU6rHeNLKYic-MMxe_EN320DTATrjjeiOjnvmbSVV8QAV33Lk2ZirhImZNQ62XU10XimQEfyXTtZ0uGdZ_VD1nLJJY92l4yqxU75n6CVDo3QVWw-K_B8JBIiGMFEiCsDocmmeHP28temKTOwg..&type=2&query=%E8%B7%AF%E8%A7%85%E7%95%99%E5%AD%A6&token=E16692CFC566EE462A2C6CE9F23761F12A2F0D38693CF4CE)
+- **路觅** - 路觅教育获“最佳留学课业辅导机构” 殊荣  🔗 [查看原文](https://weixin.sogou.com/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgSziln4oLtJd_fcxfFhIYFmAnWnzBnTuUQ1qXa8Fplpd9PEbD1Ie_qqhXYpusSUG3z7xfQdb3Bh3XGGsiJMTvRJMXjABaTJdfW5TZkaM7jJLVU7aZFjSPVX_bQmgeZhcX3JvegesjfRDsUsa5WBduUJZWQSmCpCrrV7HKAABF1uOlUJguh81UUTbqcz-uSDRAY-OwXfJ8i4GZ5lxDxrO4XWv1AfaFW2DefQ..&type=2&query=%E8%B7%AF%E8%A7%85%E8%BE%85%E5%AF%BC&token=E166B719C566EE462A2C6CE9F23761F12A2F0D38693CF4D7)
+- **路觅** - 路觅教育 | 致力于让每一位留学生都获得好成绩  🔗 [查看原文](https://weixin.sogou.com/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgSziln4oLtJd_fcxfFhIYFmAnWnzBnTuUQ1qXa8Fplpd9v_nlth45BdbGcjPE2ekU4nqLOtYQypJcZAU6roy2W_-6fKL3XLWST5XEn0ROHzz6OLkoVZ8JZzL1VrE4H3XhualCKEQoSXP0KsjF3Of3q_UqUI1hxnUV3xpfldHYq_mU7Fk3k9HpxBoIdQCxJ9LYHdsjcMa9eRHBsQFubI19G_Vf_71bqkOtiw..&type=2&query=%E8%B7%AF%E8%A7%85%E8%BE%85%E5%AF%BC&token=E166B719C566EE462A2C6CE9F23761F12A2F0D38693CF4D7)
+- **路觅** - 关于路觅留学生课程辅导,你不能不知道的6件事  🔗 [查看原文](https://weixin.sogou.com/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgSziln4oLtJd_fcxfFhIYFmAnWnzBnTuUQ1qXa8Fplpd9PEbD1Ie_qqhXYpusSUG3z7xfQdb3Bh3XGGsiJMTvRJMXjABaTJdfWw4w-hk6Tge_qLP2iWYyzwdMKYJxrZ-9DEaY-xfzR6F2psDOg2ZAB2XdWD3l9VmMdIlzpF-98vHLX4eI3jDy_lxPQ6Qp9S6at_coLiD4CjK9-KDNu10F3BiFW6cwuUnkdA..&type=2&query=%E8%B7%AF%E8%A7%85%E8%BE%85%E5%AF%BC&token=E166B719C566EE462A2C6CE9F23761F12A2F0D38693CF4D7)
+- **路觅** - 25级觅峰辅导班超详细介绍——上岸的最佳选择在这里!!!  🔗 [查看原文](https://weixin.sogou.com/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgSziln4oLtJd_fcxfFhIYFmAnWnzBnTuUQ1qXa8Fplpd9MGTIBP-Z5YtswzVI3uYqMTs18RpDIdNUMwFK7dUbvD-jvr01lfL7OzJQXnu7LmbP-SGlG8Ltks2bVw-_3BfQrMa1ZJtW7A4xB0UKqYreZIXQujyswh43JRVJO6roUIu8noyAMsm4r4eEtXF0-knzBbG8rDsM0zfTyYn26Dtj0xBS6t2rFt2rnA..&type=2&query=%E8%B7%AF%E8%A7%85%E8%BE%85%E5%AF%BC&token=E166B719C566EE462A2C6CE9F23761F12A2F0D38693CF4D7)
+- **路觅** - 重磅官宣!路觅教育「AI课程报告」正式上线啦  🔗 [查看原文](https://weixin.sogou.com/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgSziln4oLtJd_cz1YWI-mvBUnWnzBnTuUQ1qXa8Fplpd9v_nlth45BdbGcjPE2ekU4nqLOtYQypJcZAU6roy2W_-6fKL3XLWST7KtP08MdwyLr7ah0H6jKWnblHs24oFSM8i4Qiho6c6I5bsPgZtYzjMNJRDY0mbDq4B_jcIYUHmEv7RJqr1Ufn_O8LRQMp54zI6irRPylWzkWoeUQDXUs9d5Nu7CnoSqqg..&type=2&query=%E8%B7%AF%E8%A7%85%E7%BD%91%E8%AF%BE&token=E166DC6CC566EE462A2C6CE9F23761F12A2F0D38693CF4E0)
+
+
+================================================================================

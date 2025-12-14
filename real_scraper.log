@@ -1,0 +1,372 @@
+2025-12-13 00:25:13,426 - INFO - 实战情报采集器初始化完成，当前日期: 2025-12-13
+2025-12-13 00:25:13,428 - INFO - ============================================================
+2025-12-13 00:25:13,428 - INFO - 实战情报采集开始 [测试模式]
+2025-12-13 00:25:13,428 - INFO - ============================================================
+2025-12-13 00:25:13,428 - INFO - 开始采集 DBC职梦 的微信公众号文章...
+2025-12-13 00:25:13,428 - INFO - 访问搜狗微信: https://weixin.sogou.com/
+2025-12-13 00:25:17,855 - INFO - 已输入搜索关键词: DBC职梦
+2025-12-13 00:25:19,112 - INFO - 已点击搜索按钮
+2025-12-13 00:25:25,177 - INFO - 使用选择器 'tag:div@class=news-box' 找到 1 条文章
+2025-12-13 00:25:25,179 - INFO - 总共找到 1 条文章
+2025-12-13 00:25:33,234 - INFO -   找到文章 1: 科技大厂!DBC职梦学员斩获Amazon (CN) 2025全职Offer!...
+2025-12-13 00:25:35,239 - INFO - DBC职梦 微信公众号采集完成，共找到 1 条文章
+2025-12-13 00:25:38,244 - INFO - 开始采集 途鸽求职 的微信公众号文章...
+2025-12-13 00:25:38,244 - INFO - 访问搜狗微信: https://weixin.sogou.com/
+2025-12-13 00:25:40,755 - INFO - 已输入搜索关键词: 途鸽求职
+2025-12-13 00:25:42,017 - INFO - 已点击搜索按钮
+2025-12-13 00:25:48,103 - INFO - 使用选择器 'tag:div@class=news-box' 找到 1 条文章
+2025-12-13 00:25:48,104 - INFO - 总共找到 1 条文章
+2025-12-13 00:25:56,171 - INFO -   找到文章 1: 互联派、海马职加、途鸽求职机构,我来说点大实话!...
+2025-12-13 00:25:58,173 - INFO - 途鸽求职 微信公众号采集完成，共找到 1 条文章
+2025-12-13 00:26:01,175 - INFO - 开始采集 Offer先生 的微信公众号文章...
+2025-12-13 00:26:01,175 - INFO - 访问搜狗微信: https://weixin.sogou.com/
+2025-12-13 00:26:03,701 - INFO - 已输入搜索关键词: Offer先生
+2025-12-13 00:26:04,951 - INFO - 已点击搜索按钮
+2025-12-13 00:26:11,025 - INFO - 使用选择器 'tag:div@class=news-box' 找到 1 条文章
+2025-12-13 00:26:11,026 - INFO - 总共找到 1 条文章
+2025-12-13 00:26:19,069 - INFO -   找到文章 1: 企业HR您好,offer先生诚邀你参加2023春季招聘会!...
+2025-12-13 00:26:21,073 - INFO - Offer先生 微信公众号采集完成，共找到 1 条文章
+2025-12-13 00:26:24,079 - INFO - 开始采集 职问 的微信公众号文章...
+2025-12-13 00:26:24,080 - INFO - 访问搜狗微信: https://weixin.sogou.com/
+2025-12-13 00:26:26,538 - INFO - 已输入搜索关键词: 职问
+2025-12-13 00:26:27,794 - INFO - 已点击搜索按钮
+2025-12-13 00:26:33,868 - INFO - 使用选择器 'tag:div@class=news-box' 找到 1 条文章
+2025-12-13 00:26:33,868 - INFO - 总共找到 1 条文章
+2025-12-13 00:26:41,912 - INFO -   找到文章 1: 【职问德答】:面试时,该怎么谈钱不伤感情?| 职问德答 Vol.001→...
+2025-12-13 00:26:43,914 - INFO - 职问 微信公众号采集完成，共找到 1 条文章
+2025-12-13 00:26:46,915 - INFO - 开始采集 爱思益 的微信公众号文章...
+2025-12-13 00:26:46,916 - INFO - 访问搜狗微信: https://weixin.sogou.com/
+2025-12-13 00:26:49,529 - INFO - 已输入搜索关键词: 爱思益
+2025-12-13 00:26:50,786 - INFO - 已点击搜索按钮
+2025-12-13 00:26:56,870 - INFO - 使用选择器 'tag:div@class=news-box' 找到 1 条文章
+2025-12-13 00:26:56,870 - INFO - 总共找到 1 条文章
+2025-12-13 00:27:04,907 - INFO -   找到文章 1: 爱思益研究院成立始末——瞭望...
+2025-12-13 00:27:06,915 - INFO - 爱思益 微信公众号采集完成，共找到 1 条文章
+2025-12-13 00:27:09,921 - INFO - 微信公众号采集完成，共 5 条
+2025-12-13 00:27:09,921 - INFO - 开始采集小红书负面舆情...
+2025-12-13 00:27:09,922 - INFO - 访问 Bing 搜索: site:xiaohongshu.com (DBC职梦 OR 途鸽求职 OR Offer先生 OR 职问 OR 爱思益) (避雷 OR 坑 OR 退费 OR 骗局 OR 投诉 OR 差评)
+2025-12-13 00:27:22,984 - ERROR - 采集小红书舆情失败: EOF when reading a line
+Traceback (most recent call last):
+  File "/Users/changchun/Desktop/job_scraper/real_scraper.py", line 263, in scrape_xiaohongshu_sentiment
+    self.wait_for_manual_verification("Bing 需要验证码，请手动完成验证")
+  File "/Users/changchun/Desktop/job_scraper/real_scraper.py", line 81, in wait_for_manual_verification
+    input("完成后请按回车键继续...")
+EOFError: EOF when reading a line
+2025-12-13 00:27:22,992 - INFO - 小红书舆情采集完成，共找到 0 条负面舆情
+2025-12-13 00:27:22,992 - INFO - 小红书舆情采集完成，共 0 条
+2025-12-13 00:27:22,993 - INFO - 开始使用 Gemini 生成销售话术...
+2025-12-13 00:27:26,170 - INFO - HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+2025-12-13 00:28:24,081 - INFO - Retrying request to /chat/completions in 0.427783 seconds
+2025-12-13 00:28:27,819 - INFO - HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+2025-12-13 00:29:26,500 - INFO - Retrying request to /chat/completions in 0.924354 seconds
+2025-12-13 00:29:29,847 - INFO - HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+2025-12-13 00:30:28,467 - ERROR - DeepSeek 生成失败: Connection error.
+2025-12-13 00:30:28,469 - ERROR - 采集流程异常: Connection error.
+Traceback (most recent call last):
+  File "/Users/changchun/Library/Python/3.9/lib/python/site-packages/httpx/_transports/default.py", line 101, in map_httpcore_exceptions
+    yield
+  File "/Users/changchun/Library/Python/3.9/lib/python/site-packages/httpx/_transports/default.py", line 127, in __iter__
+    for part in self._httpcore_stream:
+  File "/Users/changchun/Library/Python/3.9/lib/python/site-packages/httpcore/_sync/connection_pool.py", line 407, in __iter__
+    raise exc from None
+  File "/Users/changchun/Library/Python/3.9/lib/python/site-packages/httpcore/_sync/connection_pool.py", line 403, in __iter__
+    for part in self._stream:
+  File "/Users/changchun/Library/Python/3.9/lib/python/site-packages/httpcore/_sync/http11.py", line 342, in __iter__
+    raise exc
+  File "/Users/changchun/Library/Python/3.9/lib/python/site-packages/httpcore/_sync/http11.py", line 334, in __iter__
+    for chunk in self._connection._receive_response_body(**kwargs):
+  File "/Users/changchun/Library/Python/3.9/lib/python/site-packages/httpcore/_sync/http11.py", line 203, in _receive_response_body
+    event = self._receive_event(timeout=timeout)
+  File "/Users/changchun/Library/Python/3.9/lib/python/site-packages/httpcore/_sync/http11.py", line 214, in _receive_event
+    event = self._h11_state.next_event()
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/contextlib.py", line 135, in __exit__
+    self.gen.throw(type, value, traceback)
+  File "/Users/changchun/Library/Python/3.9/lib/python/site-packages/httpcore/_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc) from exc
+httpcore.RemoteProtocolError: peer closed connection without sending complete message body (incomplete chunked read)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/changchun/Library/Python/3.9/lib/python/site-packages/openai/_base_client.py", line 982, in request
+    response = self._client.send(
+  File "/Users/changchun/Library/Python/3.9/lib/python/site-packages/httpx/_client.py", line 928, in send
+    raise exc
+  File "/Users/changchun/Library/Python/3.9/lib/python/site-packages/httpx/_client.py", line 922, in send
+    response.read()
+  File "/Users/changchun/Library/Python/3.9/lib/python/site-packages/httpx/_models.py", line 881, in read
+    self._content = b"".join(self.iter_bytes())
+  File "/Users/changchun/Library/Python/3.9/lib/python/site-packages/httpx/_models.py", line 897, in iter_bytes
+    for raw_bytes in self.iter_raw():
+  File "/Users/changchun/Library/Python/3.9/lib/python/site-packages/httpx/_models.py", line 951, in iter_raw
+    for raw_stream_bytes in self.stream:
+  File "/Users/changchun/Library/Python/3.9/lib/python/site-packages/httpx/_client.py", line 153, in __iter__
+    for chunk in self._stream:
+  File "/Users/changchun/Library/Python/3.9/lib/python/site-packages/httpx/_transports/default.py", line 128, in __iter__
+    yield part
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/contextlib.py", line 135, in __exit__
+    self.gen.throw(type, value, traceback)
+  File "/Users/changchun/Library/Python/3.9/lib/python/site-packages/httpx/_transports/default.py", line 118, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.RemoteProtocolError: peer closed connection without sending complete message body (incomplete chunked read)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/changchun/Desktop/job_scraper/real_scraper.py", line 493, in run
+    "id": 2,
+  File "/Users/changchun/Desktop/job_scraper/real_scraper.py", line 409, in generate_sales_talk_tracks
+    response = self.ai_client.chat.completions.create(
+  File "/Users/changchun/Library/Python/3.9/lib/python/site-packages/openai/_utils/_utils.py", line 286, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/changchun/Library/Python/3.9/lib/python/site-packages/openai/resources/chat/completions/completions.py", line 1192, in create
+    return self._post(
+  File "/Users/changchun/Library/Python/3.9/lib/python/site-packages/openai/_base_client.py", line 1259, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+  File "/Users/changchun/Library/Python/3.9/lib/python/site-packages/openai/_base_client.py", line 1014, in request
+    raise APIConnectionError(request=request) from err
+openai.APIConnectionError: Connection error.
+2025-12-13 00:31:01,321 - INFO - 实战情报采集器初始化完成，当前日期: 2025-12-13
+2025-12-13 00:31:01,322 - INFO - ============================================================
+2025-12-13 00:31:01,322 - INFO - 实战情报采集开始 [测试模式]
+2025-12-13 00:31:01,322 - INFO - ============================================================
+2025-12-13 00:31:01,322 - INFO - 使用模拟数据进行测试...
+2025-12-13 00:31:01,322 - INFO - 模拟数据：微信公众号 2 条，小红书舆情 2 条
+2025-12-13 00:31:01,322 - INFO - 开始使用 Gemini 生成销售话术...
+2025-12-13 00:31:01,322 - INFO - 调用 DeepSeek API (尝试 1/3)...
+2025-12-13 00:31:06,490 - INFO - Retrying request to /chat/completions in 0.465410 seconds
+2025-12-13 00:31:09,288 - INFO - HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+2025-12-13 00:32:07,925 - INFO - Retrying request to /chat/completions in 0.909195 seconds
+2025-12-13 00:32:13,057 - INFO - HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+2025-12-13 00:33:11,126 - WARNING - DeepSeek 生成失败 (尝试 1/3): Connection error.
+2025-12-13 00:33:16,133 - INFO - 调用 DeepSeek API (尝试 2/3)...
+2025-12-13 00:33:20,192 - INFO - HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+2025-12-13 00:34:17,064 - INFO - DeepSeek 销售话术生成完成
+2025-12-13 00:34:17,066 - INFO - 报告已保存到: daily_report.md
+2025-12-13 00:34:17,066 - INFO - 测试模式：消息已打印到控制台，未发送到钉钉
+2025-12-13 00:34:17,066 - INFO - ============================================================
+2025-12-13 00:34:17,066 - INFO - 实战情报采集完成
+2025-12-13 00:34:17,066 - INFO - ============================================================
+2025-12-13 00:35:52,615 - INFO - 实战情报采集器初始化完成，当前日期: 2025-12-13
+2025-12-13 00:35:52,615 - INFO - ============================================================
+2025-12-13 00:35:52,615 - INFO - 实战情报采集开始 [测试模式]
+2025-12-13 00:35:52,615 - INFO - ============================================================
+2025-12-13 00:35:52,615 - INFO - 开始采集 DBC职梦 的微信公众号文章...
+2025-12-13 00:35:52,615 - INFO - 访问搜狗微信: https://weixin.sogou.com/
+2025-12-13 00:35:54,946 - INFO - 已输入搜索关键词: DBC职梦
+2025-12-13 00:35:56,207 - INFO - 已点击搜索按钮
+2025-12-13 00:36:06,626 - INFO - 使用选择器 'tag:div@class=news-box' 找到 1 条文章
+2025-12-13 00:36:06,629 - INFO - 总共找到 1 条文章
+2025-12-13 00:36:14,677 - INFO -   找到文章 1: 科技大厂!DBC职梦学员斩获Amazon (CN) 2025全职Offer!...
+2025-12-13 00:36:16,681 - INFO - DBC职梦 微信公众号采集完成，共找到 1 条文章
+2025-12-13 00:36:19,682 - INFO - 开始采集 途鸽求职 的微信公众号文章...
+2025-12-13 00:36:19,682 - INFO - 访问搜狗微信: https://weixin.sogou.com/
+2025-12-13 00:36:22,257 - INFO - 已输入搜索关键词: 途鸽求职
+2025-12-13 00:36:23,523 - INFO - 已点击搜索按钮
+2025-12-13 00:36:29,608 - INFO - 使用选择器 'tag:div@class=news-box' 找到 1 条文章
+2025-12-13 00:36:29,608 - INFO - 总共找到 1 条文章
+2025-12-13 00:36:37,680 - INFO -   找到文章 1: 互联派、海马职加、途鸽求职机构,我来说点大实话!...
+2025-12-13 00:36:39,682 - INFO - 途鸽求职 微信公众号采集完成，共找到 1 条文章
+2025-12-13 00:36:42,686 - INFO - 开始采集 Offer先生 的微信公众号文章...
+2025-12-13 00:36:42,687 - INFO - 访问搜狗微信: https://weixin.sogou.com/
+2025-12-13 00:36:45,147 - INFO - 已输入搜索关键词: Offer先生
+2025-12-13 00:36:46,409 - INFO - 已点击搜索按钮
+2025-12-13 00:36:52,475 - INFO - 使用选择器 'tag:div@class=news-box' 找到 1 条文章
+2025-12-13 00:36:52,475 - INFO - 总共找到 1 条文章
+2025-12-13 00:37:00,514 - INFO -   找到文章 1: 企业HR您好,offer先生诚邀你参加2023春季招聘会!...
+2025-12-13 00:37:02,516 - INFO - Offer先生 微信公众号采集完成，共找到 1 条文章
+2025-12-13 00:37:05,522 - INFO - 开始采集 职问 的微信公众号文章...
+2025-12-13 00:37:05,522 - INFO - 访问搜狗微信: https://weixin.sogou.com/
+2025-12-13 00:37:08,260 - INFO - 已输入搜索关键词: 职问
+2025-12-13 00:37:09,508 - INFO - 已点击搜索按钮
+2025-12-13 00:37:15,577 - INFO - 使用选择器 'tag:div@class=news-box' 找到 1 条文章
+2025-12-13 00:37:15,578 - INFO - 总共找到 1 条文章
+2025-12-13 00:37:23,629 - INFO -   找到文章 1: 【职问德答】:面试时,该怎么谈钱不伤感情?| 职问德答 Vol.001→...
+2025-12-13 00:37:25,632 - INFO - 职问 微信公众号采集完成，共找到 1 条文章
+2025-12-13 00:37:28,633 - INFO - 开始采集 爱思益 的微信公众号文章...
+2025-12-13 00:37:28,633 - INFO - 访问搜狗微信: https://weixin.sogou.com/
+2025-12-13 00:37:31,185 - INFO - 已输入搜索关键词: 爱思益
+2025-12-13 00:37:32,462 - INFO - 已点击搜索按钮
+2025-12-13 00:37:38,536 - INFO - 使用选择器 'tag:div@class=news-box' 找到 1 条文章
+2025-12-13 00:37:38,536 - INFO - 总共找到 1 条文章
+2025-12-13 00:37:46,568 - INFO -   找到文章 1: 爱思益研究院成立始末——瞭望...
+2025-12-13 00:37:48,573 - INFO - 爱思益 微信公众号采集完成，共找到 1 条文章
+2025-12-13 00:37:51,576 - INFO - 微信公众号采集完成，共 5 条
+2025-12-13 00:37:51,577 - INFO - 开始采集小红书负面舆情...
+2025-12-13 00:37:51,577 - INFO - 访问 Bing 搜索: site:xiaohongshu.com (DBC职梦 OR 途鸽求职 OR Offer先生 OR 职问 OR 爱思益) (避雷 OR 坑 OR 退费 OR 骗局 OR 投诉 OR 差评)
+2025-12-13 00:38:09,916 - ERROR - 采集小红书舆情失败: EOF when reading a line
+Traceback (most recent call last):
+  File "/Users/changchun/Desktop/job_scraper/real_scraper.py", line 263, in scrape_xiaohongshu_sentiment
+    self.wait_for_manual_verification("Bing 需要验证码，请手动完成验证")
+  File "/Users/changchun/Desktop/job_scraper/real_scraper.py", line 81, in wait_for_manual_verification
+    input("完成后请按回车键继续...")
+EOFError: EOF when reading a line
+2025-12-13 00:38:09,920 - INFO - 小红书舆情采集完成，共找到 0 条负面舆情
+2025-12-13 00:38:09,920 - INFO - 小红书舆情采集完成，共 0 条
+2025-12-13 00:38:09,920 - INFO - 开始使用 Gemini 生成销售话术...
+2025-12-13 00:38:09,920 - INFO - 调用 DeepSeek API (尝试 1/3)...
+2025-12-13 00:38:13,143 - INFO - HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+2025-12-13 00:39:11,835 - INFO - Retrying request to /chat/completions in 0.379084 seconds
+2025-12-13 00:39:14,612 - INFO - HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+2025-12-13 00:40:13,657 - INFO - Retrying request to /chat/completions in 0.837831 seconds
+2025-12-13 00:40:20,290 - INFO - HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+2025-12-13 00:41:18,541 - WARNING - DeepSeek 生成失败 (尝试 1/3): Connection error.
+2025-12-13 00:41:23,546 - INFO - 调用 DeepSeek API (尝试 2/3)...
+2025-12-13 00:41:28,956 - INFO - HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+2025-12-13 00:42:27,451 - INFO - Retrying request to /chat/completions in 0.491173 seconds
+2025-12-13 00:42:32,951 - INFO - Retrying request to /chat/completions in 0.882196 seconds
+2025-12-13 00:42:40,618 - INFO - HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+2025-12-13 00:43:38,895 - WARNING - DeepSeek 生成失败 (尝试 2/3): Connection error.
+2025-12-13 00:43:43,898 - INFO - 调用 DeepSeek API (尝试 3/3)...
+2025-12-13 00:43:45,881 - INFO - HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+2025-12-13 00:44:44,815 - INFO - Retrying request to /chat/completions in 0.413342 seconds
+2025-12-13 00:44:47,352 - INFO - HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+2025-12-13 00:45:46,343 - INFO - Retrying request to /chat/completions in 0.863745 seconds
+2025-12-13 00:45:50,421 - INFO - HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+2025-12-13 00:46:48,745 - WARNING - DeepSeek 生成失败 (尝试 3/3): Connection error.
+2025-12-13 00:46:48,747 - ERROR - DeepSeek 生成最终失败: Connection error.
+2025-12-13 00:46:48,747 - ERROR - 采集流程异常: Connection error.
+Traceback (most recent call last):
+  File "/Users/changchun/Library/Python/3.9/lib/python/site-packages/httpx/_transports/default.py", line 101, in map_httpcore_exceptions
+    yield
+  File "/Users/changchun/Library/Python/3.9/lib/python/site-packages/httpx/_transports/default.py", line 127, in __iter__
+    for part in self._httpcore_stream:
+  File "/Users/changchun/Library/Python/3.9/lib/python/site-packages/httpcore/_sync/connection_pool.py", line 407, in __iter__
+    raise exc from None
+  File "/Users/changchun/Library/Python/3.9/lib/python/site-packages/httpcore/_sync/connection_pool.py", line 403, in __iter__
+    for part in self._stream:
+  File "/Users/changchun/Library/Python/3.9/lib/python/site-packages/httpcore/_sync/http11.py", line 342, in __iter__
+    raise exc
+  File "/Users/changchun/Library/Python/3.9/lib/python/site-packages/httpcore/_sync/http11.py", line 334, in __iter__
+    for chunk in self._connection._receive_response_body(**kwargs):
+  File "/Users/changchun/Library/Python/3.9/lib/python/site-packages/httpcore/_sync/http11.py", line 203, in _receive_response_body
+    event = self._receive_event(timeout=timeout)
+  File "/Users/changchun/Library/Python/3.9/lib/python/site-packages/httpcore/_sync/http11.py", line 214, in _receive_event
+    event = self._h11_state.next_event()
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/contextlib.py", line 135, in __exit__
+    self.gen.throw(type, value, traceback)
+  File "/Users/changchun/Library/Python/3.9/lib/python/site-packages/httpcore/_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc) from exc
+httpcore.RemoteProtocolError: peer closed connection without sending complete message body (incomplete chunked read)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/changchun/Library/Python/3.9/lib/python/site-packages/openai/_base_client.py", line 982, in request
+    response = self._client.send(
+  File "/Users/changchun/Library/Python/3.9/lib/python/site-packages/httpx/_client.py", line 928, in send
+    raise exc
+  File "/Users/changchun/Library/Python/3.9/lib/python/site-packages/httpx/_client.py", line 922, in send
+    response.read()
+  File "/Users/changchun/Library/Python/3.9/lib/python/site-packages/httpx/_models.py", line 881, in read
+    self._content = b"".join(self.iter_bytes())
+  File "/Users/changchun/Library/Python/3.9/lib/python/site-packages/httpx/_models.py", line 897, in iter_bytes
+    for raw_bytes in self.iter_raw():
+  File "/Users/changchun/Library/Python/3.9/lib/python/site-packages/httpx/_models.py", line 951, in iter_raw
+    for raw_stream_bytes in self.stream:
+  File "/Users/changchun/Library/Python/3.9/lib/python/site-packages/httpx/_client.py", line 153, in __iter__
+    for chunk in self._stream:
+  File "/Users/changchun/Library/Python/3.9/lib/python/site-packages/httpx/_transports/default.py", line 128, in __iter__
+    yield part
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/contextlib.py", line 135, in __exit__
+    self.gen.throw(type, value, traceback)
+  File "/Users/changchun/Library/Python/3.9/lib/python/site-packages/httpx/_transports/default.py", line 118, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.RemoteProtocolError: peer closed connection without sending complete message body (incomplete chunked read)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/changchun/Desktop/job_scraper/real_scraper.py", line 544, in run
+    report = self.generate_sales_talk_tracks(all_wechat_data, xhs_data)
+  File "/Users/changchun/Desktop/job_scraper/real_scraper.py", line 413, in generate_sales_talk_tracks
+    response = self.ai_client.chat.completions.create(
+  File "/Users/changchun/Library/Python/3.9/lib/python/site-packages/openai/_utils/_utils.py", line 286, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/changchun/Library/Python/3.9/lib/python/site-packages/openai/resources/chat/completions/completions.py", line 1192, in create
+    return self._post(
+  File "/Users/changchun/Library/Python/3.9/lib/python/site-packages/openai/_base_client.py", line 1259, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+  File "/Users/changchun/Library/Python/3.9/lib/python/site-packages/openai/_base_client.py", line 1014, in request
+    raise APIConnectionError(request=request) from err
+openai.APIConnectionError: Connection error.
+2025-12-13 00:48:14,004 - INFO - 实战情报采集器初始化完成，当前日期: 2025-12-13
+2025-12-13 00:48:14,005 - INFO - ============================================================
+2025-12-13 00:48:14,005 - INFO - 实战情报采集开始 [测试模式]
+2025-12-13 00:48:14,005 - INFO - ============================================================
+2025-12-13 00:48:14,005 - INFO - 开始采集 DBC职梦 的微信公众号文章...
+2025-12-13 00:48:14,005 - INFO - 访问搜狗微信: https://weixin.sogou.com/
+2025-12-13 00:48:20,198 - INFO - 已输入搜索关键词: DBC职梦
+2025-12-13 00:48:21,440 - INFO - 已点击搜索按钮
+2025-12-13 00:48:27,475 - INFO - 使用选择器 'tag:div@class=news-box' 找到 1 条文章
+2025-12-13 00:48:27,476 - INFO - 总共找到 1 条文章
+2025-12-13 00:48:35,516 - INFO -   找到文章 1: 科技大厂!DBC职梦学员斩获Amazon (CN) 2025全职Offer!...
+2025-12-13 00:48:37,522 - INFO - DBC职梦 微信公众号采集完成，共找到 1 条文章
+2025-12-13 00:48:40,527 - INFO - 开始采集 途鸽求职 的微信公众号文章...
+2025-12-13 00:48:40,527 - INFO - 访问搜狗微信: https://weixin.sogou.com/
+2025-12-13 00:48:43,061 - INFO - 已输入搜索关键词: 途鸽求职
+2025-12-13 00:48:44,288 - INFO - 已点击搜索按钮
+2025-12-13 00:48:50,323 - INFO - 使用选择器 'tag:div@class=news-box' 找到 1 条文章
+2025-12-13 00:48:50,323 - INFO - 总共找到 1 条文章
+2025-12-13 00:48:58,355 - INFO -   找到文章 1: 互联派、海马职加、途鸽求职机构,我来说点大实话!...
+2025-12-13 00:49:00,356 - INFO - 途鸽求职 微信公众号采集完成，共找到 1 条文章
+2025-12-13 00:49:03,362 - INFO - 开始采集 Offer先生 的微信公众号文章...
+2025-12-13 00:49:03,362 - INFO - 访问搜狗微信: https://weixin.sogou.com/
+2025-12-13 00:49:06,025 - INFO - 已输入搜索关键词: Offer先生
+2025-12-13 00:49:07,252 - INFO - 已点击搜索按钮
+2025-12-13 00:49:13,291 - INFO - 使用选择器 'tag:div@class=news-box' 找到 1 条文章
+2025-12-13 00:49:13,292 - INFO - 总共找到 1 条文章
+2025-12-13 00:49:21,332 - INFO -   找到文章 1: 企业HR您好,offer先生诚邀你参加2023春季招聘会!...
+2025-12-13 00:49:23,335 - INFO - Offer先生 微信公众号采集完成，共找到 1 条文章
+2025-12-13 00:49:26,345 - INFO - 开始采集 职问 的微信公众号文章...
+2025-12-13 00:49:26,345 - INFO - 访问搜狗微信: https://weixin.sogou.com/
+2025-12-13 00:49:28,890 - INFO - 已输入搜索关键词: 职问
+2025-12-13 00:49:30,122 - INFO - 已点击搜索按钮
+2025-12-13 00:49:36,160 - INFO - 使用选择器 'tag:div@class=news-box' 找到 1 条文章
+2025-12-13 00:49:36,160 - INFO - 总共找到 1 条文章
+2025-12-13 00:49:44,197 - INFO -   找到文章 1: 【职问德答】:面试时,该怎么谈钱不伤感情?| 职问德答 Vol.001→...
+2025-12-13 00:49:46,203 - INFO - 职问 微信公众号采集完成，共找到 1 条文章
+2025-12-13 00:49:49,208 - INFO - 开始采集 爱思益 的微信公众号文章...
+2025-12-13 00:49:49,208 - INFO - 访问搜狗微信: https://weixin.sogou.com/
+2025-12-13 00:49:51,596 - INFO - 已输入搜索关键词: 爱思益
+2025-12-13 00:49:52,826 - INFO - 已点击搜索按钮
+2025-12-13 00:49:58,857 - INFO - 使用选择器 'tag:div@class=news-box' 找到 1 条文章
+2025-12-13 00:49:58,858 - INFO - 总共找到 1 条文章
+2025-12-13 00:50:06,896 - INFO -   找到文章 1: 爱思益研究院成立始末——瞭望...
+2025-12-13 00:50:08,898 - INFO - 爱思益 微信公众号采集完成，共找到 1 条文章
+2025-12-13 00:50:11,904 - INFO - 微信公众号采集完成，共 5 条
+2025-12-13 00:50:11,904 - INFO - 开始采集小红书负面舆情...
+2025-12-13 00:50:11,904 - INFO - 访问 Bing 搜索: site:xiaohongshu.com (DBC职梦 OR 途鸽求职 OR Offer先生 OR 职问 OR 爱思益) (避雷 OR 坑 OR 退费 OR 骗局 OR 投诉 OR 差评)
+2025-12-13 00:50:35,853 - INFO - 通过链接特征找到 0 条结果
+2025-12-13 00:50:35,855 - INFO - 总共找到 0 条搜索结果
+2025-12-13 00:50:37,860 - INFO - 小红书舆情采集完成，共找到 0 条负面舆情
+2025-12-13 00:50:37,860 - INFO - 小红书舆情采集完成，共 0 条
+2025-12-13 00:50:37,860 - INFO - 开始使用 Gemini 生成销售话术...
+2025-12-13 00:50:37,860 - INFO - 调用 DeepSeek API (尝试 1/3)...
+2025-12-13 00:50:40,926 - INFO - HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+2025-12-13 00:51:39,149 - INFO - Retrying request to /chat/completions in 0.443514 seconds
+2025-12-13 00:51:45,668 - INFO - HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+2025-12-13 00:52:43,970 - INFO - Retrying request to /chat/completions in 0.932849 seconds
+2025-12-13 00:52:48,099 - INFO - HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+2025-12-13 00:53:46,793 - WARNING - DeepSeek 生成失败 (尝试 1/3): Connection error.
+2025-12-13 00:53:51,800 - INFO - 调用 DeepSeek API (尝试 2/3)...
+2025-12-13 00:53:53,900 - INFO - HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+2025-12-13 00:54:10,941 - INFO - Retrying request to /chat/completions in 0.402765 seconds
+2025-12-13 00:54:13,767 - INFO - HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+2025-12-13 00:55:12,578 - INFO - Retrying request to /chat/completions in 0.947273 seconds
+2025-12-13 00:55:16,805 - INFO - HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+2025-12-13 00:56:15,794 - WARNING - DeepSeek 生成失败 (尝试 2/3): Connection error.
+2025-12-13 00:56:20,801 - INFO - 调用 DeepSeek API (尝试 3/3)...
+2025-12-13 00:56:26,707 - INFO - HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+2025-12-13 00:57:24,969 - INFO - Retrying request to /chat/completions in 0.483454 seconds
+2025-12-13 00:57:27,826 - INFO - HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+2025-12-13 00:58:26,564 - INFO - Retrying request to /chat/completions in 0.815273 seconds
+2025-12-13 00:58:29,932 - INFO - HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+2025-12-13 00:59:28,354 - WARNING - DeepSeek 生成失败 (尝试 3/3): Connection error.
+2025-12-13 00:59:28,355 - ERROR - DeepSeek 生成最终失败: Connection error.
+2025-12-13 00:59:28,355 - ERROR - 生成销售话术失败: Connection error.
+2025-12-13 00:59:28,356 - INFO - 报告已保存到: daily_report.md
+2025-12-13 00:59:28,356 - INFO - 测试模式：消息已打印到控制台，未发送到钉钉
+2025-12-13 00:59:28,356 - INFO - ============================================================
+2025-12-13 00:59:28,356 - INFO - 实战情报采集完成
+2025-12-13 00:59:28,356 - INFO - ============================================================

@@ -1,0 +1,162 @@
+/Users/changchun/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+2025-12-13 09:24:09,538 - INFO - 阿里通义千问 (Qwen) 初始化成功
+2025-12-13 09:24:09,552 - INFO - 浏览器初始化成功
+2025-12-13 09:24:09,552 - INFO - 市场雷达系统初始化完成，当前日期: 2025-12-13
+2025-12-13 09:24:09,552 - INFO - ================================================================================
+2025-12-13 09:24:09,552 - INFO - 海马职加·市场雷达日报 - 开始运行
+2025-12-13 09:24:09,552 - INFO - ================================================================================
+2025-12-13 09:24:09,552 - INFO - 跳过登录步骤，假设浏览器已登录
+2025-12-13 09:24:09,553 - INFO - ================================================================================
+2025-12-13 09:24:09,553 - INFO - 第二阶段：抖音采集
+2025-12-13 09:24:09,553 - INFO - ================================================================================
+2025-12-13 09:24:20,315 - INFO - 搜索关键词: DBC职梦
+2025-12-13 09:24:28,950 - INFO - 当前页面 URL: https://www.douyin.com/search/DBC%E8%81%8C%E6%A2%A6?type=video
+2025-12-13 09:24:29,040 - INFO - 页面中共找到 33 个 <a> 标签
+2025-12-13 09:24:29,065 - INFO - 找到 0 个视频链接
+2025-12-13 09:24:29,065 - WARNING - ⚠️ 警告：未找到视频链接
+2025-12-13 09:24:29,349 - WARNING - 页面前500字符预览: <!DOCTYPE html><html dark="true" header-ui="h-56"><head><link rel="dns-prefetch" href="//fonts.bytedance.com"><link rel="dns-prefetch" href="//lf-douyin-pc-search.douyinstatic.com"><link rel="dns-prefetch" href="//lf-cdn-tos.bytescm.com"><link rel="dns-prefetch" href="//lf3-cdn-tos.bytescm.com"><link rel="dns-prefetch" href="//lf3-static.bytednsdoc.com"><link rel="dns-prefetch" href="//p3-pc.douyinpic.com"><link rel="dns-prefetch" href="//p3-sign.douyinpic.com"><link rel="dns-prefetch" href="//p
+2025-12-13 09:24:29,350 - WARNING - 未找到任何视频，跳过关键词: DBC职梦
+2025-12-13 09:24:29,350 - INFO - 搜索关键词: 途鸽求职
+2025-12-13 09:24:34,417 - INFO - 当前页面 URL: https://www.douyin.com/search/%E9%80%94%E9%B8%BD%E6%B1%82%E8%81%8C?type=video
+2025-12-13 09:24:34,504 - INFO - 页面中共找到 33 个 <a> 标签
+2025-12-13 09:24:34,527 - INFO - 找到 0 个视频链接
+2025-12-13 09:24:34,527 - WARNING - ⚠️ 警告：未找到视频链接
+2025-12-13 09:24:34,768 - WARNING - 页面前500字符预览: <!DOCTYPE html><html dark="true" header-ui="h-56"><head><link rel="dns-prefetch" href="//fonts.bytedance.com"><link rel="dns-prefetch" href="//lf-douyin-pc-search.douyinstatic.com"><link rel="dns-prefetch" href="//lf-cdn-tos.bytescm.com"><link rel="dns-prefetch" href="//lf3-cdn-tos.bytescm.com"><link rel="dns-prefetch" href="//lf3-static.bytednsdoc.com"><link rel="dns-prefetch" href="//p3-pc.douyinpic.com"><link rel="dns-prefetch" href="//p3-sign.douyinpic.com"><link rel="dns-prefetch" href="//p
+2025-12-13 09:24:34,768 - WARNING - 未找到任何视频，跳过关键词: 途鸽求职
+2025-12-13 09:24:34,768 - INFO - 搜索关键词: Offer先生
+2025-12-13 09:24:40,844 - INFO - 当前页面 URL: https://www.douyin.com/search/Offer%E5%85%88%E7%94%9F?type=video
+2025-12-13 09:24:40,912 - INFO - 页面中共找到 33 个 <a> 标签
+2025-12-13 09:24:40,933 - INFO - 找到 0 个视频链接
+2025-12-13 09:24:40,933 - WARNING - ⚠️ 警告：未找到视频链接
+2025-12-13 09:24:41,181 - WARNING - 页面前500字符预览: <!DOCTYPE html><html dark="true" header-ui="h-56"><head><link rel="dns-prefetch" href="//fonts.bytedance.com"><link rel="dns-prefetch" href="//lf-douyin-pc-search.douyinstatic.com"><link rel="dns-prefetch" href="//lf-cdn-tos.bytescm.com"><link rel="dns-prefetch" href="//lf3-cdn-tos.bytescm.com"><link rel="dns-prefetch" href="//lf3-static.bytednsdoc.com"><link rel="dns-prefetch" href="//p3-pc.douyinpic.com"><link rel="dns-prefetch" href="//p3-sign.douyinpic.com"><link rel="dns-prefetch" href="//p
+2025-12-13 09:24:41,181 - WARNING - 未找到任何视频，跳过关键词: Offer先生
+2025-12-13 09:24:41,181 - INFO - 搜索关键词: 爱思益
+2025-12-13 09:24:46,724 - INFO - 当前页面 URL: https://www.douyin.com/search/%E7%88%B1%E6%80%9D%E7%9B%8A?type=video
+2025-12-13 09:24:46,822 - INFO - 页面中共找到 36 个 <a> 标签
+2025-12-13 09:24:46,850 - INFO - 找到 3 个视频链接
+2025-12-13 09:24:46,850 - INFO -   处理视频 1/3: https://www.douyin.com/video/7582861284249537844...
+2025-12-13 09:25:07,413 - INFO -     提取到 0 条评论
+2025-12-13 09:25:07,451 - INFO -   ✓ 采集成功: 这5种求职机构避雷！交了钱就后悔！ #留学生求职机构#求职机构排名#求职机构避雷#爱思益#靠谱求职机... (评论: 0条)
+2025-12-13 09:25:09,099 - INFO -   处理视频 2/3: https://www.douyin.com/video/7582875110109875471...
+2025-12-13 09:25:29,728 - INFO -     提取到 0 条评论
+2025-12-13 09:25:29,791 - INFO -   ✓ 采集成功: 顶级咨询公司2026实习汇总！留学生可转正+年薪35万起 #留学生#留学生求职#商科留学生#爱思益#... (评论: 0条)
+2025-12-13 09:25:30,870 - INFO -   处理视频 3/3: https://www.douyin.com/video/7582504686834437428...
+2025-12-13 09:25:53,255 - INFO -     提取到 0 条评论
+2025-12-13 09:25:53,335 - INFO -   ✓ 采集成功: 海归回国就业，最好的四种选择，您知道吗 #留学生#留学生求职#爱思益#校招#秋招... (评论: 0条)
+2025-12-13 09:25:57,148 - INFO - 搜索关键词: 海马职加
+2025-12-13 09:26:02,817 - INFO - 当前页面 URL: https://www.douyin.com/search/%E6%B5%B7%E9%A9%AC%E8%81%8C%E5%8A%A0?type=video
+2025-12-13 09:26:02,907 - INFO - 页面中共找到 36 个 <a> 标签
+2025-12-13 09:26:02,936 - INFO - 找到 3 个视频链接
+2025-12-13 09:26:02,936 - INFO -   处理视频 1/3: https://www.douyin.com/video/7582908787472747814...
+2025-12-13 09:26:22,206 - INFO -     提取到 0 条评论
+2025-12-13 09:26:22,235 - INFO -   ✓ 采集成功: 留学生秋招没offer？现在怎么办？该怎么做呢？ #留学生求职#留学生#秋招#留学生就业... (评论: 0条)
+2025-12-13 09:26:24,187 - INFO -   处理视频 2/3: https://www.douyin.com/video/7582882258588781839...
+2025-12-13 09:26:43,810 - INFO -     提取到 0 条评论
+2025-12-13 09:26:43,849 - INFO -   ✓ 采集成功: 留学生找求职机构海马职加来帮你！ #留学生求职#留学生求职辅导#留学生求职机构#留学生#海马职加... (评论: 0条)
+2025-12-13 09:26:44,919 - INFO -   处理视频 3/3: https://www.douyin.com/video/7582805065505738018...
+2025-12-13 09:27:05,542 - INFO -     提取到 0 条评论
+2025-12-13 09:27:05,581 - INFO -   ✓ 采集成功: 金融专业留学生寒假实习,0经验可内推直推 #金融专业#留学生寒假实习#0经验#内推#海马职加... (评论: 0条)
+2025-12-13 09:27:10,271 - INFO - 抖音采集完成，共找到 6 条有效数据
+2025-12-13 09:27:10,272 - INFO - ================================================================================
+2025-12-13 09:27:10,272 - INFO - 第二阶段：小红书采集
+2025-12-13 09:27:10,272 - INFO - ================================================================================
+2025-12-13 09:27:38,151 - INFO - 搜索关键词: DBC职梦
+2025-12-13 09:27:46,953 - INFO - 当前页面 URL: https://www.xiaohongshu.com/search_result?keyword=DBC%E8%81%8C%E6%A2%A6&source=web_search_result_notes&sort=time_descending&type=51
+2025-12-13 09:27:47,121 - INFO - 页面中共找到 131 个 <a> 标签
+2025-12-13 09:27:47,215 - INFO - 找到 0 条笔记链接
+2025-12-13 09:27:47,215 - WARNING - ⚠️ 警告：未找到笔记链接
+2025-12-13 09:27:47,419 - WARNING - 页面前500字符预览: <!DOCTYPE html><html><head><script formula-runtime="">function e(e){for(var r=1;r<arguments.length;r++){var t=null!=arguments[r]?arguments[r]:{},n=Object.keys(t);"function"==typeof Object.getOwnPropertySymbols&&(n=n.concat(Object.getOwnPropertySymbols(t).filter(function(e){return Object.getOwnPropertyDescriptor(t,e).enumerable}))),n.forEach(function(r){var n;n=t[r],r in e?Object.defineProperty(e,r,{value:n,enumerable:!0,configurable:!0,writable:!0}):e[r]=n})}return e}function r(e,r){return r=nul
+2025-12-13 09:27:47,419 - WARNING - 未找到任何笔记，跳过关键词: DBC职梦
+2025-12-13 09:27:47,419 - INFO - 搜索关键词: 途鸽求职
+2025-12-13 09:27:56,207 - INFO - 当前页面 URL: https://www.xiaohongshu.com/search_result?keyword=%E9%80%94%E9%B8%BD%E6%B1%82%E8%81%8C&source=web_search_result_notes&sort=time_descending&type=51
+2025-12-13 09:27:56,364 - INFO - 页面中共找到 130 个 <a> 标签
+2025-12-13 09:27:56,460 - INFO - 找到 0 条笔记链接
+2025-12-13 09:27:56,460 - WARNING - ⚠️ 警告：未找到笔记链接
+2025-12-13 09:27:56,664 - WARNING - 页面前500字符预览: <!DOCTYPE html><html><head><script formula-runtime="">function e(e){for(var r=1;r<arguments.length;r++){var t=null!=arguments[r]?arguments[r]:{},n=Object.keys(t);"function"==typeof Object.getOwnPropertySymbols&&(n=n.concat(Object.getOwnPropertySymbols(t).filter(function(e){return Object.getOwnPropertyDescriptor(t,e).enumerable}))),n.forEach(function(r){var n;n=t[r],r in e?Object.defineProperty(e,r,{value:n,enumerable:!0,configurable:!0,writable:!0}):e[r]=n})}return e}function r(e,r){return r=nul
+2025-12-13 09:27:56,664 - WARNING - 未找到任何笔记，跳过关键词: 途鸽求职
+2025-12-13 09:27:56,664 - INFO - 搜索关键词: Offer先生
+2025-12-13 09:28:05,538 - INFO - 当前页面 URL: https://www.xiaohongshu.com/search_result?keyword=Offer%E5%85%88%E7%94%9F&source=web_search_result_notes&sort=time_descending&type=51
+2025-12-13 09:28:05,700 - INFO - 页面中共找到 131 个 <a> 标签
+2025-12-13 09:28:05,794 - INFO - 找到 0 条笔记链接
+2025-12-13 09:28:05,794 - WARNING - ⚠️ 警告：未找到笔记链接
+2025-12-13 09:28:05,995 - WARNING - 页面前500字符预览: <!DOCTYPE html><html><head><script formula-runtime="">function e(e){for(var r=1;r<arguments.length;r++){var t=null!=arguments[r]?arguments[r]:{},n=Object.keys(t);"function"==typeof Object.getOwnPropertySymbols&&(n=n.concat(Object.getOwnPropertySymbols(t).filter(function(e){return Object.getOwnPropertyDescriptor(t,e).enumerable}))),n.forEach(function(r){var n;n=t[r],r in e?Object.defineProperty(e,r,{value:n,enumerable:!0,configurable:!0,writable:!0}):e[r]=n})}return e}function r(e,r){return r=nul
+2025-12-13 09:28:05,995 - WARNING - 未找到任何笔记，跳过关键词: Offer先生
+2025-12-13 09:28:05,995 - INFO - 搜索关键词: 爱思益
+2025-12-13 09:28:14,811 - INFO - 当前页面 URL: https://www.xiaohongshu.com/search_result?keyword=%E7%88%B1%E6%80%9D%E7%9B%8A&source=web_search_result_notes&sort=time_descending&type=51
+2025-12-13 09:28:14,969 - INFO - 页面中共找到 128 个 <a> 标签
+2025-12-13 09:28:15,061 - INFO - 找到 0 条笔记链接
+2025-12-13 09:28:15,062 - WARNING - ⚠️ 警告：未找到笔记链接
+2025-12-13 09:28:15,263 - WARNING - 页面前500字符预览: <!DOCTYPE html><html><head><script formula-runtime="">function e(e){for(var r=1;r<arguments.length;r++){var t=null!=arguments[r]?arguments[r]:{},n=Object.keys(t);"function"==typeof Object.getOwnPropertySymbols&&(n=n.concat(Object.getOwnPropertySymbols(t).filter(function(e){return Object.getOwnPropertyDescriptor(t,e).enumerable}))),n.forEach(function(r){var n;n=t[r],r in e?Object.defineProperty(e,r,{value:n,enumerable:!0,configurable:!0,writable:!0}):e[r]=n})}return e}function r(e,r){return r=nul
+2025-12-13 09:28:15,263 - WARNING - 未找到任何笔记，跳过关键词: 爱思益
+2025-12-13 09:28:15,263 - INFO - 搜索关键词: 海马职加
+2025-12-13 09:28:24,014 - INFO - 当前页面 URL: https://www.xiaohongshu.com/search_result?keyword=%E6%B5%B7%E9%A9%AC%E8%81%8C%E5%8A%A0&source=web_search_result_notes&sort=time_descending&type=51
+2025-12-13 09:28:24,177 - INFO - 页面中共找到 131 个 <a> 标签
+2025-12-13 09:28:24,271 - INFO - 找到 0 条笔记链接
+2025-12-13 09:28:24,271 - WARNING - ⚠️ 警告：未找到笔记链接
+2025-12-13 09:28:24,470 - WARNING - 页面前500字符预览: <!DOCTYPE html><html><head><script formula-runtime="">function e(e){for(var r=1;r<arguments.length;r++){var t=null!=arguments[r]?arguments[r]:{},n=Object.keys(t);"function"==typeof Object.getOwnPropertySymbols&&(n=n.concat(Object.getOwnPropertySymbols(t).filter(function(e){return Object.getOwnPropertyDescriptor(t,e).enumerable}))),n.forEach(function(r){var n;n=t[r],r in e?Object.defineProperty(e,r,{value:n,enumerable:!0,configurable:!0,writable:!0}):e[r]=n})}return e}function r(e,r){return r=nul
+2025-12-13 09:28:24,470 - WARNING - 未找到任何笔记，跳过关键词: 海马职加
+2025-12-13 09:28:24,470 - INFO - 小红书采集完成，共找到 0 条有效数据
+2025-12-13 09:28:24,470 - INFO - ================================================================================
+2025-12-13 09:28:24,470 - INFO - 第二阶段：搜狗微信采集
+2025-12-13 09:28:24,470 - INFO - ================================================================================
+2025-12-13 09:28:27,883 - INFO - 搜索关键词: DBC职梦
+2025-12-13 09:28:32,450 - INFO - 当前页面 URL: https://weixin.sogou.com/weixin?type=2&query=DBC%E8%81%8C%E6%A2%A6
+2025-12-13 09:28:34,496 - INFO - 页面中共找到 10 个 txt-box 元素
+2025-12-13 09:28:34,508 - INFO -   ✓ 采集成功: 科技大厂!DBC职梦学员斩获Amazon (CN) 2025全职Offer!...
+2025-12-13 09:28:34,516 - INFO -   ✓ 采集成功: 恭喜DBC职梦学员收到Goldman Sachs(US) 2025全职Offer...
+2025-12-13 09:28:34,523 - INFO -   ✓ 采集成功: 恭喜DBC职梦香港学员,斩获百度2025 Internship Offer...
+2025-12-13 09:28:34,529 - INFO -   ✓ 采集成功: DBC职梦学员已收到Goldman Sachs (US) Risk全职岗位终面邀请...
+2025-12-13 09:28:34,535 - INFO -   ✓ 采集成功: DBC职梦学员已收到Goldman Sachs (US) Quant全职岗位终面邀请...
+2025-12-13 09:28:36,581 - INFO - 搜索关键词: 途鸽求职
+2025-12-13 09:28:42,065 - INFO - 当前页面 URL: https://weixin.sogou.com/weixin?type=2&query=%E9%80%94%E9%B8%BD%E6%B1%82%E8%81%8C
+2025-12-13 09:28:44,103 - INFO - 页面中共找到 10 个 txt-box 元素
+2025-12-13 09:28:44,114 - INFO -   ✓ 采集成功: 互联派、海马职加、途鸽求职机构,我来说点大实话!...
+2025-12-13 09:28:44,122 - INFO -   ✓ 采集成功: 爱思益求职vs途鸽求职,哪家靠谱...
+2025-12-13 09:28:44,129 - INFO -   ✓ 采集成功: Togo Share丨秋招之回国求职,海归们不能不知的那些事...
+2025-12-13 09:28:44,136 - INFO -   ✓ 采集成功: 年薪23万!2019Q1中高端人才求职报告,这些行业新兴又多金!...
+2025-12-13 09:28:44,141 - INFO -   ✓ 采集成功: 【学联推广】12 年品牌“途鸽国际教育”:从课业到就业,一站式托举你的海外求学路...
+2025-12-13 09:28:46,552 - INFO - 搜索关键词: Offer先生
+2025-12-13 09:28:50,904 - INFO - 当前页面 URL: https://weixin.sogou.com/weixin?type=2&query=Offer%E5%85%88%E7%94%9F
+2025-12-13 09:28:52,942 - INFO - 页面中共找到 9 个 txt-box 元素
+2025-12-13 09:28:52,953 - INFO -   ✓ 采集成功: 企业HR您好,offer先生诚邀你参加2023春季招聘会!...
+2025-12-13 09:28:52,962 - INFO -   ✓ 采集成功: 第二届「offer先生-2024校招最佳雇主」用户投票环节正式启动!快来pick你的梦中情司!...
+2025-12-13 09:28:52,970 - INFO -   ✓ 采集成功: 职教品牌「offer先生」完成 A 轮融资,58 产业基金投资...
+2025-12-13 09:28:52,977 - INFO -   ✓ 采集成功: offer先生与国内领先消费品公司蓝月亮,达成官方战略合作!...
+2025-12-13 09:28:52,984 - INFO -   ✓ 采集成功: offer先生上榜「2020·爱分析中国在线教育创新企业Top50」| 58产业基金portfoli...
+2025-12-13 09:28:55,479 - INFO - 搜索关键词: 爱思益
+2025-12-13 09:28:59,196 - INFO - 当前页面 URL: https://weixin.sogou.com/weixin?type=2&query=%E7%88%B1%E6%80%9D%E7%9B%8A
+2025-12-13 09:29:01,241 - INFO - 页面中共找到 10 个 txt-box 元素
+2025-12-13 09:29:01,252 - INFO -   ✓ 采集成功: 爱思益研究院成立始末——瞭望...
+2025-12-13 09:29:01,261 - INFO -   ✓ 采集成功: 爱思益:醒醒啊上课啦,别到毕业了再手忙脚乱地找工作 创业...
+2025-12-13 09:29:01,268 - INFO -   ✓ 采集成功: 爱思益创始人兼CEO孙静博受邀至人民日报社参加研讨...
+2025-12-13 09:29:01,275 - INFO -   ✓ 采集成功: 爱思益AceOffer招聘 | 来自超有爱的互联网公司的女神节求职套餐...
+2025-12-13 09:29:01,281 - INFO -   ✓ 采集成功: 完成 Pre-A 轮融资后,职前教育培训「爱思益AceOffer」还要借本土化优势切海外市场...
+2025-12-13 09:29:03,370 - INFO - 搜索关键词: 海马职加
+2025-12-13 09:29:08,102 - INFO - 当前页面 URL: https://weixin.sogou.com/weixin?type=2&query=%E6%B5%B7%E9%A9%AC%E8%81%8C%E5%8A%A0
+2025-12-13 09:29:10,156 - INFO - 页面中共找到 10 个 txt-box 元素
+2025-12-13 09:29:10,181 - INFO -   ✓ 采集成功: 互联派、海马职加、途鸽求职机构,我来说点大实话!...
+2025-12-13 09:29:10,188 - INFO -   ✓ 采集成功: 破解海归求职三大困局:海马职加凭什么让石沉大海的简历转化成名企Offer?...
+2025-12-13 09:29:10,193 - INFO -   ✓ 采集成功: 【海马职加9周年】九载同行 一录前行...
+2025-12-13 09:29:10,199 - INFO -   ✓ 采集成功: OPPO | 2026届校招小语种专场,多语种可投...
+2025-12-13 09:29:10,204 - INFO -   ✓ 采集成功: 海马职加落地上海,总裁林长春:留学生求职的“价值回归”时代已至...
+2025-12-13 09:29:13,193 - INFO - 搜狗微信采集完成，共找到 25 条有效数据
+2025-12-13 09:29:13,207 - INFO - 原始数据已保存到: raw_data.csv (共 31 条)
+2025-12-13 09:29:13,207 - INFO - ================================================================================
+2025-12-13 09:29:13,207 - INFO - 第三阶段：阿里千问 (Qwen) 销冠分析
+2025-12-13 09:29:13,207 - INFO - ================================================================================
+2025-12-13 09:29:13,207 - WARNING - 格式化数据过长 (15050 字符)，截取前5000字符
+2025-12-13 09:29:13,207 - INFO - 正在发送给 AI 的数据长度: 5011 字符
+2025-12-13 09:29:13,207 - INFO - 数据统计：抖音 6 条，小红书 0 条，搜狗微信 25 条
+2025-12-13 09:29:13,207 - INFO - 调用阿里千问 (qwen-plus) API 生成报告...
+2025-12-13 09:30:03,859 - INFO - 阿里千问 报告生成完成
+2025-12-13 09:30:03,861 - INFO - 报告已保存到: Market_Radar_2025-12-13.md
+2025-12-13 09:30:03,861 - INFO - ================================================================================
+2025-12-13 09:30:03,861 - INFO - 市场雷达日报生成完成
+2025-12-13 09:30:03,861 - INFO - ================================================================================
+2025-12-13 09:30:03,861 - INFO - 浏览器保持打开状态，请手动关闭
+
+✅ 采集完成！
+📊 数据统计：抖音 6 条，小红书 0 条，搜狗微信 25 条
+📄 原始数据：raw_data.csv
+📋 分析报告：Market_Radar_2025-12-13.md

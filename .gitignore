@@ -1,19 +1,15 @@
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
-
 # dependencies
-/node_modules
-/.pnp
+node_modules
+.pnp
 .pnp.js
 
 # testing
-/coverage
+coverage
 
 # next.js
-/.next/
-/out/
-
-# production
-/build
+.next/
+out/
+build
 
 # misc
 .DS_Store
@@ -21,65 +17,17 @@
 
 # debug
 npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-*.log
 
 # local env files
-.env*.local
+.env
 .env.local
+.env.development.local
+.env.test.local
+.env.production.local
 
 # vercel
 .vercel
 
-# typescript
-*.tsbuildinfo
-next-env.d.ts
-
-# Python files (if not needed)
-*.py
-*.pyc
-__pycache__/
-*.db
-*.sqlite
-*.sqlite3
-
-# Data files
-*.xlsx
-*.csv
-*.xls
+# database (本地测试用)
 data/
-
-# Debug images
-*_debug*.png
-douyin_debug*.png
-xhs_debug*.png
-
-# Recordings
-recordings/
-*.mp3
-
-# Resume files
-resumes/
-resumes_download/
-resume/
-
-# Python requirements (keep only if needed)
-requirements*.txt
-
-# Workspace files
-*.code-workspace
-
-# Backup files
-*_backup*
-jobs_backup*
-
-# Test files
-test_*.log
-test_*.py
-scraper*.log
-market_*.log
-referral_*.log
-real_scraper.log
-download.log
-download_log.txt
+*.db
