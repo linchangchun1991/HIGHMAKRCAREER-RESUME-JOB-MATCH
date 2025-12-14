@@ -73,13 +73,17 @@ npm run dev
 ## 📦 部署
 
 ### Vercel 部署（推荐）
-1. Fork 本项目到你的 GitHub
-2. 在 Vercel 导入项目
-3. 设置环境变量：
+
+详细部署指南请查看 [VERCEL_DEPLOY_GUIDE.md](./VERCEL_DEPLOY_GUIDE.md)
+
+**快速步骤**：
+1. 将代码推送到 GitHub
+2. 在 [Vercel](https://vercel.com) 导入项目
+3. 配置环境变量：
    - `QWEN_API_KEY` - 阿里云 API Key
    - `TURSO_DATABASE_URL` - Turso 数据库 URL
    - `TURSO_AUTH_TOKEN` - Turso 认证 Token
-4. 部署完成
+4. 点击部署，完成！
 
 ### 本地/服务器部署
 \`\`\`bash
